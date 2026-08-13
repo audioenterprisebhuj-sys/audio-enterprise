@@ -18,11 +18,11 @@ interface ProductCardProps {
 }
 
 const badgeStyles: Record<string, string> = {
-  SALE: 'bg-accent text-white',
-  BESTSELLER: 'bg-ink text-white',
-  NEW: 'bg-gold text-ink',
-  'LIMITED OFFER': 'bg-red-600 text-white',
-  POPULAR: 'bg-graphite text-white'
+  SALE: 'bg-gradient-to-r from-orange-500 to-orange-400 text-white shadow-sm',
+  BESTSELLER: 'bg-gradient-to-r from-zinc-900 to-zinc-700 text-white',
+  NEW: 'bg-gradient-to-r from-amber-300 to-yellow-200 text-zinc-900',
+  'LIMITED OFFER': 'bg-gradient-to-r from-red-600 to-red-500 text-white',
+  POPULAR: 'bg-gradient-to-r from-zinc-700 to-zinc-600 text-white'
 };
 
 const availabilityIcon = {
@@ -50,17 +50,17 @@ export function ProductCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="group flex h-full flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-lift">
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white/90 shadow-[0_12px_30px_rgba(15,23,42,0.06)] ring-1 ring-zinc-100 transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_24px_50px_rgba(255,106,0,0.12)]">
       
       <Link
         to={`/product/${product.slug}`}
-        className="relative block overflow-hidden bg-zinc-100"
+        className="relative block overflow-hidden bg-gradient-to-br from-zinc-100 via-zinc-50 to-zinc-100"
         aria-label={product.name}>
         
         <div className="absolute left-2.5 top-2.5 z-10 flex flex-col items-start gap-1.5">
           {product.badge &&
           <span
-            className={`rounded px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider ${
+            className={`rounded-md px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider shadow-sm ${
             badgeStyles[product.badge] ?? 'bg-ink text-white'}`
             }>
             
@@ -68,30 +68,32 @@ export function ProductCard({
             </span>
           }
           {off !== null &&
-          <span className="rounded bg-white/95 px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider text-accent shadow-sm">
+          <span className="rounded-md bg-white/95 px-2 py-1 text-[10px] font-extrabold uppercase tracking-wider text-accent shadow-sm ring-1 ring-orange-100">
               {off}% Off
             </span>
           }
         </div>
-        <img
-          src={product.image}
-          alt={product.name}
-          loading="lazy"
-          width={640}
-          height={640}
-          className="aspect-square w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.07]" />
+        <div className="flex h-[180px] items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.9),_rgba(245,245,245,1)_40%,_rgba(229,231,235,1))] sm:h-[210px] md:h-[220px] lg:h-[240px]">
+          <img
+            src={product.image}
+            alt={product.name}
+            loading="lazy"
+            width={640}
+            height={640}
+            className="h-full w-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.08]" />
+        </div>
         
-        <span className="absolute inset-x-0 bottom-0 bg-ink/85 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+        <span className="absolute inset-x-0 bottom-0 bg-gradient-to-r from-zinc-900 to-zinc-800 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
           {product.feature}
         </span>
       </Link>
 
       <div className="flex flex-1 flex-col p-3.5">
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
           {product.category}
         </p>
-        <h3 className="mt-0.5 font-display text-[17px] font-bold uppercase leading-tight tracking-tight text-ink">
-          <Link to={`/product/${product.slug}`} className="hover:text-accent">
+        <h3 className="mt-0.5 font-display text-[15px] font-bold uppercase leading-tight tracking-tight text-zinc-900 sm:text-[16px] lg:text-[17px]">
+          <Link to={`/product/${product.slug}`} className="transition-colors duration-200 hover:text-accent">
             {product.name}
           </Link>
         </h3>
@@ -113,7 +115,7 @@ export function ProductCard({
         }
 
         <div className="mt-2.5 flex items-end gap-2">
-          <span className="font-display text-xl font-extrabold tracking-tight text-ink">
+          <span className="font-display text-xl font-extrabold tracking-tight text-zinc-900">
             {formatPrice(product.price)}
           </span>
           {product.oldPrice &&
@@ -142,11 +144,13 @@ export function ProductCard({
         </div>
 
         <div className="mt-3 flex-1" />
-        <WhatsAppButton
-          href={generateWhatsAppInquiry(product)}
-          label={ctaLabel}
-          size="sm"
-          fullWidth />
+        <div className="rounded-xl bg-gradient-to-r from-orange-500 via-orange-500 to-amber-400 p-[1px] shadow-sm">
+          <WhatsAppButton
+            href={generateWhatsAppInquiry(product)}
+            label={ctaLabel}
+            size="sm"
+            fullWidth />
+        </div>
         
       </div>
     </motion.article>);

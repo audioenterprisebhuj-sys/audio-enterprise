@@ -10,31 +10,75 @@
 
 :root {
   --accent: #ff6a00;
+  --page-max: 1320px;
 }
+
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
+
 body {
+  margin: 0;
+  min-height: 100vh;
   font-family: 'Barlow', system-ui, sans-serif;
   background-color: #f5f5f6;
   color: #0b0b0c;
   overflow-x: hidden;
 }
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .thin-scrollbar::-webkit-scrollbar {
   height: 6px;
 }
+
 .thin-scrollbar::-webkit-scrollbar-thumb {
   background: #d4d4d8;
   border-radius: 999px;
 }
+
 ::selection {
   background: var(--accent);
   color: #fff;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    background-color: #f7f7f8;
+  }
 }

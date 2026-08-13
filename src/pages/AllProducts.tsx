@@ -216,7 +216,7 @@ export function AllProducts() {
 
           <div>
             {loading ?
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
                 {Array.from({ length: 8 }).map((_, i) =>
               <ProductCardSkeleton key={i} />
               )}
@@ -239,7 +239,7 @@ export function AllProducts() {
                 </button>
               </div> :
 
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
                 {results.map((product) =>
               <ProductCard
                 key={product.id}
