@@ -33,6 +33,8 @@ export function ProductDetail() {
   const { slug = '' } = useParams();
   const product = getProductBySlug(slug);
   const [activeImage, setActiveImage] = useState(0);
+  const activeImageSource = product ? product.images[activeImage] ?? product.image : '';
+  const isActiveEmoji = activeImageSource.startsWith('emoji:');
 
   useEffect(() => {
     setActiveImage(0);
@@ -99,10 +101,18 @@ export function ProductDetail() {
                   {product.badge}
                 </span>
               }
+              {!activeImageSource ?
+              <div className="flex aspect-square w-full items-center justify-center bg-zinc-50 text-xs font-bold uppercase tracking-wider text-zinc-400">
+                  Photo Coming Soon
+                </div> : isActiveEmoji ?
+              <div className="flex aspect-square w-full items-center justify-center bg-zinc-50 text-[120px]" aria-label={product.name}>
+                  {activeImageSource.slice(6)}
+                </div> :
               <img
-                src={product.images[activeImage] ?? product.image}
+                src={activeImageSource}
                 alt={product.name}
                 className="aspect-square w-full object-cover" />
+              }
               
             </motion.div>
             {product.images.length > 1 &&
@@ -117,11 +127,16 @@ export function ProductDetail() {
                 i === activeImage ? 'border-accent' : 'border-zinc-200 hover:border-zinc-400'}`
                 }>
                 
+                    {image.startsWith('emoji:') ?
+                    <span className="flex h-20 w-20 items-center justify-center bg-zinc-50 text-4xl sm:h-24 sm:w-24" aria-hidden="true">
+                        {image.slice(6)}
+                      </span> :
                     <img
-                  src={image}
-                  alt=""
-                  loading="lazy"
-                  className="h-20 w-20 object-cover sm:h-24 sm:w-24" />
+                      src={image}
+                      alt=""
+                      loading="lazy"
+                      className="h-20 w-20 object-cover sm:h-24 sm:w-24" />
+                    }
                 
                   </button>
               )}

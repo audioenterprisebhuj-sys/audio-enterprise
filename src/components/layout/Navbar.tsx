@@ -8,6 +8,8 @@ import {
   SearchIcon,
   XIcon } from
 'lucide-react';
+import { FaFacebookF } from 'react-icons/fa';
+import logoImage from '../../assets/categories/LOGO.jpeg';
 import { SITE } from '../../config/site';
 import { getMegaMenuCategories } from '../../services/categoryService';
 import { generateGeneralInquiry } from '../../utils/whatsapp';
@@ -19,6 +21,7 @@ const NAV_LINKS = [
 { label: 'New Arrivals', to: '/products?tag=new' },
 { label: 'Sale', to: '/products?tag=sale' },
 { label: 'Brands', to: '/about#brands' },
+{ label: 'Our Brand', to: '/branches' },
 { label: 'About Us', to: '/about' },
 { label: 'Contact', to: '/contact' }];
 
@@ -58,21 +61,13 @@ export function Navbar() {
         }
         onMouseLeave={() => setMegaOpen(false)}>
         
-        <div className="mx-auto flex w-full max-w-[1320px] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
-          <Link to="/" className="group flex shrink-0 items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-ink transition-colors group-hover:bg-accent">
-              <span className="font-display text-lg font-extrabold leading-none text-accent transition-colors group-hover:text-white">
-                J
-              </span>
-            </span>
-            <span className="leading-none">
-              <span className="block font-display text-xl font-extrabold uppercase tracking-tight text-ink">
-                {SITE.brand}
-              </span>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-zinc-400">
-                {SITE.tagline}
-              </span>
-            </span>
+        <div className="mx-auto flex w-full max-w-[1320px] items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:px-8">
+          <Link to="/" className="group flex min-w-0 shrink items-center">
+            <img
+              src={logoImage}
+              alt={SITE.brand}
+              className="h-12 w-auto max-w-[180px] object-contain transition-transform duration-200 group-hover:scale-[1.02] sm:h-14 md:h-16 lg:h-[64px]"
+            />
           </Link>
 
           <nav
@@ -84,13 +79,13 @@ export function Navbar() {
               onClick={() => setMegaOpen((v) => !v)}
               onMouseEnter={() => setMegaOpen(true)}
               aria-expanded={megaOpen}
-              className={`flex items-center gap-1 rounded-md px-3 py-2 text-[13px] font-bold uppercase tracking-wide transition-colors ${
+              className={`flex items-center gap-1 rounded-md px-2.5 py-2 text-[11px] font-bold uppercase tracking-[0.12em] transition-colors ${
               megaOpen ? 'text-accent' : 'text-ink hover:text-accent'}`
               }>
               
               Categories
               <ChevronDownIcon
-                size={14}
+                size={13}
                 className={`transition-transform duration-200 ${megaOpen ? 'rotate-180' : ''}`} />
               
             </button>
@@ -100,7 +95,7 @@ export function Navbar() {
               to={link.to}
               onMouseEnter={() => setMegaOpen(false)}
               className={({ isActive }) =>
-              `relative rounded-md px-3 py-2 text-[13px] font-bold uppercase tracking-wide transition-colors after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-accent after:transition-transform hover:text-accent hover:after:scale-x-100 ${
+              `relative rounded-md px-2.5 py-2 text-[11px] font-bold uppercase tracking-[0.12em] transition-colors after:absolute after:inset-x-2 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-accent after:transition-transform hover:text-accent hover:after:scale-x-100 ${
               isActive && link.to === location.pathname ?
               'text-accent after:scale-x-100' :
               'text-ink'}`
@@ -117,34 +112,34 @@ export function Navbar() {
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Search products"
-              className="flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:bg-surface hover:text-accent">
+              className="flex h-9 w-9 items-center justify-center rounded-md text-ink transition-colors hover:bg-surface hover:text-accent">
               
-              <SearchIcon size={19} />
+              <SearchIcon size={17} />
             </button>
             <a
               href={generateGeneralInquiry()}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
-              className="flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:bg-surface hover:text-[#1faa54]">
+              className="flex h-9 w-9 items-center justify-center rounded-md text-ink transition-colors hover:bg-surface hover:text-[#1faa54]">
               
-              <MessageCircleIcon size={19} />
+              <MessageCircleIcon size={17} />
             </a>
             <a
-              href={generateGeneralInquiry()}
+              href={SITE.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden h-10 items-center rounded-md bg-accent px-5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-ink sm:inline-flex">
-              
-              Send Inquiry
+              aria-label="Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-md text-ink transition-colors hover:bg-surface hover:text-[#1877f2]">
+              <FaFacebookF size={15} />
             </a>
             <button
               type="button"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
-              className="flex h-10 w-10 items-center justify-center rounded-md text-ink transition-colors hover:bg-surface lg:hidden">
+              className="flex h-9 w-9 items-center justify-center rounded-md text-ink transition-colors hover:bg-surface lg:hidden">
               
-              <MenuIcon size={21} />
+              <MenuIcon size={20} />
             </button>
           </div>
         </div>

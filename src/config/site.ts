@@ -6,9 +6,9 @@
 export const WHATSAPP_NUMBER = '919876543210'; // country code + number, digits only
 
 export const SITE = {
-  brand: 'JBL Audio Pro',
-  brandShort: 'JBL',
-  tagline: 'Professional Audio Solutions',
+  brand: 'Audio Enterprise',
+  brandShort: 'AE',
+  tagline: 'The Sound of Innovation',
   phone: '+91 98765 43210',
   phoneHref: 'tel:+919876543210',
   email: 'sales@jblaudiopro.in',
@@ -21,7 +21,7 @@ export const SITE = {
   'https://www.openstreetmap.org/export/embed.html?bbox=72.81%2C18.94%2C72.85%2C18.98&layer=mapnik',
   social: {
     instagram: 'https://instagram.com',
-    facebook: 'https://facebook.com',
+    facebook: 'https://www.facebook.com/share/1KMSsqGtK6/',
     youtube: 'https://youtube.com'
   }
 } as const;

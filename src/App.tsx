@@ -6,6 +6,7 @@ import { Footer } from './components/layout/Footer';
 import { Navbar } from './components/layout/Navbar';
 import { About } from './pages/About';
 import { AllProducts } from './pages/AllProducts';
+import { Branches } from './pages/Branches';
 import { CategoryPage } from './pages/CategoryPage';
 import { Contact } from './pages/Contact';
 import { Home } from './pages/Home';
@@ -25,6 +26,7 @@ export function App() {
             <Route path="/product/:slug" element={<ProductDetail />} />
             <Route path="/category/:slug" element={<CategoryPage />} />
             <Route path="/about" element={<About />} />
+            <Route path="/branches" element={<Branches />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

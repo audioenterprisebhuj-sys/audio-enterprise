@@ -57,6 +57,10 @@ export function getProductsByCategoryName(name: string, limit?: number): Product
   return typeof limit === 'number' ? list.slice(0, limit) : list;
 }
 
+export function getProductsBySubcategory(subcategory: Product['subcategory']): Product[] {
+  return products.filter((p) => p.subcategory === subcategory);
+}
+
 export function getProductsByTag(tag: ProductTag, limit?: number): Product[] {
   const list = products.filter((p) => p.tags.includes(tag));
   return typeof limit === 'number' ? list.slice(0, limit) : list;

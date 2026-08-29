@@ -74,13 +74,14 @@ export function ProductCard({
           }
         </div>
         <div className="flex h-[180px] items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.9),_rgba(245,245,245,1)_40%,_rgba(229,231,235,1))] sm:h-[210px] md:h-[220px] lg:h-[240px]">
-          <img
+          {product.image ? <img
             src={product.image}
             alt={product.name}
             loading="lazy"
             width={640}
             height={640}
-            className="h-full w-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.08]" />
+            className="h-full w-full object-contain object-center transition-transform duration-500 ease-out group-hover:scale-[1.08]" /> :
+          <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">Photo Coming Soon</span>}
         </div>
         
         <span className="absolute inset-x-0 bottom-0 bg-gradient-to-r from-zinc-900 to-zinc-800 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
@@ -90,7 +91,7 @@ export function ProductCard({
 
       <div className="flex flex-1 flex-col p-3.5">
         <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
-          {product.category}
+          {product.subcategory ?? product.category}
         </p>
         <h3 className="mt-0.5 font-display text-[15px] font-bold uppercase leading-tight tracking-tight text-zinc-900 sm:text-[16px] lg:text-[17px]">
           <Link to={`/product/${product.slug}`} className="transition-colors duration-200 hover:text-accent">

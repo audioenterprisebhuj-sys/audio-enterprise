@@ -50,6 +50,10 @@ export function CategoryShowcase() {
                   aria-hidden="true" />
                 
                 </div>
+                {category.name === 'Microphones' &&
+                <p className="px-4 pt-2 text-[10px] font-bold uppercase tracking-wider text-accent">
+                    Wired / Wireless
+                  </p>}
                 <div className="p-4">
                   <h3 className="font-display text-[19px] font-bold uppercase leading-tight tracking-tight text-ink">
                     {category.name}

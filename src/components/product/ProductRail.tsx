@@ -15,7 +15,7 @@ interface ProductRailProps {
 export function ProductRail({
   children,
   dark = false,
-  itemClassName = 'w-[72vw] sm:w-[300px] lg:w-[272px]',
+  itemClassName = 'w-[82vw] sm:w-[300px] lg:w-[272px]',
   ariaLabel
 }: ProductRailProps) {
   const scrollerRef = useRef<HTMLDivElement>(null);

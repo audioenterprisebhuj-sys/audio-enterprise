@@ -29,7 +29,7 @@ export function HeroCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}>
       
-      <div className="relative h-[520px] w-full sm:h-[560px] lg:h-[640px]">
+      <div className="relative min-h-[520px] w-full sm:min-h-[560px] lg:min-h-[640px]">
         <AnimatePresence mode="sync">
           <motion.img
             key={slide.id}
@@ -39,7 +39,7 @@ export function HeroCarousel() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.1, ease: 'easeOut' }}
-            className="absolute inset-0 h-full w-full object-cover" />
+            className="absolute inset-0 h-full w-full object-cover object-center" />
           
         </AnimatePresence>
         <div
@@ -48,7 +48,7 @@ export function HeroCarousel() {
         
         <div className="absolute inset-0 bg-ink/30" aria-hidden="true" />
 
-        <div className="relative mx-auto flex h-full w-full max-w-[1320px] items-center px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto flex h-full min-h-[520px] w-full max-w-[1320px] items-center px-4 py-12 sm:min-h-[560px] sm:px-6 lg:min-h-[640px] lg:px-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={slide.id}
@@ -56,21 +56,21 @@ export function HeroCarousel() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -18 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="max-w-2xl">
+              className="w-full max-w-[95%] sm:max-w-xl lg:max-w-2xl">
               
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-accent">
                 {slide.eyebrow}
               </span>
-              <h1 className="mt-5 whitespace-pre-line font-display text-[2.75rem] font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-[4.25rem]">
+              <h1 className="mt-5 whitespace-pre-line font-display text-[2.25rem] font-extrabold uppercase leading-[0.96] tracking-tight text-white sm:text-5xl lg:text-[4.25rem]">
                 {slide.title}
               </h1>
               <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/70 sm:text-base">
                 {slide.subtitle}
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   to={slide.href}
-                  className="group inline-flex h-12 items-center gap-2 rounded-md bg-accent px-6 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-ink sm:text-sm">
+                  className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-accent px-6 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-ink sm:w-auto sm:text-sm">
                   
                   Explore Products
                   <ArrowRightIcon
@@ -82,7 +82,7 @@ export function HeroCarousel() {
                   href={generateGeneralInquiry()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center gap-2 rounded-md border border-white/30 px-6 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white hover:text-ink sm:text-sm">
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-md border border-white/30 px-6 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white hover:text-ink sm:w-auto sm:text-sm">
                   
                   <MessageCircleIcon size={16} />
                   Send Inquiry on WhatsApp

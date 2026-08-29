@@ -13,6 +13,7 @@ export interface Product {
   model: string;
   brand: string;
   category: string;
+  subcategory?: 'Wired' | 'Wireless';
   price: number;
   oldPrice?: number;
   rating: number;

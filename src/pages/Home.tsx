@@ -10,7 +10,7 @@ import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { ContactSection } from '../components/contact/ContactSection';
 import { CategorySection } from '../components/sections/CategorySection';
 import { saleProducts } from '../data/products';
-import { getProductsByCategoryName, getProductsByCategorySlug } from '../services/productService';
+import { getProductsByCategoryName, getProductsByCategorySlug, getProductsBySubcategory } from '../services/productService';
 import { generateCategoryInquiry } from '../utils/whatsapp';
 
 export function Home() {
@@ -68,19 +68,24 @@ export function Home() {
       <CategorySection
         id="microphones"
         eyebrow="Category"
-        title="Professional Microphones"
-        subtitle="Wireless, wired, vocal, instrument, conference and gooseneck microphones."
-        products={getProductsByCategoryName('Microphones')}
+        title="Wired Microphones"
+        subtitle="Professional wired microphones with the latest models and complete details."
+        products={getProductsBySubcategory('Wired')}
         chips={[
-        'Wireless Microphones',
-        'Wired Microphones',
-        'Vocal Microphones',
-        'Instrument Microphones',
-        'Conference Microphones',
-        'Gooseneck Microphones']
+        'Wired']
         }
         viewAllHref="/category/microphones"
         className="bg-white" />
+
+      <CategorySection
+        id="wireless-microphones"
+        eyebrow="Category"
+        title="Wireless Microphones"
+        subtitle="Wireless microphone photos and products will be added soon."
+        products={getProductsBySubcategory('Wireless')}
+        chips={['Wireless']}
+        viewAllHref="/category/microphones"
+        className="bg-surface" />
       
 
       <CategorySection
