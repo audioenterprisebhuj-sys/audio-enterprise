@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /Admin
 
-Sitemap: https://audioenterprise.in/sitemap.xml
+Sitemap: https://ssaudio.in/sitemap.xml

@@ -120,12 +120,15 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col-reverse items-center justify-between gap-5 border-t border-white/10 pt-6 sm:flex-row">
           <p className="text-xs text-white/40">
-            © 2026 {SITE.brand}. All rights reserved.{' '}
-            <Link to="/admin" className="opacity-0 hover:opacity-70 transition-opacity ml-1 cursor-pointer" title="Admin Portal">
-              🔒
-            </Link>
+            © 2026 {SITE.brand}. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link
+              to="/admin"
+              className="text-xs text-accent font-bold uppercase tracking-wider hover:text-white transition-colors underline-offset-2 hover:underline"
+            >
+              Admin Portal
+            </Link>
             <button
               type="button"
               onClick={() => setModalContent('privacy')}

@@ -321,7 +321,7 @@ export async function handleApiRequest(req, res, next) {
         const categories = await categoriesCollection.find({}).toArray();
         const brands = await brandsCollection.find({}).toArray();
 
-        const host = req.headers.host ? `https://${req.headers.host}` : 'https://audioenterprise.in';
+        const host = req.headers.host ? `https://${req.headers.host}` : 'https://ssaudio.in';
         const today = new Date().toISOString().split('T')[0];
 
         const urls = [

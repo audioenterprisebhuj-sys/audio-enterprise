@@ -10,11 +10,7 @@
     "viewAllLabel": "View All Sale Products",
     "maxProducts": 5,
     "productIds": [
-      17,
-      18,
-      22,
-      28,
-      36
+      18
     ],
     "enabled": true,
     "variant": "default",
@@ -32,11 +28,7 @@
     "viewAllLabel": "View All Top Picks",
     "maxProducts": 5,
     "productIds": [
-      17,
-      18,
-      19,
-      20,
-      21
+      18
     ],
     "enabled": true,
     "variant": "default",
@@ -53,9 +45,7 @@
     "viewAllHref": "/category/amplifiers",
     "viewAllLabel": "View All Amplifiers",
     "maxProducts": 5,
-    "productIds": [
-      7
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "spec",
     "specKeys": [
@@ -75,9 +65,7 @@
     "viewAllHref": "/category/speakers-tweeters",
     "viewAllLabel": "View All Speakers & Tweeters",
     "maxProducts": 5,
-    "productIds": [
-      14
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "spec",
     "specKeys": [
@@ -96,11 +84,9 @@
     "filterValue": "Microphones",
     "viewAllHref": "/category/microphones",
     "viewAllLabel": "View All Microphones",
-    "maxProducts": 5,
+    "maxProducts": 3,
     "productIds": [
-      17,
       18,
-      19,
       20,
       21
     ],
@@ -119,9 +105,7 @@
     "viewAllHref": "/category/mixers",
     "viewAllLabel": "View All Mixers",
     "maxProducts": 5,
-    "productIds": [
-      28
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "spec",
     "specKeys": [
@@ -143,9 +127,7 @@
     "viewAllHref": "/category/processors",
     "viewAllLabel": "View All Audio Processors",
     "maxProducts": 5,
-    "productIds": [
-      34
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "spec",
     "specKeys": [
@@ -167,9 +149,7 @@
     "viewAllHref": "/category/lighting-sfx",
     "viewAllLabel": "Explore Lighting",
     "maxProducts": 5,
-    "productIds": [
-      36
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "default",
     "dark": true,
@@ -185,9 +165,7 @@
     "viewAllHref": "/category/wires-cables",
     "viewAllLabel": "View All Wires & Cables",
     "maxProducts": 5,
-    "productIds": [
-      49
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "spec",
     "specKeys": [
@@ -208,9 +186,7 @@
     "viewAllHref": "/category/connectors",
     "viewAllLabel": "View All Connectors",
     "maxProducts": 5,
-    "productIds": [
-      55
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "spec",
     "specKeys": [
@@ -230,9 +206,7 @@
     "viewAllHref": "/category/speaker-box",
     "viewAllLabel": "View All Speaker Boxes",
     "maxProducts": 5,
-    "productIds": [
-      60
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "spec",
     "specKeys": [
@@ -252,9 +226,7 @@
     "viewAllHref": "/category/spare-parts",
     "viewAllLabel": "View All Spare Parts",
     "maxProducts": 5,
-    "productIds": [
-      65
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "default",
     "dark": false,
@@ -270,9 +242,7 @@
     "viewAllHref": "/category/accessories",
     "viewAllLabel": "View All Accessories",
     "maxProducts": 5,
-    "productIds": [
-      72
-    ],
+    "productIds": [],
     "enabled": true,
     "variant": "default",
     "dark": false,

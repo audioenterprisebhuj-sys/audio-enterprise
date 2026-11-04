@@ -11,7 +11,7 @@ const rootDir = path.resolve(__dirname, '..');
 dotenv.config({ path: path.join(rootDir, '.env') });
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://audioenterprisebhuj_db_user:N0csDNfFudsme5RG@jbl-audio.7csuwei.mongodb.net/jbl_audio_db';
-const BASE_URL = 'https://audioenterprise.in';
+const BASE_URL = 'https://ssaudio.in';
 
 async function generate() {
   let products = [];

@@ -5,6 +5,7 @@ import {
   ChevronDownIcon,
   MenuIcon,
   SearchIcon,
+  ShieldCheckIcon,
   XIcon
 } from 'lucide-react';
 import { FaFacebookF } from 'react-icons/fa';
@@ -153,6 +154,15 @@ export function Navbar() {
             >
               <FaFacebookF size={15} />
             </a>
+            <Link
+              to="/admin"
+              title="Admin Panel"
+              aria-label="Admin Panel"
+              className="hidden sm:inline-flex h-9 items-center gap-1.5 rounded-lg border border-zinc-200 px-3 text-xs font-bold uppercase tracking-wider text-ink transition-colors hover:border-accent hover:bg-accent/5 hover:text-accent"
+            >
+              <ShieldCheckIcon size={14} className="text-accent" />
+              <span>Admin</span>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileOpen(true)}
@@ -229,6 +239,15 @@ export function Navbar() {
                       </li>
                     );
                   })}
+                  <li>
+                    <Link
+                      to="/admin"
+                      className="flex items-center gap-2 rounded-md px-3 py-2.5 text-sm font-bold uppercase tracking-wide text-accent hover:bg-accent/10 transition-colors"
+                    >
+                      <ShieldCheckIcon size={16} />
+                      <span>Admin Dashboard</span>
+                    </Link>
+                  </li>
                 </ul>
 
                 <p className="mb-2 mt-6 px-3 text-[11px] font-bold uppercase tracking-wider text-zinc-400">

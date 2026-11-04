@@ -7,7 +7,7 @@ function buildUrl(message: string): string {
 }
 
 export function productUrl(product: Product): string {
-  if (typeof window === 'undefined') return `/product/${product.slug}`;
+  if (typeof window === 'undefined') return `https://ssaudio.in/product/${product.slug}`;
   return `${window.location.origin}/product/${product.slug}`;
 }
 

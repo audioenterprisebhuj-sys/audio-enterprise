@@ -465,7 +465,7 @@ export function Admin() {
     });
   };
 
-  const existingProductIds = useMemo(() => new Set(products.map((p) => p.id)), [products]);
+  const existingProductIds = useMemo(() => new Set(products.map((p) => Number(p.id))), [products]);
 
   const handleSaveHomeSections = async () => {
     setSavingHomeSections(true);
@@ -574,15 +574,16 @@ export function Admin() {
     const currentSection = homeSections.find((s) => s.id === pickerSectionId);
     if (!currentSection) return;
 
+    const numId = Number(productId);
     // Filter to valid product IDs so phantom/deleted IDs don't consume selection slots
-    const currentIds = (currentSection.productIds || []).filter((id) => existingProductIds.has(id));
-    const isSelected = currentIds.includes(productId);
+    const currentIds = (currentSection.productIds || []).map(Number).filter((id) => existingProductIds.has(id));
+    const isSelected = currentIds.includes(numId);
 
     if (isSelected) {
       setHomeSections((prev) =>
         prev.map((s) =>
           s.id === pickerSectionId
-            ? { ...s, productIds: currentIds.filter((id) => id !== productId) }
+            ? { ...s, productIds: currentIds.filter((id) => id !== numId) }
             : s
         )
       );
@@ -598,7 +599,7 @@ export function Admin() {
       }
       setHomeSections((prev) =>
         prev.map((s) =>
-          s.id === pickerSectionId ? { ...s, productIds: [...currentIds, productId] } : s
+          s.id === pickerSectionId ? { ...s, productIds: [...currentIds, numId] } : s
         )
       );
     }
@@ -611,7 +612,7 @@ export function Admin() {
 
   const activePickerSelectedIds = useMemo(() => {
     if (!activePickerSection || !Array.isArray(activePickerSection.productIds)) return [];
-    return activePickerSection.productIds.filter((id) => existingProductIds.has(id));
+    return activePickerSection.productIds.map(Number).filter((id) => existingProductIds.has(id));
   }, [activePickerSection, existingProductIds]);
 
   const pickerProducts = useMemo(() => {
@@ -2158,6 +2159,38 @@ export function Admin() {
           )}
         </div>
 
+        {/* Selected Products Chips Bar */}
+        {activePickerSelectedIds.length > 0 && (
+          <div className="flex flex-wrap items-center gap-1.5 border-b border-zinc-200 bg-zinc-50 px-4 py-2.5">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-500 mr-1 shrink-0">
+              Selected ({activePickerSelectedIds.length}/{activePickerSection.maxProducts || 5}):
+            </span>
+            {activePickerSelectedIds.map((id, idx) => {
+              const prod = products.find((p) => Number(p.id) === id);
+              if (!prod) return null;
+              return (
+                <span
+                  key={id}
+                  className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-2.5 py-0.5 text-[11px] font-bold text-accent border border-accent/20"
+                >
+                  <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-accent text-white text-[9px]">
+                    #{idx + 1}
+                  </span>
+                  <span className="max-w-[120px] truncate">{prod.model || prod.name}</span>
+                  <button
+                    type="button"
+                    onClick={() => handleToggleProductInPicker(id)}
+                    className="ml-0.5 rounded-full p-0.5 text-accent/70 hover:bg-accent/20 hover:text-accent cursor-pointer"
+                    title={`Remove ${prod.model}`}
+                  >
+                    <XIcon size={11} />
+                  </button>
+                </span>
+              );
+            })}
+          </div>
+        )}
+
         {/* Products Grid */}
         <div className="flex-1 overflow-y-auto p-4 max-h-[55vh] thin-scrollbar">
           {pickerProducts.length === 0 ? (
@@ -2167,12 +2200,12 @@ export function Admin() {
           ) : (
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {pickerProducts.map((p) => {
-                const selectedIdx = activePickerSelectedIds.indexOf(p.id);
+                const selectedIdx = activePickerSelectedIds.indexOf(Number(p.id));
                 const isSelected = selectedIdx !== -1;
                 return (
                   <div
                     key={p.id}
-                    onClick={() => handleToggleProductInPicker(p.id)}
+                    onClick={() => handleToggleProductInPicker(Number(p.id))}
                     className={`flex items-center gap-3 rounded-xl border p-2.5 cursor-pointer transition-all ${
                       isSelected
                         ? 'border-accent bg-accent/5 ring-2 ring-accent/30 shadow-sm'

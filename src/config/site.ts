@@ -9,9 +9,11 @@ export const SITE = {
   brand: 'Audio Enterprise',
   brandShort: 'AE',
   tagline: 'The Sound of Professional Audio',
+  domain: 'ssaudio.in',
+  url: 'https://ssaudio.in',
   phone: '+91 98765 43210',
   phoneHref: 'tel:+919876543210',
-  email: 'sales@audioenterprise.in',
+  email: 'sales@ssaudio.in',
   address: 'Sound City Complex, Station Road, Bhuj, Kutch, Gujarat 370001',
   branches: [
     {
