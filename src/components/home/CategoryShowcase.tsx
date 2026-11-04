@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon } from 'lucide-react';
-import { getShowcaseCategories } from '../../services/categoryService';
+import { getShowcaseCategories, subscribeCategories } from '../../services/categoryService';
 import { SectionHeading } from '../ui/SectionHeading';
 
 export function CategoryShowcase() {
-  const categories = getShowcaseCategories();
+  const [categories, setCategories] = useState(getShowcaseCategories);
+
+  useEffect(() => {
+    return subscribeCategories(() => {
+      setCategories([...getShowcaseCategories()]);
+    });
+  }, []);
 
   return (
     <section
@@ -40,7 +46,8 @@ export function CategoryShowcase() {
               
                 <div className="overflow-hidden bg-zinc-100">
                   <img
-                  src={category.image}
+                  src={category.image || '/amplifiers1.webp'}
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/amplifiers1.webp'; }}
                   alt={category.name}
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110" />
@@ -54,8 +61,8 @@ export function CategoryShowcase() {
                 <p className="px-4 pt-2 text-[10px] font-bold uppercase tracking-wider text-accent">
                     Wired / Wireless
                   </p>}
-                <div className="p-4">
-                  <h3 className="font-display text-[19px] font-bold uppercase leading-tight tracking-tight text-ink">
+                <div className="p-3 sm:p-4">
+                  <h3 className="font-display text-[15px] sm:text-[17px] md:text-[19px] font-bold uppercase leading-tight tracking-tight text-ink">
                     {category.name}
                   </h3>
                   <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-zinc-500">

@@ -1,10 +1,12 @@
 export type ProductTag =
-'new' |
-'bestseller' |
-'popular' |
-'professional' |
-'budget' |
-'sale';
+  | 'new'
+  | 'bestseller'
+  | 'popular'
+  | 'professional'
+  | 'budget'
+  | 'sale'
+  | 'featured'
+  | (string & {});
 
 export interface Product {
   id: number;
@@ -25,11 +27,11 @@ export interface Product {
   description: string;
   specifications: Record<string, string>;
   availability: 'In Stock' | 'Limited Stock' | 'Made To Order';
-  tags: ProductTag[];
+  tags: (ProductTag | string)[];
 }
 
 export interface Category {
-  id: number;
+  id: number | string;
   name: string;
   slug: string;
   description: string;
@@ -37,11 +39,11 @@ export interface Category {
 }
 
 export type InquiryStatus =
-'New' |
-'Contacted' |
-'Follow Up' |
-'Converted' |
-'Closed';
+  | 'New'
+  | 'Contacted'
+  | 'Follow Up'
+  | 'Converted'
+  | 'Closed';
 
 export interface Inquiry {
   name: string;
@@ -52,4 +54,22 @@ export interface Inquiry {
   message: string;
   createdAt: string;
   status: InquiryStatus;
+}
+
+export interface HomeSection {
+  id: string;
+  title: string;
+  eyebrow?: string;
+  subtitle?: string;
+  type: 'category' | 'tag' | 'top-picks' | 'custom';
+  filterValue?: string;
+  viewAllHref?: string;
+  viewAllLabel?: string;
+  maxProducts: number;
+  productIds?: number[];
+  enabled: boolean;
+  variant?: 'default' | 'spec';
+  specKeys?: string[];
+  dark?: boolean;
+  order?: number;
 }

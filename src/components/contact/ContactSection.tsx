@@ -1,5 +1,6 @@
 import React from 'react';
-import { ClockIcon, MailIcon, MapPinIcon, MessageCircleIcon, PhoneIcon } from 'lucide-react';
+import { ClockIcon, MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 import { SITE } from '../../config/site';
 import { generateGeneralInquiry } from '../../utils/whatsapp';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -13,8 +14,8 @@ export function ContactSection() {
           <SectionHeading
             eyebrow="Get in touch"
             title="Contact Our Team"
-            subtitle="Visit the showroom, call us, or send a WhatsApp message — we respond during business hours." />
-          
+            subtitle="Visit the showroom, call us, or send a WhatsApp message — we respond during business hours."
+          />
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1fr_1.15fr]">
@@ -32,7 +33,7 @@ export function ContactSection() {
                 </span>
               </li>
               <li className="flex items-start gap-3 rounded-xl border border-zinc-200 p-4">
-                <MessageCircleIcon size={18} className="mt-0.5 shrink-0 text-[#1faa54]" />
+                <WhatsAppIcon size={18} className="mt-0.5 shrink-0 text-[#25D366]" />
                 <span>
                   <span className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400">
                     WhatsApp
@@ -41,8 +42,8 @@ export function ContactSection() {
                     href={generateGeneralInquiry()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold text-ink hover:text-accent">
-                    
+                    className="text-sm font-semibold text-ink hover:text-[#25D366]"
+                  >
                     Chat with us now
                   </a>
                 </span>
@@ -73,11 +74,11 @@ export function ContactSection() {
                   <span className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400">
                     Business Hours
                   </span>
-                  {SITE.hours.map((h) =>
-                  <span key={h.day} className="block text-sm font-medium text-zinc-600">
+                  {SITE.hours.map((h) => (
+                    <span key={h.day} className="block text-sm font-medium text-zinc-600">
                       {h.day}: <span className="text-ink">{h.time}</span>
                     </span>
-                  )}
+                  ))}
                 </span>
               </li>
             </ul>
@@ -87,14 +88,14 @@ export function ContactSection() {
                 title="Showroom location map"
                 src={SITE.mapEmbed}
                 loading="lazy"
-                className="h-56 w-full border-0" />
-              
+                className="h-56 w-full border-0"
+              />
             </div>
           </div>
 
           <InquiryForm title="Request a Quote" />
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }

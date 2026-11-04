@@ -6,20 +6,20 @@ import {
   ChevronRightIcon,
   ClockIcon,
   FileTextIcon,
-  MessageCircleIcon,
   PackageSearchIcon,
   PhoneIcon,
   ShieldCheckIcon,
   TruckIcon,
-  WrenchIcon } from
-'lucide-react';
+  WrenchIcon
+} from 'lucide-react';
 import { InquiryForm } from '../components/contact/InquiryForm';
 import { ProductCard } from '../components/product/ProductCard';
 import { ProductRail } from '../components/product/ProductRail';
 import { Rating } from '../components/ui/Rating';
 import { SectionHeading } from '../components/ui/SectionHeading';
+import { WhatsAppIcon } from '../components/ui/WhatsAppIcon';
 import { SITE } from '../config/site';
-import { getProductBySlug, getRelatedProducts } from '../services/productService';
+import { getRelatedProducts, useProduct } from '../services/productService';
 import { discountPercent, formatPrice } from '../utils/format';
 import { generateWhatsAppInquiry } from '../utils/whatsapp';
 
@@ -31,10 +31,9 @@ const availabilityIcon = {
 
 export function ProductDetail() {
   const { slug = '' } = useParams();
-  const product = getProductBySlug(slug);
+  const product = useProduct(slug);
   const [activeImage, setActiveImage] = useState(0);
-  const activeImageSource = product ? product.images[activeImage] ?? product.image : '';
-  const isActiveEmoji = activeImageSource.startsWith('emoji:');
+  const activeImageSource = product ? ((product.images && product.images[activeImage]) ?? product.image) : '';
 
   useEffect(() => {
     setActiveImage(0);
@@ -53,12 +52,12 @@ export function ProductDetail() {
         </p>
         <Link
           to="/products"
-          className="rounded-md bg-ink px-6 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-accent">
-          
+          className="rounded-md bg-ink px-6 py-3 text-xs font-bold uppercase tracking-wider text-white hover:bg-accent"
+        >
           Browse All Products
         </Link>
-      </div>);
-
+      </div>
+    );
   }
 
   const off = discountPercent(product.price, product.oldPrice);
@@ -94,54 +93,51 @@ export function ProductDetail() {
               initial={{ opacity: 0.4 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.25 }}
-              className="relative overflow-hidden rounded-xl border border-zinc-200 bg-white">
-              
-              {product.badge &&
-              <span className="absolute left-3 top-3 z-10 rounded bg-accent px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white">
+              className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-card"
+            >
+              {product.badge && (
+                <span className="absolute left-3 top-3 z-10 rounded bg-accent px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white shadow-sm">
                   {product.badge}
                 </span>
-              }
-              {!activeImageSource ?
-              <div className="flex aspect-square w-full items-center justify-center bg-zinc-50 text-xs font-bold uppercase tracking-wider text-zinc-400">
+              )}
+              {!activeImageSource ? (
+                <div className="flex h-[300px] sm:h-[360px] lg:h-[400px] xl:h-[420px] w-full items-center justify-center bg-zinc-50 text-xs font-bold uppercase tracking-wider text-zinc-400">
                   Photo Coming Soon
-                </div> : isActiveEmoji ?
-              <div className="flex aspect-square w-full items-center justify-center bg-zinc-50 text-[120px]" aria-label={product.name}>
-                  {activeImageSource.slice(6)}
-                </div> :
-              <img
-                src={activeImageSource}
-                alt={product.name}
-                className="aspect-square w-full object-cover" />
-              }
-              
+                </div>
+              ) : (
+                <div className="flex h-[300px] sm:h-[360px] lg:h-[400px] xl:h-[420px] w-full items-center justify-center bg-[radial-gradient(circle_at_center,_rgba(255,255,255,1),_rgba(244,244,245,0.7))] p-4 sm:p-6 lg:p-8">
+                  <img
+                    src={activeImageSource}
+                    alt={product.name}
+                    className="max-h-full max-w-full object-contain object-center transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+              )}
             </motion.div>
-            {product.images.length > 1 &&
-            <div className="mt-3 flex gap-3">
-                {product.images.map((image, i) =>
-              <button
-                key={image + i}
-                type="button"
-                onClick={() => setActiveImage(i)}
-                aria-label={`View image ${i + 1}`}
-                className={`overflow-hidden rounded-lg border-2 bg-white transition-colors ${
-                i === activeImage ? 'border-accent' : 'border-zinc-200 hover:border-zinc-400'}`
-                }>
-                
-                    {image.startsWith('emoji:') ?
-                    <span className="flex h-20 w-20 items-center justify-center bg-zinc-50 text-4xl sm:h-24 sm:w-24" aria-hidden="true">
-                        {image.slice(6)}
-                      </span> :
+            {Array.isArray(product.images) && product.images.length > 1 && (
+              <div className="mt-3 flex gap-2.5 overflow-x-auto thin-scrollbar pb-1">
+                {product.images.map((image, i) => (
+                  <button
+                    key={image + i}
+                    type="button"
+                    onClick={() => setActiveImage(i)}
+                    aria-label={`View image ${i + 1}`}
+                    className={`flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center overflow-hidden rounded-xl border-2 bg-white p-1 transition-all cursor-pointer ${
+                      i === activeImage
+                        ? 'border-accent shadow-sm ring-2 ring-accent/20'
+                        : 'border-zinc-200 hover:border-zinc-400'
+                    }`}
+                  >
                     <img
                       src={image}
                       alt=""
                       loading="lazy"
-                      className="h-20 w-20 object-cover sm:h-24 sm:w-24" />
-                    }
-                
+                      className="h-full w-full object-contain object-center"
+                    />
                   </button>
-              )}
+                ))}
               </div>
-            }
+            )}
           </div>
 
           <div>
@@ -166,27 +162,27 @@ export function ProductDetail() {
                 <span className="font-display text-4xl font-extrabold tracking-tight text-ink">
                   {formatPrice(product.price)}
                 </span>
-                {product.oldPrice &&
-                <span className="pb-1 text-base font-medium text-zinc-400 line-through">
+                {product.oldPrice && (
+                  <span className="pb-1 text-base font-medium text-zinc-400 line-through">
                     {formatPrice(product.oldPrice)}
                   </span>
-                }
-                {off !== null &&
-                <span className="mb-1 rounded bg-accent/10 px-2 py-1 text-xs font-extrabold uppercase text-accent">
+                )}
+                {off !== null && (
+                  <span className="mb-1 rounded bg-accent/10 px-2 py-1 text-xs font-extrabold uppercase text-accent">
                     {off}% Off
                   </span>
-                }
+                )}
               </div>
 
               <p
                 className={`mt-2 inline-flex items-center gap-1.5 text-sm font-semibold ${
-                product.availability === 'In Stock' ?
-                'text-emerald-600' :
-                product.availability === 'Limited Stock' ?
-                'text-amber-600' :
-                'text-zinc-500'}`
-                }>
-                
+                  product.availability === 'In Stock'
+                    ? 'text-emerald-600'
+                    : product.availability === 'Limited Stock'
+                    ? 'text-amber-600'
+                    : 'text-zinc-500'
+                }`}
+              >
                 <AvailabilityIcon size={15} />
                 {product.availability}
               </p>
@@ -200,22 +196,22 @@ export function ProductDetail() {
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-md bg-[#1faa54] px-6 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#178c45] sm:text-sm">
-                  
-                  <MessageCircleIcon size={17} />
+                  className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-md bg-[#25D366] px-6 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#1faa54] sm:text-sm shadow-sm"
+                >
+                  <WhatsAppIcon size={19} />
                   Send Inquiry on WhatsApp
                 </a>
                 <a
                   href="#request-quote"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-ink px-6 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-accent sm:text-sm">
-                  
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-ink px-6 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-accent sm:text-sm"
+                >
                   <FileTextIcon size={16} />
                   Request a Quote
                 </a>
                 <a
                   href={SITE.phoneHref}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-zinc-300 px-6 text-xs font-bold uppercase tracking-wider text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white sm:text-sm">
-                  
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-zinc-300 px-6 text-xs font-bold uppercase tracking-wider text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white sm:text-sm"
+                >
                   <PhoneIcon size={16} />
                   Call Now
                 </a>
@@ -223,35 +219,35 @@ export function ProductDetail() {
 
               <ul className="mt-6 grid gap-3 border-t border-zinc-200 pt-5 sm:grid-cols-3">
                 {[
-                { Icon: ShieldCheckIcon, text: 'Genuine product' },
-                { Icon: TruckIcon, text: 'Pan-India dispatch' },
-                { Icon: WrenchIcon, text: 'Installation support' }].
-                map(({ Icon, text }) =>
-                <li key={text} className="flex items-center gap-2 text-xs font-semibold text-zinc-600">
+                  { Icon: ShieldCheckIcon, text: 'Genuine product' },
+                  { Icon: TruckIcon, text: 'Pan-India dispatch' },
+                  { Icon: WrenchIcon, text: 'Installation support' }
+                ].map(({ Icon, text }) => (
+                  <li key={text} className="flex items-center gap-2 text-xs font-semibold text-zinc-600">
                     <Icon size={15} className="text-accent" />
                     {text}
                   </li>
-                )}
+                ))}
               </ul>
             </div>
 
             <section
               aria-labelledby="specs-heading"
-              className="mt-5 rounded-xl border border-zinc-200 bg-white p-5 sm:p-7">
-              
+              className="mt-5 rounded-xl border border-zinc-200 bg-white p-5 sm:p-7"
+            >
               <h2
                 id="specs-heading"
-                className="font-display text-2xl font-extrabold uppercase tracking-tight text-ink">
-                
+                className="font-display text-2xl font-extrabold uppercase tracking-tight text-ink"
+              >
                 Specifications
               </h2>
               <dl className="mt-4 divide-y divide-zinc-100">
-                {Object.entries(product.specifications).map(([key, value]) =>
-                <div key={key} className="flex items-baseline justify-between gap-6 py-2.5">
+                {Object.entries(product.specifications).map(([key, value]) => (
+                  <div key={key} className="flex items-baseline justify-between gap-6 py-2.5">
                     <dt className="text-sm font-medium text-zinc-500">{key}</dt>
                     <dd className="text-right text-sm font-bold text-ink">{value}</dd>
                   </div>
-                )}
+                ))}
               </dl>
             </section>
 
@@ -262,27 +258,27 @@ export function ProductDetail() {
         </div>
       </div>
 
-      {related.length > 0 &&
-      <section
-        aria-labelledby="related-heading"
-        className="border-t border-zinc-200 bg-white py-12">
-        
+      {related.length > 0 && (
+        <section
+          aria-labelledby="related-heading"
+          className="border-t border-zinc-200 bg-white py-12"
+        >
           <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
             <div id="related-heading">
               <SectionHeading
-              eyebrow="You may also need"
-              title="Related Products"
-              viewAllHref="/products" />
-            
+                eyebrow="You may also need"
+                title="Related Products"
+                viewAllHref="/products"
+              />
             </div>
             <ProductRail ariaLabel="Related products">
-              {related.map((item) =>
-            <ProductCard key={item.id} product={item} />
-            )}
+              {related.map((item) => (
+                <ProductCard key={item.id} product={item} />
+              ))}
             </ProductRail>
           </div>
         </section>
-      }
-    </div>);
-
+      )}
+    </div>
+  );
 }

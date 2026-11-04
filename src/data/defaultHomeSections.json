@@ -1,0 +1,281 @@
+[
+  {
+    "id": "sale",
+    "title": "Sale Is Live",
+    "eyebrow": "Limited period pricing",
+    "subtitle": "Live offers across amplifiers, speakers, mixers, microphones and stage lighting.",
+    "type": "tag",
+    "filterValue": "sale",
+    "viewAllHref": "/products?tag=sale",
+    "viewAllLabel": "View All Sale Products",
+    "maxProducts": 5,
+    "productIds": [
+      17,
+      18,
+      22,
+      28,
+      36
+    ],
+    "enabled": true,
+    "variant": "default",
+    "dark": false,
+    "order": 1
+  },
+  {
+    "id": "top-picks",
+    "title": "Top Picks For You",
+    "eyebrow": "Curated Selection",
+    "subtitle": "Handpicked gear our engineers recommend most often, grouped by how you buy.",
+    "type": "top-picks",
+    "filterValue": "new",
+    "viewAllHref": "/products",
+    "viewAllLabel": "View All Top Picks",
+    "maxProducts": 5,
+    "productIds": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "enabled": true,
+    "variant": "default",
+    "dark": false,
+    "order": 2
+  },
+  {
+    "id": "amplifiers",
+    "title": "Amplifiers",
+    "eyebrow": "Category",
+    "subtitle": "Power your sound with reliable professional amplification.",
+    "type": "category",
+    "filterValue": "Amplifiers",
+    "viewAllHref": "/category/amplifiers",
+    "viewAllLabel": "View All Amplifiers",
+    "maxProducts": 5,
+    "productIds": [
+      7
+    ],
+    "enabled": true,
+    "variant": "spec",
+    "specKeys": [
+      "Power",
+      "Channels"
+    ],
+    "dark": false,
+    "order": 3
+  },
+  {
+    "id": "speakers",
+    "title": "Speakers & Tweeters",
+    "eyebrow": "Category",
+    "subtitle": "Active and passive enclosures, subwoofers, woofer drivers, tweeters and compression drivers.",
+    "type": "category",
+    "filterValue": "Speakers & Tweeters",
+    "viewAllHref": "/category/speakers-tweeters",
+    "viewAllLabel": "View All Speakers & Tweeters",
+    "maxProducts": 5,
+    "productIds": [
+      14
+    ],
+    "enabled": true,
+    "variant": "spec",
+    "specKeys": [
+      "Power",
+      "Frequency"
+    ],
+    "dark": false,
+    "order": 4
+  },
+  {
+    "id": "microphones",
+    "title": "Microphones",
+    "eyebrow": "Category",
+    "subtitle": "Vocal, instrument, wireless systems, podium and studio microphones.",
+    "type": "category",
+    "filterValue": "Microphones",
+    "viewAllHref": "/category/microphones",
+    "viewAllLabel": "View All Microphones",
+    "maxProducts": 5,
+    "productIds": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "enabled": true,
+    "variant": "default",
+    "dark": false,
+    "order": 5
+  },
+  {
+    "id": "mixers",
+    "title": "Professional Mixers",
+    "eyebrow": "Category",
+    "subtitle": "From compact 4-channel desks to 24-channel digital consoles.",
+    "type": "category",
+    "filterValue": "Mixers",
+    "viewAllHref": "/category/mixers",
+    "viewAllLabel": "View All Mixers",
+    "maxProducts": 5,
+    "productIds": [
+      28
+    ],
+    "enabled": true,
+    "variant": "spec",
+    "specKeys": [
+      "Channels",
+      "Effects",
+      "USB",
+      "Bluetooth"
+    ],
+    "dark": false,
+    "order": 6
+  },
+  {
+    "id": "processors",
+    "title": "Audio Processors",
+    "eyebrow": "Category",
+    "subtitle": "Signal processing, equalisation, crossovers and loudspeaker management.",
+    "type": "category",
+    "filterValue": "Processors",
+    "viewAllHref": "/category/processors",
+    "viewAllLabel": "View All Audio Processors",
+    "maxProducts": 5,
+    "productIds": [
+      34
+    ],
+    "enabled": true,
+    "variant": "spec",
+    "specKeys": [
+      "Inputs",
+      "Outputs",
+      "Bands",
+      "Channels"
+    ],
+    "dark": false,
+    "order": 7
+  },
+  {
+    "id": "lighting",
+    "title": "Lighting & SFX",
+    "eyebrow": "Category",
+    "subtitle": "Moving heads, LED PARs, lasers, strobes and atmospheric effects for unforgettable stages.",
+    "type": "category",
+    "filterValue": "Lighting & SFX",
+    "viewAllHref": "/category/lighting-sfx",
+    "viewAllLabel": "Explore Lighting",
+    "maxProducts": 5,
+    "productIds": [
+      36
+    ],
+    "enabled": true,
+    "variant": "default",
+    "dark": true,
+    "order": 8
+  },
+  {
+    "id": "cables",
+    "title": "Wires & Cables",
+    "eyebrow": "Category",
+    "subtitle": "Speaker, microphone, XLR, DMX, instrument and power cabling built for the road.",
+    "type": "category",
+    "filterValue": "Wires & Cables",
+    "viewAllHref": "/category/wires-cables",
+    "viewAllLabel": "View All Wires & Cables",
+    "maxProducts": 5,
+    "productIds": [
+      49
+    ],
+    "enabled": true,
+    "variant": "spec",
+    "specKeys": [
+      "Cable Type",
+      "Length",
+      "Connector"
+    ],
+    "dark": false,
+    "order": 9
+  },
+  {
+    "id": "connectors",
+    "title": "Connectors & Adapters",
+    "eyebrow": "Category",
+    "subtitle": "XLR, jack, Speakon, RCA, banana plugs and adapter kits.",
+    "type": "category",
+    "filterValue": "Connectors",
+    "viewAllHref": "/category/connectors",
+    "viewAllLabel": "View All Connectors",
+    "maxProducts": 5,
+    "productIds": [
+      55
+    ],
+    "enabled": true,
+    "variant": "spec",
+    "specKeys": [
+      "Type",
+      "Quantity"
+    ],
+    "dark": false,
+    "order": 10
+  },
+  {
+    "id": "speaker-boxes",
+    "title": "Speaker Boxes",
+    "eyebrow": "Category",
+    "subtitle": "Tour-grade empty cabinets ready for your drivers and horns.",
+    "type": "category",
+    "filterValue": "Speaker Box",
+    "viewAllHref": "/category/speaker-box",
+    "viewAllLabel": "View All Speaker Boxes",
+    "maxProducts": 5,
+    "productIds": [
+      60
+    ],
+    "enabled": true,
+    "variant": "spec",
+    "specKeys": [
+      "Size",
+      "Material"
+    ],
+    "dark": false,
+    "order": 11
+  },
+  {
+    "id": "spare-parts",
+    "title": "Spare Parts",
+    "eyebrow": "Category",
+    "subtitle": "Diaphragms, voice coils, recone kits and driver components.",
+    "type": "category",
+    "filterValue": "Spare Parts",
+    "viewAllHref": "/category/spare-parts",
+    "viewAllLabel": "View All Spare Parts",
+    "maxProducts": 5,
+    "productIds": [
+      65
+    ],
+    "enabled": true,
+    "variant": "default",
+    "dark": false,
+    "order": 12
+  },
+  {
+    "id": "accessories",
+    "title": "Audio Accessories",
+    "eyebrow": "Category",
+    "subtitle": "Stands, mounts, racks, power distribution and transport cases.",
+    "type": "category",
+    "filterValue": "Accessories",
+    "viewAllHref": "/category/accessories",
+    "viewAllLabel": "View All Accessories",
+    "maxProducts": 5,
+    "productIds": [
+      72
+    ],
+    "enabled": true,
+    "variant": "default",
+    "dark": false,
+    "order": 13
+  }
+]

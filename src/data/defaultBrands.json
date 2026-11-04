@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Audio Enterprise",
+    "description": "Flagship professional audio systems and touring equipment"
+  },
+  {
+    "id": 2,
+    "name": "JBL Audio Pro",
+    "description": "Legendary world-class transducers, speakers and touring line arrays"
+  },
+  {
+    "id": 3,
+    "name": "EM Audio",
+    "description": "High-powered pro amplifiers, crossovers and sound processors"
+  },
+  {
+    "id": 4,
+    "name": "SoundForge",
+    "description": "Tour-grade mixing consoles and live digital desks"
+  },
+  {
+    "id": 5,
+    "name": "Crestline",
+    "description": "Rugged stage cabling, snakes, and tour distribution boxes"
+  },
+  {
+    "id": 6,
+    "name": "Axiom Pro",
+    "description": "Precision compression drivers, tweeters and HF components"
+  },
+  {
+    "id": 7,
+    "name": "NovaStage",
+    "description": "Intelligent DMX moving heads, stage strobes and atmospheric FX"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  { "id": 1, "name": "Amplifiers", "slug": "amplifiers", "description": "Powerful amplification solutions", "image": "/amplifiers1.webp" },
+  { "id": 2, "name": "Microphones", "slug": "microphones", "description": "Professional vocal and instrument microphones", "image": "/microphone1.webp" },
+  { "id": 3, "name": "Speakers & Tweeters", "slug": "speakers-tweeters", "description": "High-performance audio drivers", "image": "/speakerTwitter1.webp" },
+  { "id": 4, "name": "Lighting & SFX", "slug": "lighting-sfx", "description": "Stage lighting and special effects", "image": "/light1.webp" },
+  { "id": 5, "name": "Spare Parts", "slug": "spare-parts", "description": "Genuine replacement components", "image": "/spareParts1.webp" },
+  { "id": 6, "name": "Processors", "slug": "processors", "description": "Precision signal processing", "image": "/processor1.webp" },
+  { "id": 7, "name": "Wires & Cables", "slug": "wires-cables", "description": "Reliable professional connectivity", "image": "/wires1.webp" },
+  { "id": 8, "name": "Connectors", "slug": "connectors", "description": "Rugged plugs and adapters", "image": "/connector1.webp" },
+  { "id": 9, "name": "Accessories", "slug": "accessories", "description": "Stands, mounts, cases and racks", "image": "/accessories1.webp" },
+  { "id": 10, "name": "Speaker Box", "slug": "speaker-box", "description": "Tour-grade empty cabinets", "image": "/speakerBox1.webp" },
+  { "id": 11, "name": "Mixers", "slug": "mixers", "description": "Professional mixing solutions", "image": "/mixer1.webp" },
+  { "id": 12, "name": "Power Amplifiers", "slug": "power-amplifiers", "description": "High current touring amplifiers", "image": "/powerAmplifiersImg.webp" },
+  { "id": 13, "name": "Active Speakers", "slug": "active-speakers", "description": "Powered loudspeakers with DSP", "image": "/activeSpeakersImg.webp" },
+  { "id": 14, "name": "Passive Speakers", "slug": "passive-speakers", "description": "Full range passive enclosures", "image": "/passiveSpeakersImg.webp" },
+  { "id": 15, "name": "Subwoofers", "slug": "subwoofers", "description": "Deep low frequency extension", "image": "/subwoofersImg.webp" },
+  { "id": 16, "name": "DJ Equipment", "slug": "dj-equipment", "description": "Controllers, players and DJ mixers", "image": "/djEquipmentImg.webp" },
+  { "id": 17, "name": "Stands & Mounts", "slug": "stands-mounts", "description": "Secure rigging and support", "image": "/standsImg.webp" },
+  { "id": 18, "name": "Professional Audio Accessories", "slug": "pro-audio-accessories", "description": "Everything for a complete setup", "image": "/proAudioImg.webp" }
+]

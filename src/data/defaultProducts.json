@@ -1,0 +1,2219 @@
+[
+  {
+    "id": 1,
+    "slug": "professional-power-amplifier-pa-2000",
+    "name": "Professional Power Amplifier",
+    "model": "PA-2000",
+    "brand": "JBL Audio Pro",
+    "category": "Amplifiers",
+    "price": 24999,
+    "oldPrice": 29999,
+    "rating": 4.8,
+    "reviews": 214,
+    "badge": "BESTSELLER",
+    "feature": "450W × 2 Output",
+    "image": "/amplifiers1.webp",
+    "images": [
+      "/amplifiers1.webp"
+    ],
+    "description": "A workhorse two-channel power amplifier built for touring and fixed installations. Toroidal transformer, forced-air cooling and full protection circuitry keep it stable through long shows.",
+    "specifications": {
+      "Power": "450W × 2 @ 8Ω",
+      "Channels": "2",
+      "Frequency": "20Hz – 20kHz",
+      "THD": "<0.05%",
+      "Connectivity": "XLR / TRS / Speakon",
+      "Cooling": "Variable speed fan",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "bestseller",
+      "professional"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "power-amplifier-2000w-fx-2000",
+    "name": "Power Amplifier 2000W",
+    "model": "FX-2000",
+    "brand": "SoundForge",
+    "category": "Amplifiers",
+    "price": 34999,
+    "oldPrice": 41999,
+    "rating": 4.7,
+    "reviews": 132,
+    "badge": "SALE",
+    "feature": "2000W Bridged",
+    "image": "/amplifiers2.webp",
+    "images": [
+      "/amplifiers2.webp"
+    ],
+    "description": "High-headroom stereo amplifier for large format PA systems, with bridged mono operation and selectable crossover.",
+    "specifications": {
+      "Power": "2000W Bridged",
+      "Channels": "2",
+      "Frequency": "20Hz – 20kHz",
+      "Damping Factor": ">400",
+      "Connectivity": "XLR / Speakon",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "professional"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "power-amplifier-1500w-fx-1500",
+    "name": "Power Amplifier 1500W",
+    "model": "FX-1500",
+    "brand": "SoundForge",
+    "category": "Amplifiers",
+    "price": 27999,
+    "oldPrice": 32999,
+    "rating": 4.6,
+    "reviews": 98,
+    "badge": "SALE",
+    "feature": "1500W Bridged",
+    "image": "/amplifiers3.webp",
+    "images": [
+      "/amplifiers3.webp"
+    ],
+    "description": "Reliable mid-power amplifier suited to mobile DJs, banquet halls and mid-size live events.",
+    "specifications": {
+      "Power": "1500W Bridged",
+      "Channels": "2",
+      "Frequency": "20Hz – 20kHz",
+      "Connectivity": "XLR / TRS",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "popular"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "professional-4-channel-amplifier-q4-800",
+    "name": "Professional 4 Channel Amplifier",
+    "model": "Q4-800",
+    "brand": "Axiom Pro",
+    "category": "Amplifiers",
+    "price": 46999,
+    "rating": 4.9,
+    "reviews": 61,
+    "badge": "NEW",
+    "feature": "4 × 800W",
+    "image": "/amplifiers4.webp",
+    "images": [
+      "/amplifiers4.webp"
+    ],
+    "description": "Four independent channels with onboard DSP presets — ideal for multi-zone installations and line array systems.",
+    "specifications": {
+      "Power": "800W × 4 @ 4Ω",
+      "Channels": "4",
+      "DSP": "Onboard 96kHz",
+      "Frequency": "20Hz – 20kHz",
+      "Connectivity": "XLR / Speakon / Ethernet",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "new",
+      "professional"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "digital-power-amplifier-dpa-3200",
+    "name": "Digital Power Amplifier",
+    "model": "DPA-3200",
+    "brand": "Crestline",
+    "category": "Amplifiers",
+    "price": 58999,
+    "rating": 4.8,
+    "reviews": 44,
+    "badge": "NEW",
+    "feature": "Class-D 3200W",
+    "image": "/amplifiers5.webp",
+    "images": [
+      "/amplifiers5.webp"
+    ],
+    "description": "Lightweight Class-D touring amplifier with switch-mode power supply and remote monitoring.",
+    "specifications": {
+      "Power": "1600W × 2 @ 4Ω",
+      "Class": "Class-D",
+      "Channels": "2",
+      "Frequency": "20Hz – 22kHz",
+      "Connectivity": "XLR / Speakon",
+      "Warranty": "2 Years"
+    },
+    "availability": "Limited Stock",
+    "tags": [
+      "new",
+      "professional"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "dj-amplifier-dja-1200",
+    "name": "DJ Amplifier",
+    "model": "DJA-1200",
+    "brand": "NovaStage",
+    "category": "Amplifiers",
+    "price": 15999,
+    "oldPrice": 18999,
+    "rating": 4.4,
+    "reviews": 176,
+    "badge": "POPULAR",
+    "feature": "1200W Peak",
+    "image": "/amplifiers6.webp",
+    "images": [
+      "/amplifiers6.webp"
+    ],
+    "description": "Compact, road-ready amplifier tuned for mobile DJ rigs with bass boost and thermal protection.",
+    "specifications": {
+      "Power": "600W × 2",
+      "Channels": "2",
+      "Frequency": "25Hz – 20kHz",
+      "Connectivity": "RCA / XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "popular",
+      "budget",
+      "sale"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "install-amplifier-ia-600",
+    "name": "Installation Amplifier",
+    "model": "IA-600",
+    "brand": "Crestline",
+    "category": "Amplifiers",
+    "price": 12499,
+    "rating": 4.3,
+    "reviews": 52,
+    "feature": "70V / 100V Line",
+    "image": "/amplifiers7.webp",
+    "images": [
+      "/amplifiers7.webp"
+    ],
+    "description": "Constant voltage amplifier for commercial background music and paging installations.",
+    "specifications": {
+      "Power": "600W",
+      "Lines": "70V / 100V",
+      "Zones": "4",
+      "Connectivity": "Euroblock / RCA",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "active-speaker-15-as-1500",
+    "name": "Active Speaker 15\"",
+    "model": "AS-1500",
+    "brand": "JBL Audio Pro",
+    "category": "Speakers & Tweeters",
+    "price": 32999,
+    "oldPrice": 38999,
+    "rating": 4.9,
+    "reviews": 302,
+    "badge": "SALE",
+    "feature": "1500W Powered",
+    "image": "/speakerTwitter1.webp",
+    "images": [
+      "/speakerTwitter1.webp"
+    ],
+    "description": "Bi-amplified 15-inch powered loudspeaker with onboard DSP, a 1.75\" compression driver and a 90° × 60° rotatable horn.",
+    "specifications": {
+      "Power": "1500W Peak",
+      "Driver Size": "15\" + 1.75\" HF",
+      "Frequency": "45Hz – 20kHz",
+      "SPL": "132 dB",
+      "Connectivity": "XLR / TRS Combo",
+      "Weight": "19.5 kg",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "bestseller",
+      "professional"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "active-speaker-12-as-1200",
+    "name": "Active Speaker 12\"",
+    "model": "AS-1200",
+    "brand": "JBL Audio Pro",
+    "category": "Speakers & Tweeters",
+    "price": 26999,
+    "oldPrice": 30999,
+    "rating": 4.7,
+    "reviews": 188,
+    "badge": "POPULAR",
+    "feature": "1000W Powered",
+    "image": "/speakerTwitter2.webp",
+    "images": [
+      "/speakerTwitter2.webp"
+    ],
+    "description": "Compact powered 12-inch speaker for live vocals, corporate events and monitor duty.",
+    "specifications": {
+      "Power": "1000W Peak",
+      "Driver Size": "12\" + 1.4\" HF",
+      "Frequency": "50Hz – 20kHz",
+      "SPL": "129 dB",
+      "Connectivity": "XLR / TRS",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "popular",
+      "sale"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "passive-speaker-12-ps-1200",
+    "name": "Passive Speaker 12\"",
+    "model": "PS-1200",
+    "brand": "SoundForge",
+    "category": "Speakers & Tweeters",
+    "price": 17999,
+    "rating": 4.5,
+    "reviews": 121,
+    "feature": "600W Passive",
+    "image": "/speakerTwitter3.webp",
+    "images": [
+      "/speakerTwitter3.webp"
+    ],
+    "description": "Rugged plywood passive enclosure with a 12-inch woofer and titanium compression driver.",
+    "specifications": {
+      "Power": "600W RMS",
+      "Driver Size": "12\" + 1\"",
+      "Impedance": "8Ω",
+      "Frequency": "55Hz – 19kHz",
+      "Connectivity": "Speakon / Binding Post",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional",
+      "budget"
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "passive-speaker-15-ps-1500",
+    "name": "Passive Speaker 15\"",
+    "model": "PS-1500",
+    "brand": "SoundForge",
+    "category": "Speakers & Tweeters",
+    "price": 21999,
+    "oldPrice": 24999,
+    "rating": 4.6,
+    "reviews": 96,
+    "badge": "SALE",
+    "feature": "800W Passive",
+    "image": "/speakerTwitter4.webp",
+    "images": [
+      "/speakerTwitter4.webp"
+    ],
+    "description": "High-output passive 15-inch full range cabinet with fly points and pole socket.",
+    "specifications": {
+      "Power": "800W RMS",
+      "Driver Size": "15\" + 1.4\"",
+      "Impedance": "8Ω",
+      "Frequency": "48Hz – 19kHz",
+      "Connectivity": "Speakon",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "professional"
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "compression-driver-cd-75",
+    "name": "Compression Driver",
+    "model": "CD-75",
+    "brand": "Axiom Pro",
+    "category": "Speakers & Tweeters",
+    "price": 5499,
+    "rating": 4.6,
+    "reviews": 74,
+    "feature": "75mm Titanium",
+    "image": "/speakerTwitter5.webp",
+    "images": [
+      "/speakerTwitter5.webp"
+    ],
+    "description": "Titanium diaphragm compression driver delivering smooth, detailed high frequency response.",
+    "specifications": {
+      "Voice Coil": "75mm",
+      "Power": "120W AES",
+      "Impedance": "8Ω",
+      "Frequency": "900Hz – 20kHz",
+      "Throat": "1.4\"",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "bullet-tweeter-bt-40",
+    "name": "Bullet Tweeter",
+    "model": "BT-40",
+    "brand": "Axiom Pro",
+    "category": "Speakers & Tweeters",
+    "price": 1899,
+    "oldPrice": 2299,
+    "rating": 4.4,
+    "reviews": 143,
+    "badge": "SALE",
+    "feature": "150W High Frequency",
+    "image": "/speakerTwitter6.webp",
+    "images": [
+      "/speakerTwitter6.webp"
+    ],
+    "description": "Piezo bullet tweeter for DJ boxes and car audio builds — crisp, cutting top end.",
+    "specifications": {
+      "Power": "150W",
+      "Impedance": "8Ω",
+      "Frequency": "2kHz – 22kHz",
+      "Sensitivity": "105 dB",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "budget",
+      "popular"
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "woofer-driver-wd-18",
+    "name": "Woofer Driver 18\"",
+    "model": "WD-18",
+    "brand": "SoundForge",
+    "category": "Speakers & Tweeters",
+    "price": 13999,
+    "rating": 4.7,
+    "reviews": 58,
+    "feature": "1000W Low Frequency",
+    "image": "/speakerTwitter7.webp",
+    "images": [
+      "/speakerTwitter7.webp"
+    ],
+    "description": "High excursion 18-inch woofer with 4-inch voice coil for subwoofer cabinet builds.",
+    "specifications": {
+      "Driver Size": "18\"",
+      "Power": "1000W RMS",
+      "Voice Coil": "4\"",
+      "Impedance": "8Ω",
+      "Frequency": "30Hz – 2kHz",
+      "Warranty": "1 Year"
+    },
+    "availability": "Made To Order",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "professional-subwoofer-sub-18",
+    "name": "Professional Subwoofer",
+    "model": "SUB-18",
+    "brand": "JBL Audio Pro",
+    "category": "Subwoofers",
+    "price": 39999,
+    "oldPrice": 47999,
+    "rating": 4.9,
+    "reviews": 167,
+    "badge": "LIMITED OFFER",
+    "feature": "18\" 2000W Active",
+    "image": "/speakerTwitter8.webp",
+    "images": [
+      "/speakerTwitter8.webp"
+    ],
+    "description": "Active 18-inch subwoofer with a birch ply cabinet, DSP alignment presets and pole mount for satellite speakers.",
+    "specifications": {
+      "Power": "2000W Peak",
+      "Driver Size": "18\"",
+      "Frequency": "30Hz – 150Hz",
+      "SPL": "136 dB",
+      "Connectivity": "XLR In / Thru",
+      "Weight": "46 kg",
+      "Warranty": "2 Years"
+    },
+    "availability": "Limited Stock",
+    "tags": [
+      "sale",
+      "bestseller",
+      "professional"
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "compact-subwoofer-sub-15",
+    "name": "Compact Subwoofer 15\"",
+    "model": "SUB-15",
+    "brand": "NovaStage",
+    "category": "Subwoofers",
+    "price": 28999,
+    "rating": 4.5,
+    "reviews": 89,
+    "badge": "POPULAR",
+    "feature": "1200W Active",
+    "image": "/speakerTwitter9.webp",
+    "images": [
+      "/speakerTwitter9.webp"
+    ],
+    "description": "Portable powered subwoofer that adds weight to small PA systems without a truck load of gear.",
+    "specifications": {
+      "Power": "1200W Peak",
+      "Driver Size": "15\"",
+      "Frequency": "38Hz – 160Hz",
+      "Connectivity": "XLR In / Thru",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "professional-wireless-microphone-wm-200",
+    "name": "Professional Wireless Microphone",
+    "model": "WM-200",
+    "brand": "JBL Audio Pro",
+    "category": "Microphones",
+    "price": 8499,
+    "oldPrice": 10999,
+    "rating": 4.7,
+    "reviews": 421,
+    "badge": "SALE",
+    "feature": "Dual UHF Channel",
+    "subcategory": "Wireless",
+    "image": "/wireless1.webp",
+    "images": [
+      "/wireless1.webp"
+    ],
+    "description": "Dual-channel UHF wireless system with 100 selectable frequencies, metal handhelds and rack-mountable receiver.",
+    "specifications": {
+      "Type": "UHF Wireless",
+      "Channels": "2",
+      "Range": "80 m line of sight",
+      "Frequency": "50Hz – 16kHz",
+      "Battery": "8 hrs (2 × AA)",
+      "Connectivity": "XLR / 6.35mm",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "bestseller",
+      "popular"
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "wired-vocal-microphone-vm-58",
+    "name": "Wired Vocal Microphone",
+    "model": "SRP6",
+    "subcategory": "Wired",
+    "brand": "SoundForge",
+    "category": "Microphones",
+    "price": 2499,
+    "oldPrice": 2999,
+    "rating": 4.6,
+    "reviews": 512,
+    "badge": "BESTSELLER",
+    "feature": "Cardioid Dynamic",
+    "image": "/microphone2.webp",
+    "images": [
+      "/microphone2.webp"
+    ],
+    "description": "Industry-standard dynamic vocal microphone with a tailored presence peak and rugged steel grille.",
+    "specifications": {
+      "Type": "Dynamic Cardioid",
+      "Frequency": "50Hz – 15kHz",
+      "Impedance": "300Ω",
+      "Connectivity": "XLR",
+      "Cable Included": "5 m",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "bestseller",
+      "budget",
+      "sale"
+    ]
+  },
+  {
+    "id": 19,
+    "slug": "instrument-microphone-im-40",
+    "name": "Instrument Microphone",
+    "model": "SM59ND",
+    "subcategory": "Wired",
+    "brand": "Axiom Pro",
+    "category": "Microphones",
+    "price": 4299,
+    "rating": 4.5,
+    "reviews": 87,
+    "feature": "Drum & Amp Miking",
+    "image": "/microphone3.webp",
+    "images": [
+      "/microphone3.webp"
+    ],
+    "description": "Compact clip-on instrument mic engineered for high SPL sources like drums and guitar cabinets.",
+    "specifications": {
+      "Type": "Dynamic Supercardioid",
+      "Max SPL": "150 dB",
+      "Frequency": "40Hz – 18kHz",
+      "Connectivity": "XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 20,
+    "slug": "conference-microphone-cm-12",
+    "name": "Conference Microphone",
+    "model": "SM 2.1",
+    "subcategory": "Wired",
+    "brand": "Crestline",
+    "category": "Microphones",
+    "price": 6999,
+    "rating": 4.4,
+    "reviews": 63,
+    "badge": "NEW",
+    "feature": "Delegate Unit",
+    "image": "/microphone4.webp",
+    "images": [
+      "/microphone4.webp"
+    ],
+    "description": "Daisy-chainable conference delegate unit with mute LED ring and built-in monitor speaker.",
+    "specifications": {
+      "Type": "Condenser Gooseneck",
+      "Frequency": "80Hz – 16kHz",
+      "Connectivity": "8-pin Chain",
+      "Indicator": "LED Ring",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "new",
+      "professional"
+    ]
+  },
+  {
+    "id": 21,
+    "slug": "gooseneck-microphone-gm-18",
+    "name": "Gooseneck Microphone",
+    "model": "SM 9.5S",
+    "subcategory": "Wired",
+    "brand": "Crestline",
+    "category": "Microphones",
+    "price": 3499,
+    "rating": 4.3,
+    "reviews": 41,
+    "feature": "18\" Flexible Arm",
+    "image": "/microphone5.webp",
+    "images": [
+      "/microphone5.webp"
+    ],
+    "description": "Podium gooseneck condenser microphone with shock-mounted capsule and phantom power operation.",
+    "specifications": {
+      "Type": "Condenser Cardioid",
+      "Length": "18 inch",
+      "Power": "48V Phantom",
+      "Connectivity": "XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 22,
+    "slug": "wireless-collar-microphone-wl-80",
+    "name": "Wireless Collar Microphone",
+    "model": "WL-80",
+    "brand": "NovaStage",
+    "category": "Microphones",
+    "price": 5999,
+    "oldPrice": 7499,
+    "rating": 4.4,
+    "reviews": 205,
+    "badge": "SALE",
+    "feature": "Lapel + Headset",
+    "subcategory": "Wireless",
+    "image": "/wireless2.webp",
+    "images": [
+      "/wireless2.webp"
+    ],
+    "description": "Bodypack wireless system bundled with both a lapel and a headworn microphone for presenters.",
+    "specifications": {
+      "Type": "UHF Bodypack",
+      "Channels": "2",
+      "Range": "60 m",
+      "Battery": "6 hrs",
+      "Connectivity": "XLR / 6.35mm",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "popular",
+      "budget"
+    ]
+  },
+  {
+    "id": 101,
+    "slug": "wired-microphone-sm-94s",
+    "name": "Wired Microphone SM 9.4S",
+    "model": "SM 9.4S",
+    "brand": "JBL Audio Pro",
+    "category": "Microphones",
+    "subcategory": "Wired",
+    "price": 2899,
+    "rating": 4.4,
+    "reviews": 38,
+    "feature": "Dynamic Vocal Mic",
+    "image": "/microphone1.webp",
+    "images": [
+      "/microphone1.webp"
+    ],
+    "description": "Professional wired dynamic microphone for clear vocals, announcements and live performance use.",
+    "specifications": {
+      "Type": "Dynamic Cardioid",
+      "Frequency": "50Hz – 16kHz",
+      "Impedance": "600Ω",
+      "Connectivity": "XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 102,
+    "slug": "wired-microphone-sm815",
+    "name": "Wired Microphone SM815",
+    "model": "SM815",
+    "brand": "JBL Audio Pro",
+    "category": "Microphones",
+    "subcategory": "Wired",
+    "price": 2499,
+    "rating": 4.3,
+    "reviews": 31,
+    "feature": "Cardioid Dynamic",
+    "image": "/microphone2.webp",
+    "images": [
+      "/microphone2.webp"
+    ],
+    "description": "Durable wired handheld microphone designed for dependable speech and vocal reproduction.",
+    "specifications": {
+      "Type": "Dynamic Cardioid",
+      "Frequency": "60Hz – 15kHz",
+      "Impedance": "500Ω",
+      "Connectivity": "XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 103,
+    "slug": "wired-microphone-sm303",
+    "name": "Wired Microphone SM303",
+    "model": "SM303",
+    "brand": "SoundForge",
+    "category": "Microphones",
+    "subcategory": "Wired",
+    "price": 2199,
+    "rating": 4.2,
+    "reviews": 27,
+    "feature": "Vocal Performance",
+    "image": "/microphone3.webp",
+    "images": [
+      "/microphone3.webp"
+    ],
+    "description": "Reliable wired microphone with focused pickup for stage vocals, karaoke and presentations.",
+    "specifications": {
+      "Type": "Dynamic Cardioid",
+      "Frequency": "60Hz – 15kHz",
+      "Impedance": "600Ω",
+      "Connectivity": "XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 104,
+    "slug": "wired-microphone-sm999",
+    "name": "Wired Microphone SM999",
+    "model": "SM999",
+    "brand": "SoundForge",
+    "category": "Microphones",
+    "subcategory": "Wired",
+    "price": 2999,
+    "rating": 4.4,
+    "reviews": 35,
+    "feature": "High Output Vocal",
+    "image": "/microphone4.webp",
+    "images": [
+      "/microphone4.webp"
+    ],
+    "description": "High-output wired dynamic microphone tuned for strong vocal presence and clean stage sound.",
+    "specifications": {
+      "Type": "Dynamic Cardioid",
+      "Frequency": "50Hz – 16kHz",
+      "Impedance": "500Ω",
+      "Connectivity": "XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "popular"
+    ]
+  },
+  {
+    "id": 105,
+    "slug": "wired-microphone-sm98a",
+    "name": "Wired Microphone SM98A",
+    "model": "SM98A",
+    "brand": "Axiom Pro",
+    "category": "Microphones",
+    "subcategory": "Wired",
+    "price": 3499,
+    "rating": 4.5,
+    "reviews": 29,
+    "feature": "Studio & Stage",
+    "image": "/microphone5.webp",
+    "images": [
+      "/microphone5.webp"
+    ],
+    "description": "Versatile wired microphone for detailed vocal capture in studio, stage and event applications.",
+    "specifications": {
+      "Type": "Dynamic Cardioid",
+      "Frequency": "40Hz – 18kHz",
+      "Impedance": "300Ω",
+      "Connectivity": "XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 106,
+    "slug": "wired-microphone-sm8000",
+    "name": "Wired Microphone SM8000",
+    "model": "SM8000",
+    "brand": "Crestline",
+    "category": "Microphones",
+    "subcategory": "Wired",
+    "price": 3999,
+    "rating": 4.5,
+    "reviews": 24,
+    "feature": "Professional Dynamic",
+    "image": "/microphone6.webp",
+    "images": [
+      "/microphone6.webp"
+    ],
+    "description": "Professional wired dynamic microphone built for consistent vocal clarity and everyday touring use.",
+    "specifications": {
+      "Type": "Dynamic Supercardioid",
+      "Frequency": "45Hz – 18kHz",
+      "Impedance": "300Ω",
+      "Connectivity": "XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 23,
+    "slug": "12-channel-mixer-mx-12",
+    "name": "12 Channel Mixer",
+    "model": "MX-12",
+    "brand": "JBL Audio Pro",
+    "category": "Mixers",
+    "price": 18999,
+    "oldPrice": 22999,
+    "rating": 4.8,
+    "reviews": 264,
+    "badge": "SALE",
+    "feature": "12 Ch • USB • FX",
+    "image": "/mixer1.webp",
+    "images": [
+      "/mixer1.webp"
+    ],
+    "description": "Analog 12-channel mixing console with 6 mic preamps, 3-band EQ, 24-bit effects engine and USB/Bluetooth playback.",
+    "specifications": {
+      "Channels": "12",
+      "Mic Preamps": "6",
+      "Effects": "24-bit, 100 presets",
+      "USB": "Yes (Record / Playback)",
+      "Bluetooth": "Yes",
+      "EQ": "3-band per channel",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "bestseller",
+      "professional"
+    ]
+  },
+  {
+    "id": 24,
+    "slug": "4-channel-mixer-mx-04",
+    "name": "4 Channel Mixer",
+    "model": "MX-04",
+    "brand": "SoundForge",
+    "category": "Mixers",
+    "price": 6499,
+    "rating": 4.3,
+    "reviews": 118,
+    "feature": "4 Ch • USB",
+    "image": "/mixer2.webp",
+    "images": [
+      "/mixer2.webp"
+    ],
+    "description": "Ultra-compact desktop mixer for podcasts, small venues and rehearsal rooms.",
+    "specifications": {
+      "Channels": "4",
+      "Mic Preamps": "2",
+      "Effects": "No",
+      "USB": "Yes",
+      "Bluetooth": "No",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 25,
+    "slug": "8-channel-mixer-mx-08",
+    "name": "8 Channel Mixer",
+    "model": "MX-08",
+    "brand": "SoundForge",
+    "category": "Mixers",
+    "price": 11999,
+    "oldPrice": 13999,
+    "rating": 4.5,
+    "reviews": 149,
+    "badge": "POPULAR",
+    "feature": "8 Ch • FX • BT",
+    "image": "/mixer3.webp",
+    "images": [
+      "/mixer3.webp"
+    ],
+    "description": "Eight-channel console balancing portability and I/O for bands and houses of worship.",
+    "specifications": {
+      "Channels": "8",
+      "Mic Preamps": "4",
+      "Effects": "16 presets",
+      "USB": "Yes",
+      "Bluetooth": "Yes",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "popular"
+    ]
+  },
+  {
+    "id": 26,
+    "slug": "16-channel-mixer-mx-16",
+    "name": "16 Channel Mixer",
+    "model": "MX-16",
+    "brand": "Axiom Pro",
+    "category": "Mixers",
+    "price": 27999,
+    "rating": 4.7,
+    "reviews": 72,
+    "feature": "16 Ch • Dual FX",
+    "image": "/mixer4.webp",
+    "images": [
+      "/mixer4.webp"
+    ],
+    "description": "Full-size analog console with 10 mic inputs, dual effects processors and 4 aux sends.",
+    "specifications": {
+      "Channels": "16",
+      "Mic Preamps": "10",
+      "Effects": "Dual engine",
+      "USB": "Yes",
+      "Bluetooth": "Yes",
+      "Aux Sends": "4",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 27,
+    "slug": "digital-mixer-dm-24",
+    "name": "Digital Mixer",
+    "model": "DM-24",
+    "brand": "Crestline",
+    "category": "Mixers",
+    "price": 74999,
+    "rating": 4.9,
+    "reviews": 38,
+    "badge": "NEW",
+    "feature": "24 Ch Digital • Wi-Fi",
+    "image": "/mixer5.webp",
+    "images": [
+      "/mixer5.webp"
+    ],
+    "description": "Motorised-fader digital console with scene recall, per-channel dynamics and tablet control over Wi-Fi.",
+    "specifications": {
+      "Channels": "24",
+      "Mic Preamps": "16",
+      "Effects": "8 FX racks",
+      "USB": "Multitrack",
+      "Bluetooth": "Yes",
+      "Control": "Wi-Fi / Tablet",
+      "Warranty": "2 Years"
+    },
+    "availability": "Made To Order",
+    "tags": [
+      "new",
+      "professional"
+    ]
+  },
+  {
+    "id": 28,
+    "slug": "dj-mixer-djm-04",
+    "name": "DJ Mixer",
+    "model": "DJM-04",
+    "brand": "NovaStage",
+    "category": "Mixers",
+    "price": 15499,
+    "oldPrice": 17999,
+    "rating": 4.5,
+    "reviews": 131,
+    "badge": "SALE",
+    "feature": "4 Ch • Crossfader",
+    "image": "/mixer6.webp",
+    "images": [
+      "/mixer6.webp"
+    ],
+    "description": "Club-style DJ mixer with a replaceable crossfader, filter knobs and booth output.",
+    "specifications": {
+      "Channels": "4",
+      "Effects": "Filter / Echo",
+      "USB": "Yes",
+      "Bluetooth": "Yes",
+      "Crossfader": "Replaceable",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "popular"
+    ]
+  },
+  {
+    "id": 29,
+    "slug": "digital-signal-processor-dsp-480",
+    "name": "Digital Signal Processor",
+    "model": "DSP-480",
+    "brand": "Crestline",
+    "category": "Processors",
+    "price": 22999,
+    "oldPrice": 26999,
+    "rating": 4.8,
+    "reviews": 84,
+    "badge": "SALE",
+    "feature": "4-In / 8-Out DSP",
+    "image": "/processor1.webp",
+    "images": [
+      "/processor1.webp",
+      "emoji:🎛️"
+    ],
+    "description": "System processor with parametric EQ, delay, limiters and crossover on every output, controlled from PC software.",
+    "specifications": {
+      "Inputs": "4",
+      "Outputs": "8",
+      "Sample Rate": "96 kHz",
+      "Latency": "<1.2 ms",
+      "Control": "USB / Ethernet",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "professional"
+    ]
+  },
+  {
+    "id": 30,
+    "slug": "graphic-equalizer-eq-231",
+    "name": "Graphic Equalizer",
+    "model": "EQ-231",
+    "brand": "Axiom Pro",
+    "category": "Processors",
+    "price": 12999,
+    "rating": 4.5,
+    "reviews": 66,
+    "feature": "Dual 31-Band",
+    "image": "/processor2.webp",
+    "images": [
+      "/processor2.webp",
+      "emoji:🎚️"
+    ],
+    "description": "Dual channel 31-band graphic EQ with switchable low-cut filter and bypass relay.",
+    "specifications": {
+      "Bands": "31 × 2",
+      "Range": "±12 dB",
+      "Frequency": "20Hz – 20kHz",
+      "Connectivity": "XLR / TRS",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 31,
+    "slug": "active-crossover-cx-234",
+    "name": "Active Crossover",
+    "model": "CX-234",
+    "brand": "Axiom Pro",
+    "category": "Processors",
+    "price": 9499,
+    "rating": 4.4,
+    "reviews": 47,
+    "feature": "2/3/4-Way",
+    "image": "/processor3.webp",
+    "images": [
+      "/processor3.webp",
+      "emoji:🔊"
+    ],
+    "description": "Stereo 2/3-way or mono 4-way active crossover with Linkwitz-Riley filters.",
+    "specifications": {
+      "Modes": "2/3/4-Way",
+      "Slope": "24 dB/octave",
+      "Frequency": "20Hz – 20kHz",
+      "Connectivity": "XLR",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional",
+      "budget"
+    ]
+  },
+  {
+    "id": 32,
+    "slug": "compressor-limiter-cl-266",
+    "name": "Compressor Limiter",
+    "model": "CL-266",
+    "brand": "Crestline",
+    "category": "Processors",
+    "price": 10999,
+    "rating": 4.6,
+    "reviews": 39,
+    "feature": "Dual Channel Gate",
+    "image": "/processor4.webp",
+    "images": [
+      "/processor4.webp",
+      "emoji:🎚️"
+    ],
+    "description": "Two-channel compressor, limiter and expander gate with auto attack/release.",
+    "specifications": {
+      "Channels": "2",
+      "Ratio": "1:1 – ∞:1",
+      "Gate": "Yes",
+      "Connectivity": "XLR / TRS",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 33,
+    "slug": "audio-controller-ac-88",
+    "name": "Audio Controller",
+    "model": "AC-88",
+    "brand": "Crestline",
+    "category": "Processors",
+    "price": 18499,
+    "rating": 4.5,
+    "reviews": 28,
+    "badge": "NEW",
+    "feature": "8×8 Matrix",
+    "image": "/processor5.webp",
+    "images": [
+      "/processor5.webp",
+      "emoji:🎛️"
+    ],
+    "description": "Installation matrix controller with wall-panel support for multi-zone commercial audio.",
+    "specifications": {
+      "Inputs": "8",
+      "Outputs": "8",
+      "Zones": "8",
+      "Control": "Ethernet / Wall Panel",
+      "Warranty": "2 Years"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "new",
+      "professional"
+    ]
+  },
+  {
+    "id": 34,
+    "slug": "speaker-management-processor-smp-360",
+    "name": "Speaker Management Processor",
+    "model": "SMP-360",
+    "brand": "Axiom Pro",
+    "category": "Processors",
+    "price": 31999,
+    "rating": 4.8,
+    "reviews": 33,
+    "feature": "3-In / 6-Out",
+    "image": "/processor1.webp",
+    "images": [
+      "/processor1.webp",
+      "emoji:🔊"
+    ],
+    "description": "Complete loudspeaker management with FIR filters, alignment delay and secure preset lock for rental fleets.",
+    "specifications": {
+      "Inputs": "3",
+      "Outputs": "6",
+      "Filters": "FIR / IIR",
+      "Sample Rate": "96 kHz",
+      "Control": "USB / Ethernet",
+      "Warranty": "2 Years"
+    },
+    "availability": "Limited Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 35,
+    "slug": "stage-lighting-system-sls-8",
+    "name": "Stage Lighting System",
+    "model": "SLS-8",
+    "brand": "NovaStage",
+    "category": "Lighting & SFX",
+    "price": 14999,
+    "oldPrice": 18999,
+    "rating": 4.6,
+    "reviews": 197,
+    "badge": "SALE",
+    "feature": "8-Fixture Kit",
+    "image": "/light1.webp",
+    "images": [
+      "/light1.webp"
+    ],
+    "description": "Complete plug-and-play stage lighting kit with fixtures, T-bar stands, DMX controller and cabling.",
+    "specifications": {
+      "Fixtures": "8 × LED PAR",
+      "Control": "DMX-512",
+      "Power": "480W total",
+      "Modes": "Auto / Sound / DMX",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "popular"
+    ]
+  },
+  {
+    "id": 36,
+    "slug": "led-stage-light-par-64",
+    "name": "LED Stage Light",
+    "model": "PAR-64",
+    "brand": "NovaStage",
+    "category": "Lighting & SFX",
+    "price": 6999,
+    "oldPrice": 8499,
+    "rating": 4.5,
+    "reviews": 233,
+    "badge": "SALE",
+    "feature": "54 × 3W RGBW",
+    "image": "/light2.webp",
+    "images": [
+      "/light2.webp"
+    ],
+    "description": "Bright RGBW LED PAR can with flicker-free dimming, suitable for stages, mandaps and studios.",
+    "specifications": {
+      "LEDs": "54 × 3W RGBW",
+      "Beam": "25°",
+      "Control": "DMX-512 / Auto / Sound",
+      "Power": "170W",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "bestseller",
+      "budget"
+    ]
+  },
+  {
+    "id": 43,
+    "slug": "speaker-cable-sc-2515",
+    "name": "Speaker Cable",
+    "model": "SC-2515",
+    "brand": "Crestline",
+    "category": "Wires & Cables",
+    "price": 1499,
+    "oldPrice": 1899,
+    "rating": 4.5,
+    "reviews": 210,
+    "badge": "SALE",
+    "feature": "2 × 2.5mm² • 15 m",
+    "image": "/wires1.webp",
+    "images": [
+      "/wires1.webp"
+    ],
+    "description": "Oxygen-free copper speaker cable terminated with metal Speakon connectors.",
+    "specifications": {
+      "Cable Type": "Speaker",
+      "Length": "15 m",
+      "Connector": "Speakon – Speakon",
+      "Conductor": "2 × 2.5 mm² OFC",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "budget"
+    ]
+  },
+  {
+    "id": 44,
+    "slug": "microphone-cable-mc-10",
+    "name": "Microphone Cable",
+    "model": "MC-10",
+    "brand": "Crestline",
+    "category": "Wires & Cables",
+    "price": 899,
+    "rating": 4.6,
+    "reviews": 340,
+    "badge": "BESTSELLER",
+    "feature": "Balanced • 10 m",
+    "image": "/wires2.webp",
+    "images": [
+      "/wires2.webp"
+    ],
+    "description": "Low-noise balanced microphone cable with braided shield and moulded strain relief.",
+    "specifications": {
+      "Cable Type": "Microphone",
+      "Length": "10 m",
+      "Connector": "XLR M – XLR F",
+      "Shield": "Braided 95%",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "bestseller",
+      "budget"
+    ]
+  },
+  {
+    "id": 45,
+    "slug": "xlr-cable-xl-05",
+    "name": "XLR Cable",
+    "model": "XL-05",
+    "brand": "Crestline",
+    "category": "Wires & Cables",
+    "price": 649,
+    "rating": 4.4,
+    "reviews": 158,
+    "feature": "Balanced • 5 m",
+    "image": "/wires3.webp",
+    "images": [
+      "/wires3.webp"
+    ],
+    "description": "Short XLR patch lead for stage boxes, mixers and powered speakers.",
+    "specifications": {
+      "Cable Type": "XLR",
+      "Length": "5 m",
+      "Connector": "XLR M – XLR F",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 46,
+    "slug": "dmx-cable-dx-10",
+    "name": "DMX Cable",
+    "model": "DX-10",
+    "brand": "NovaStage",
+    "category": "Wires & Cables",
+    "price": 1099,
+    "rating": 4.3,
+    "reviews": 74,
+    "feature": "110Ω • 10 m",
+    "image": "/wires4.webp",
+    "images": [
+      "/wires4.webp"
+    ],
+    "description": "True 110Ω DMX lighting control cable for reliable, glitch-free fixture chains.",
+    "specifications": {
+      "Cable Type": "DMX",
+      "Length": "10 m",
+      "Connector": "3-pin XLR",
+      "Impedance": "110Ω",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 47,
+    "slug": "instrument-cable-ic-06",
+    "name": "Instrument Cable",
+    "model": "IC-06",
+    "brand": "Crestline",
+    "category": "Wires & Cables",
+    "price": 749,
+    "rating": 4.2,
+    "reviews": 96,
+    "feature": "TS 6.35mm • 6 m",
+    "image": "/wires5.webp",
+    "images": [
+      "/wires5.webp"
+    ],
+    "description": "Low-capacitance guitar and keyboard cable with gold-plated tips.",
+    "specifications": {
+      "Cable Type": "Instrument",
+      "Length": "6 m",
+      "Connector": "6.35mm TS – TS",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 48,
+    "slug": "power-cable-pc-16a",
+    "name": "Power Cable",
+    "model": "PC-16A",
+    "brand": "Crestline",
+    "category": "Wires & Cables",
+    "price": 1299,
+    "rating": 4.4,
+    "reviews": 58,
+    "feature": "16A • 5 m",
+    "image": "/wires6.webp",
+    "images": [
+      "/wires6.webp"
+    ],
+    "description": "Heavy-duty 16A power extension for amplifier racks and stage distribution.",
+    "specifications": {
+      "Cable Type": "Power",
+      "Length": "5 m",
+      "Connector": "16A Industrial",
+      "Rating": "16A / 250V",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 49,
+    "slug": "patch-cable-set-pt-08",
+    "name": "Patch Cable Set",
+    "model": "PT-08",
+    "brand": "Crestline",
+    "category": "Wires & Cables",
+    "price": 999,
+    "rating": 4.1,
+    "reviews": 44,
+    "feature": "Set of 8 • 0.3 m",
+    "image": "/wires7.webp",
+    "images": [
+      "/wires7.webp"
+    ],
+    "description": "Right-angle patch cable set for pedalboards and rack patching.",
+    "specifications": {
+      "Cable Type": "Patch",
+      "Length": "0.3 m",
+      "Connector": "6.35mm TS Angled",
+      "Quantity": "8 pcs",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 50,
+    "slug": "xlr-connector-set-xc-10",
+    "name": "XLR Connector",
+    "model": "XC-10",
+    "brand": "Crestline",
+    "category": "Connectors",
+    "price": 599,
+    "rating": 4.5,
+    "reviews": 187,
+    "feature": "3-Pin Metal • 10 pcs",
+    "image": "/connector1.webp",
+    "images": [
+      "/connector1.webp"
+    ],
+    "description": "Solderable 3-pin XLR connectors with zinc shell and silver-plated contacts.",
+    "specifications": {
+      "Type": "XLR 3-pin",
+      "Quantity": "10 pcs",
+      "Plating": "Silver",
+      "Body": "Zinc alloy",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget",
+      "popular"
+    ]
+  },
+  {
+    "id": 51,
+    "slug": "speakon-connector-sk-04",
+    "name": "Speakon Connector",
+    "model": "SK-04",
+    "brand": "Crestline",
+    "category": "Connectors",
+    "price": 899,
+    "rating": 4.6,
+    "reviews": 122,
+    "feature": "4-Pole • 4 pcs",
+    "image": "/connector2.webp",
+    "images": [
+      "/connector2.webp"
+    ],
+    "description": "Locking 4-pole speaker connectors rated for high current amplifier outputs.",
+    "specifications": {
+      "Type": "Speakon NL4",
+      "Quantity": "4 pcs",
+      "Rating": "30A",
+      "Locking": "Twist lock",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 52,
+    "slug": "jack-connector-jc-12",
+    "name": "Jack Connector",
+    "model": "JC-12",
+    "brand": "Crestline",
+    "category": "Connectors",
+    "price": 449,
+    "rating": 4.2,
+    "reviews": 91,
+    "feature": "6.35mm • 12 pcs",
+    "image": "/connector3.webp",
+    "images": [
+      "/connector3.webp"
+    ],
+    "description": "Metal-bodied 6.35mm TS jack plugs for instrument and line cable assembly.",
+    "specifications": {
+      "Type": "6.35mm TS",
+      "Quantity": "12 pcs",
+      "Body": "Nickel",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 53,
+    "slug": "rca-connector-rc-20",
+    "name": "RCA Connector",
+    "model": "RC-20",
+    "brand": "Crestline",
+    "category": "Connectors",
+    "price": 399,
+    "rating": 4,
+    "reviews": 63,
+    "feature": "Gold Plated • 20 pcs",
+    "image": "/connector4.webp",
+    "images": [
+      "/connector4.webp"
+    ],
+    "description": "Gold-plated RCA plugs for clean, corrosion-resistant line level connections.",
+    "specifications": {
+      "Type": "RCA",
+      "Quantity": "20 pcs",
+      "Plating": "Gold",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 54,
+    "slug": "banana-plug-bp-16",
+    "name": "Banana Plug",
+    "model": "BP-16",
+    "brand": "Crestline",
+    "category": "Connectors",
+    "price": 549,
+    "rating": 4.3,
+    "reviews": 48,
+    "feature": "Screw Type • 16 pcs",
+    "image": "/connector5.webp",
+    "images": [
+      "/connector5.webp"
+    ],
+    "description": "Screw-type banana plugs for amplifier binding posts — no soldering required.",
+    "specifications": {
+      "Type": "Banana",
+      "Quantity": "16 pcs",
+      "Plating": "Gold",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 55,
+    "slug": "audio-adapter-kit-ad-09",
+    "name": "Audio Adapter Kit",
+    "model": "AD-09",
+    "brand": "Crestline",
+    "category": "Connectors",
+    "price": 1199,
+    "rating": 4.4,
+    "reviews": 71,
+    "badge": "POPULAR",
+    "feature": "9-Piece Kit",
+    "image": "/connector6.webp",
+    "images": [
+      "/connector6.webp"
+    ],
+    "description": "Essential adapter kit covering XLR, TRS, TS, RCA and 3.5mm conversions in a zip case.",
+    "specifications": {
+      "Type": "Mixed adapters",
+      "Quantity": "9 pcs",
+      "Case": "Included",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "popular",
+      "budget"
+    ]
+  },
+  {
+    "id": 56,
+    "slug": "speaker-box-12-sb-12",
+    "name": "12\" Speaker Box",
+    "model": "SB-12",
+    "brand": "SoundForge",
+    "category": "Speaker Box",
+    "price": 8999,
+    "rating": 4.4,
+    "reviews": 84,
+    "feature": "18mm Birch Ply",
+    "image": "/speakerBox1.webp",
+    "images": [
+      "/speakerBox1.webp"
+    ],
+    "description": "Empty 12-inch cabinet with textured paint finish, steel grille and pole socket.",
+    "specifications": {
+      "Size": "12 inch",
+      "Material": "18mm Birch Ply",
+      "Finish": "Textured paint",
+      "Handles": "2 side",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 57,
+    "slug": "speaker-box-15-sb-15",
+    "name": "15\" Speaker Box",
+    "model": "SB-15",
+    "brand": "SoundForge",
+    "category": "Speaker Box",
+    "price": 11499,
+    "oldPrice": 13499,
+    "rating": 4.5,
+    "reviews": 66,
+    "badge": "SALE",
+    "feature": "Ported Design",
+    "image": "/speakerBox2.webp",
+    "images": [
+      "/speakerBox2.webp"
+    ],
+    "description": "Front-ported 15-inch enclosure ready for your driver and horn combination.",
+    "specifications": {
+      "Size": "15 inch",
+      "Material": "18mm Birch Ply",
+      "Porting": "Front ported",
+      "Fly": "M10 points",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "popular"
+    ]
+  },
+  {
+    "id": 58,
+    "slug": "subwoofer-box-18-sb-18",
+    "name": "18\" Subwoofer Box",
+    "model": "SB-18",
+    "brand": "SoundForge",
+    "category": "Speaker Box",
+    "price": 16999,
+    "rating": 4.6,
+    "reviews": 52,
+    "feature": "Bass Reflex",
+    "image": "/speakerBox3.webp",
+    "images": [
+      "/speakerBox3.webp"
+    ],
+    "description": "Heavy-duty 18-inch bass reflex cabinet with recessed castors and skid rails.",
+    "specifications": {
+      "Size": "18 inch",
+      "Material": "21mm Birch Ply",
+      "Porting": "Bass reflex",
+      "Castors": "Recessed",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 59,
+    "slug": "line-array-box-la-08",
+    "name": "Line Array Box",
+    "model": "LA-08",
+    "brand": "Axiom Pro",
+    "category": "Speaker Box",
+    "price": 24999,
+    "rating": 4.7,
+    "reviews": 24,
+    "badge": "NEW",
+    "feature": "Dual 8\" Array",
+    "image": "/speakerBox4.webp",
+    "images": [
+      "/speakerBox4.webp"
+    ],
+    "description": "Compact dual 8-inch line array module with integrated rigging hardware.",
+    "specifications": {
+      "Size": "Dual 8 inch",
+      "Rigging": "Integrated",
+      "Material": "15mm Birch Ply",
+      "Coverage": "100° × 10°",
+      "Warranty": "1 Year"
+    },
+    "availability": "Made To Order",
+    "tags": [
+      "new",
+      "professional"
+    ]
+  },
+  {
+    "id": 60,
+    "slug": "monitor-speaker-box-mb-12",
+    "name": "Monitor Speaker Box",
+    "model": "MB-12",
+    "brand": "SoundForge",
+    "category": "Speaker Box",
+    "price": 9999,
+    "rating": 4.3,
+    "reviews": 31,
+    "feature": "Wedge Cabinet",
+    "image": "/speakerBox5.webp",
+    "images": [
+      "/speakerBox5.webp"
+    ],
+    "description": "Low-profile 12-inch floor wedge cabinet for stage monitoring builds.",
+    "specifications": {
+      "Size": "12 inch",
+      "Type": "Wedge monitor",
+      "Angle": "45°",
+      "Material": "18mm Birch Ply",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional",
+      "budget"
+    ]
+  },
+  {
+    "id": 61,
+    "slug": "speaker-diaphragm-dp-44",
+    "name": "Speaker Diaphragm",
+    "model": "DP-44",
+    "brand": "Axiom Pro",
+    "category": "Spare Parts",
+    "price": 1799,
+    "rating": 4.4,
+    "reviews": 118,
+    "feature": "44mm Replacement",
+    "image": "/spareParts1.webp",
+    "images": [
+      "/spareParts1.webp",
+      "emoji:🔧"
+    ],
+    "description": "Genuine replacement diaphragm for 44mm compression drivers — restores full HF output.",
+    "specifications": {
+      "Size": "44 mm",
+      "Material": "Titanium",
+      "Impedance": "8Ω",
+      "Fitment": "Universal 1\" throat",
+      "Warranty": "3 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "popular",
+      "budget"
+    ]
+  },
+  {
+    "id": 62,
+    "slug": "voice-coil-vc-75",
+    "name": "Voice Coil",
+    "model": "VC-75",
+    "brand": "Axiom Pro",
+    "category": "Spare Parts",
+    "price": 1299,
+    "rating": 4.3,
+    "reviews": 96,
+    "feature": "75mm Copper",
+    "image": "/spareParts2.webp",
+    "images": [
+      "/spareParts2.webp",
+      "emoji:🧲"
+    ],
+    "description": "Copper-wound 75mm voice coil on a Kapton former for woofer reconing.",
+    "specifications": {
+      "Size": "75 mm",
+      "Wire": "Copper",
+      "Former": "Kapton",
+      "Impedance": "8Ω",
+      "Warranty": "3 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 63,
+    "slug": "woofer-cone-wc-15",
+    "name": "Woofer Cone",
+    "model": "WC-15",
+    "brand": "Axiom Pro",
+    "category": "Spare Parts",
+    "price": 2199,
+    "rating": 4.2,
+    "reviews": 57,
+    "feature": "15\" Recone Kit",
+    "image": "/spareParts3.webp",
+    "images": [
+      "/spareParts3.webp",
+      "emoji:🔊"
+    ],
+    "description": "Complete 15-inch recone kit including cone, spider, surround and gasket.",
+    "specifications": {
+      "Size": "15 inch",
+      "Includes": "Cone, spider, surround",
+      "Material": "Treated paper",
+      "Warranty": "3 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 64,
+    "slug": "tweeter-diaphragm-td-25",
+    "name": "Tweeter Diaphragm",
+    "model": "TD-25",
+    "brand": "Axiom Pro",
+    "category": "Spare Parts",
+    "price": 999,
+    "rating": 4.1,
+    "reviews": 73,
+    "feature": "25mm Mylar",
+    "image": "/spareParts4.webp",
+    "images": [
+      "/spareParts4.webp",
+      "emoji:⚙️"
+    ],
+    "description": "Drop-in mylar diaphragm replacement for 25mm dome tweeters.",
+    "specifications": {
+      "Size": "25 mm",
+      "Material": "Mylar",
+      "Impedance": "8Ω",
+      "Warranty": "3 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 65,
+    "slug": "driver-parts-kit-dk-01",
+    "name": "Driver Parts Kit",
+    "model": "DK-01",
+    "brand": "Axiom Pro",
+    "category": "Spare Parts",
+    "price": 3499,
+    "rating": 4.5,
+    "reviews": 29,
+    "feature": "Service Kit",
+    "image": "/spareParts5.webp",
+    "images": [
+      "/spareParts5.webp",
+      "emoji:🧰"
+    ],
+    "description": "Workshop service kit with gaskets, screws, terminals and adhesives for driver repairs.",
+    "specifications": {
+      "Contents": "Gaskets, terminals, adhesive",
+      "Application": "Driver servicing",
+      "Warranty": "3 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 66,
+    "slug": "speaker-stand-pair-ss-2",
+    "name": "Speaker Stand (Pair)",
+    "model": "SS-2",
+    "brand": "Crestline",
+    "category": "Accessories",
+    "price": 4499,
+    "oldPrice": 5499,
+    "rating": 4.6,
+    "reviews": 214,
+    "badge": "SALE",
+    "feature": "Steel • 50 kg Load",
+    "image": "/accessories1.webp",
+    "images": [
+      "/accessories1.webp"
+    ],
+    "description": "Height-adjustable steel tripod speaker stands with safety pin and carry bag.",
+    "specifications": {
+      "Material": "Steel",
+      "Max Height": "1.9 m",
+      "Load Capacity": "50 kg per stand",
+      "Quantity": "2 pcs",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "sale",
+      "bestseller"
+    ]
+  },
+  {
+    "id": 67,
+    "slug": "microphone-stand-ms-boom",
+    "name": "Microphone Stand",
+    "model": "MS-BOOM",
+    "brand": "Crestline",
+    "category": "Accessories",
+    "price": 1899,
+    "rating": 4.5,
+    "reviews": 268,
+    "badge": "BESTSELLER",
+    "feature": "Boom Arm • Tripod",
+    "image": "/accessories2.webp",
+    "images": [
+      "/accessories2.webp"
+    ],
+    "description": "Tripod boom microphone stand with clutch height adjustment and mic clip included.",
+    "specifications": {
+      "Type": "Tripod boom",
+      "Height Range": "0.9 – 1.6 m",
+      "Boom": "0.75 m",
+      "Includes": "Mic clip",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "bestseller",
+      "budget"
+    ]
+  },
+  {
+    "id": 68,
+    "slug": "mixer-stand-mst-01",
+    "name": "Mixer Stand",
+    "model": "MST-01",
+    "brand": "Crestline",
+    "category": "Accessories",
+    "price": 3999,
+    "rating": 4.3,
+    "reviews": 47,
+    "feature": "Adjustable Table",
+    "image": "/accessories3.webp",
+    "images": [
+      "/accessories3.webp"
+    ],
+    "description": "Folding mixer table with adjustable tilt for FOH positions and DJ booths.",
+    "specifications": {
+      "Material": "Aluminium",
+      "Load Capacity": "25 kg",
+      "Tilt": "Adjustable",
+      "Folding": "Yes",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 69,
+    "slug": "wall-mount-bracket-wm-30",
+    "name": "Wall Mount Bracket",
+    "model": "WM-30",
+    "brand": "Crestline",
+    "category": "Accessories",
+    "price": 1599,
+    "rating": 4.2,
+    "reviews": 58,
+    "feature": "30 kg Swivel",
+    "image": "/accessories4.webp",
+    "images": [
+      "/accessories4.webp"
+    ],
+    "description": "Swivel and tilt wall bracket for installing speakers in halls and showrooms.",
+    "specifications": {
+      "Load Capacity": "30 kg",
+      "Movement": "Swivel + Tilt",
+      "Material": "Powder-coated steel",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 70,
+    "slug": "audio-rack-ar-12u",
+    "name": "Audio Rack 12U",
+    "model": "AR-12U",
+    "brand": "Crestline",
+    "category": "Accessories",
+    "price": 12999,
+    "rating": 4.6,
+    "reviews": 36,
+    "badge": "NEW",
+    "feature": "12U Road Rack",
+    "image": "/accessories5.webp",
+    "images": [
+      "/accessories5.webp"
+    ],
+    "description": "Flight-cased 12U rack with removable lids, castors and vented rails for amplifier racks.",
+    "specifications": {
+      "Size": "12U",
+      "Depth": "450 mm",
+      "Castors": "Included",
+      "Construction": "Plywood + aluminium",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "new",
+      "professional"
+    ]
+  },
+  {
+    "id": 71,
+    "slug": "power-distribution-pd-8",
+    "name": "Power Distribution",
+    "model": "PD-8",
+    "brand": "Crestline",
+    "category": "Accessories",
+    "price": 7499,
+    "rating": 4.5,
+    "reviews": 41,
+    "feature": "8 Outlet • Surge",
+    "image": "/accessories6.webp",
+    "images": [
+      "/accessories6.webp"
+    ],
+    "description": "Rack-mount 8-outlet power distributor with sequential switching and surge protection.",
+    "specifications": {
+      "Outlets": "8",
+      "Rating": "16A",
+      "Protection": "Surge + MCB",
+      "Rack Size": "1U",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "professional"
+    ]
+  },
+  {
+    "id": 72,
+    "slug": "speaker-carry-case-cc-15",
+    "name": "Speaker Carry Case",
+    "model": "CC-15",
+    "brand": "Crestline",
+    "category": "Accessories",
+    "price": 2999,
+    "rating": 4.1,
+    "reviews": 33,
+    "feature": "Padded • 15\"",
+    "image": "/accessories7.webp",
+    "images": [
+      "/accessories7.webp"
+    ],
+    "description": "Padded nylon transport bag protecting 15-inch speakers on the road.",
+    "specifications": {
+      "Fits": "15 inch speakers",
+      "Material": "Padded nylon",
+      "Handles": "Shoulder + side",
+      "Warranty": "6 Months"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "budget"
+    ]
+  },
+  {
+    "id": 73,
+    "slug": "dj-controller-dc-400",
+    "name": "DJ Controller",
+    "model": "DC-400",
+    "brand": "NovaStage",
+    "category": "DJ Equipment",
+    "price": 42999,
+    "oldPrice": 49999,
+    "rating": 4.7,
+    "reviews": 87,
+    "badge": "LIMITED OFFER",
+    "feature": "4 Deck • Jog Wheels",
+    "image": "/djEquipmentImg.webp",
+    "images": [
+      "/djEquipmentImg.webp",
+      "/mixersImg.webp"
+    ],
+    "description": "Four-deck DJ controller with capacitive jog wheels, performance pads and a built-in sound card.",
+    "specifications": {
+      "Decks": "4",
+      "Pads": "16 RGB",
+      "Sound Card": "24-bit / 96kHz",
+      "Outputs": "XLR / RCA / Booth",
+      "Warranty": "2 Years"
+    },
+    "availability": "Limited Stock",
+    "tags": [
+      "sale",
+      "popular",
+      "professional"
+    ]
+  },
+  {
+    "id": 74,
+    "slug": "dj-headphones-dh-70",
+    "name": "DJ Headphones",
+    "model": "DH-70",
+    "brand": "NovaStage",
+    "category": "DJ Equipment",
+    "price": 5999,
+    "rating": 4.4,
+    "reviews": 122,
+    "feature": "Swivel • Closed Back",
+    "image": "/djEquipmentImg.webp",
+    "images": [
+      "/djEquipmentImg.webp"
+    ],
+    "description": "Closed-back monitoring headphones with swivel cups and a detachable coiled cable.",
+    "specifications": {
+      "Drivers": "50 mm",
+      "Frequency": "5Hz – 30kHz",
+      "Impedance": "32Ω",
+      "Cable": "Detachable coiled",
+      "Warranty": "1 Year"
+    },
+    "availability": "In Stock",
+    "tags": [
+      "popular",
+      "budget"
+    ]
+  }
+]

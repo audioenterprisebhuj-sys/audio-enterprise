@@ -1,12 +1,23 @@
-/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap');
 
-/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss";
 
-/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+@theme {
+  --color-ink: #0b0b0c;
+  --color-charcoal: #17181a;
+  --color-graphite: #2a2c30;
+  --color-accent: #ff6a00;
+  --color-accent-soft: #fff1e6;
+  --color-accent-dark: #e35c00;
+  --color-gold: #ffb800;
+  --color-surface: #f5f5f6;
+
+  --font-sans: 'Barlow', system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', 'Barlow', sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(11,11,12,0.04), 0 8px 24px -12px rgba(11,11,12,0.18);
+  --shadow-lift: 0 18px 40px -18px rgba(11,11,12,0.35);
+}
 
 :root {
   --accent: #ff6a00;
@@ -25,12 +36,12 @@ body {
   font-family: 'Barlow', system-ui, sans-serif;
   background-color: #f5f5f6;
   color: #0b0b0c;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 #root {
   width: 100%;
-  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 img,
@@ -46,15 +57,41 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Universal pointer cursor for all links, buttons, and clickable controls across the entire site */
+a,
 button,
+[role="button"],
+[type="button"],
+[type="submit"],
+[type="reset"],
+summary,
+select,
+input[type="checkbox"],
+input[type="radio"],
+label[for],
+.cursor-pointer {
+  cursor: pointer;
+}
+
+button:disabled,
+[type="button"]:disabled,
+[type="submit"]:disabled,
+[type="reset"]:disabled,
+[aria-disabled="true"],
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
 input,
 select,
 textarea {
   font: inherit;
 }
 
-#root {
-  min-height: 100vh;
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 * {

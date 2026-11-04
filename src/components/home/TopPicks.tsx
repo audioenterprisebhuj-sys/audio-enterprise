@@ -1,75 +1,89 @@
-import React, { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { topPickTabs } from '../../data/products';
-import { getProductsByTag } from '../../services/productService';
-import type { ProductTag } from '../../types';
+import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRightIcon } from 'lucide-react';
+import { useLiveProducts } from '../../services/productService';
+import type { Product } from '../../types';
 import { ProductCard } from '../product/ProductCard';
-import { ProductRail } from '../product/ProductRail';
 import { SectionHeading } from '../ui/SectionHeading';
 
-export function TopPicks() {
-  const [active, setActive] = useState<ProductTag>('new');
-  const products = getProductsByTag(active, 10);
+interface TopPicksProps {
+  maxProducts?: number;
+  productIds?: number[];
+  title?: string;
+  eyebrow?: string;
+  subtitle?: string;
+  viewAllHref?: string;
+  viewAllLabel?: string;
+}
+
+export function TopPicks({
+  maxProducts = 5,
+  productIds,
+  title = 'Top Picks For You',
+  eyebrow = 'Curated Selection',
+  subtitle = 'Handpicked gear our engineers recommend most often across all audio categories.',
+  viewAllHref = '/products',
+  viewAllLabel = 'View All Top Picks'
+}: TopPicksProps) {
+  const liveProducts = useLiveProducts();
+
+  const products: Product[] = useMemo(() => {
+    if (productIds && productIds.length > 0) {
+      const selected = productIds
+        .map((id) => liveProducts.find((p) => p.id === id))
+        .filter(Boolean) as Product[];
+      return selected.slice(0, maxProducts);
+    }
+    return [];
+  }, [productIds, liveProducts, maxProducts]);
+
+  // If no products are selected in the database, do not render phantom products
+  if (products.length === 0) {
+    return null;
+  }
+
+  const gridColsClass =
+    products.length <= 3
+      ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3'
+      : products.length === 4
+      ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
+      : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5';
 
   return (
     <section id="top-picks" aria-labelledby="top-picks-heading" className="bg-white py-12 sm:py-16">
       <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <div id="top-picks-heading">
           <SectionHeading
-            eyebrow="Curated Selection"
-            title="Top Picks For You"
-            subtitle="Handpicked gear our engineers recommend most often, grouped by how you buy."
-            viewAllHref="/products" />
-          
+            eyebrow={eyebrow}
+            title={title}
+            subtitle={subtitle}
+            viewAllHref={viewAllHref}
+            viewAllLabel={viewAllLabel}
+          />
         </div>
 
-        <div
-          role="tablist"
-          aria-label="Product collections"
-          className="no-scrollbar -mx-4 mb-6 flex gap-2 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-          
-          {topPickTabs.map((tab) => {
-            const isActive = tab.id === active;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                onClick={() => setActive(tab.id as ProductTag)}
-                className={`relative whitespace-nowrap rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition-colors ${
-                isActive ? 'text-white' : 'text-zinc-600 hover:text-ink'}`
-                }>
-                
-                {isActive &&
-                <motion.span
-                  layoutId="top-picks-pill"
-                  transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                  className="absolute inset-0 rounded-full bg-ink" />
-
-                }
-                <span className="relative">{tab.label}</span>
-              </button>);
-
-          })}
+        <div className={`grid ${gridColsClass} gap-4 sm:gap-6 mt-4 sm:mt-6`}>
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.25 }}>
-            
-            <ProductRail ariaLabel="Top picks">
-              {products.map((product) =>
-              <ProductCard key={product.id} product={product} />
-              )}
-            </ProductRail>
-          </motion.div>
-        </AnimatePresence>
+        {/* Prominent View More Button */}
+        {viewAllHref && products.length > 0 && (
+          <div className="mt-8 flex justify-center">
+            <Link
+              to={viewAllHref}
+              className="group inline-flex items-center gap-2 rounded-lg bg-ink px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200 cursor-pointer shadow-sm hover:bg-accent hover:shadow-md"
+            >
+              <span>{viewAllLabel || 'View All Top Picks'}</span>
+              <ArrowRightIcon
+                size={16}
+                className="transition-transform group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
+        )}
       </div>
-    </section>);
-
+    </section>
+  );
 }

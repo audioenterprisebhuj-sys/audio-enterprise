@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaWhatsapp } from 'react-icons/fa';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 import { generateGeneralInquiry } from '../../utils/whatsapp';
 
 export function FloatingWhatsApp() {
@@ -16,18 +16,18 @@ export function FloatingWhatsApp() {
       transition={{ delay: 0.6, duration: 0.3 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="fixed bottom-5 right-4 z-[60] flex items-center gap-2 rounded-full bg-[#25D366] py-3.5 pl-4 pr-4 text-white shadow-lift transition-all hover:bg-[#1faa54] hover:scale-105 sm:bottom-7 sm:right-6"
-      aria-label="Chat with us on WhatsApp">
-      
-      <FaWhatsapp size={22} />
+      className="fixed bottom-5 right-4 z-[60] flex items-center gap-2 rounded-full bg-[#25D366] p-3 text-white shadow-lift transition-all hover:bg-[#1faa54] hover:scale-105 sm:bottom-7 sm:right-6"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <WhatsAppIcon size={26} className="text-white" />
       <motion.span
         initial={false}
         animate={{ width: hovered ? 'auto' : 0, opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.2 }}
-        className="overflow-hidden whitespace-nowrap text-xs font-bold uppercase tracking-wider">
-        
+        className="overflow-hidden whitespace-nowrap text-xs font-bold uppercase tracking-wider pr-1"
+      >
         Chat With Us
       </motion.span>
-    </motion.a>);
-
+    </motion.a>
+  );
 }

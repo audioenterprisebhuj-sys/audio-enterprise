@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, HeadphonesIcon } from 'lucide-react';
-import { getMegaMenuCategories } from '../../services/categoryService';
+import { useLiveCategories } from '../../services/categoryService';
 import { generateGeneralInquiry } from '../../utils/whatsapp';
 
 interface MegaMenuProps {
@@ -10,7 +10,7 @@ interface MegaMenuProps {
 }
 
 export function MegaMenu({ onNavigate }: MegaMenuProps) {
-  const categories = getMegaMenuCategories();
+  const categories = useLiveCategories();
 
   return (
     <motion.div
@@ -18,8 +18,8 @@ export function MegaMenu({ onNavigate }: MegaMenuProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }}
       transition={{ duration: 0.22, ease: 'easeOut' }}
-      className="absolute inset-x-0 top-full z-40 hidden border-t border-zinc-200 bg-white shadow-lift lg:block">
-      
+      className="absolute inset-x-0 top-full z-40 hidden border-t border-zinc-200 bg-white shadow-lift lg:block"
+    >
       <div className="mx-auto w-full max-w-[1320px] px-6 py-7 lg:px-8">
         <div className="grid grid-cols-[1fr_260px] gap-8">
           <div>
@@ -30,29 +30,33 @@ export function MegaMenu({ onNavigate }: MegaMenuProps) {
               <Link
                 to="/products"
                 onClick={onNavigate}
-                className="group inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-accent">
-                
+                className="group inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-accent"
+              >
                 All Products
                 <ArrowRightIcon
                   size={14}
-                  className="transition-transform group-hover:translate-x-0.5" />
-                
+                  className="transition-transform group-hover:translate-x-0.5"
+                />
               </Link>
             </div>
             <ul className="grid grid-cols-3 gap-x-6 gap-y-1 xl:grid-cols-4">
-              {categories.map((category) =>
-              <li key={category.id}>
+              {categories.map((category) => (
+                <li key={category.id}>
                   <Link
-                  to={`/category/${category.slug}`}
-                  onClick={onNavigate}
-                  className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-surface">
-                  
+                    to={`/category/${category.slug}`}
+                    onClick={onNavigate}
+                    className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-surface"
+                  >
                     <img
-                    src={category.image}
-                    alt=""
-                    loading="lazy"
-                    className="h-11 w-11 shrink-0 rounded-md border border-zinc-200 bg-zinc-100 object-cover transition-transform duration-300 group-hover:scale-105" />
-                  
+                      src={category.image || '/amplifiers1.webp'}
+                      alt={category.name}
+                      loading="lazy"
+                      className="h-11 w-11 shrink-0 rounded-md border border-zinc-200 bg-zinc-100 object-cover transition-transform duration-300 group-hover:scale-105"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = '/amplifiers1.webp';
+                      }}
+                    />
+
                     <span className="min-w-0">
                       <span className="block truncate text-[13px] font-bold text-ink group-hover:text-accent">
                         {category.name}
@@ -63,7 +67,7 @@ export function MegaMenu({ onNavigate }: MegaMenuProps) {
                     </span>
                   </Link>
                 </li>
-              )}
+              ))}
             </ul>
           </div>
 
@@ -82,13 +86,13 @@ export function MegaMenu({ onNavigate }: MegaMenuProps) {
               href={generateGeneralInquiry()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-ink">
-              
+              className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-ink"
+            >
               Talk to an Expert
             </a>
           </aside>
         </div>
       </div>
-    </motion.div>);
-
+    </motion.div>
+  );
 }
