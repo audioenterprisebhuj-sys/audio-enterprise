@@ -183,11 +183,11 @@ export function ProductDetail() {
                   Send Inquiry on WhatsApp
                 </a>
                 <a
-                  href="#request-quote"
+                  href="#inquiry"
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-ink px-6 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-accent sm:text-sm"
                 >
                   <FileTextIcon size={16} />
-                  Request a Quote
+                  Inquire
                 </a>
                 <a
                   href={SITE.phoneHref}
@@ -232,8 +232,8 @@ export function ProductDetail() {
               </dl>
             </section>
 
-            <div id="request-quote" className="mt-5 scroll-mt-24">
-              <InquiryForm product={product} title="Request a Quote" />
+            <div id="inquiry" className="mt-5 scroll-mt-24">
+              <InquiryForm product={product} title="Product Inquiry" />
             </div>
           </div>
         </div>
