@@ -26,7 +26,6 @@ export interface Product {
   images: string[];
   description: string;
   specifications: Record<string, string>;
-  availability: 'In Stock' | 'Limited Stock' | 'Made To Order';
   tags: (ProductTag | string)[];
 }
 

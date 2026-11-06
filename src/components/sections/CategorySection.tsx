@@ -17,7 +17,6 @@ interface CategorySectionProps {
   variant?: 'default' | 'spec';
   specKeys?: string[];
   ctaLabel?: string;
-  showAvailability?: boolean;
   viewAllHref?: string;
   viewAllLabel?: string;
   dark?: boolean;
@@ -35,7 +34,6 @@ export function CategorySection({
   variant = 'default',
   specKeys,
   ctaLabel,
-  showAvailability,
   viewAllHref,
   viewAllLabel,
   dark = false,
@@ -103,7 +101,7 @@ export function CategorySection({
 
             <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-3 py-0.5 text-[11px] font-extrabold uppercase tracking-wider text-accent mb-2">
               <ClockIcon size={12} />
-              Stock Arriving Soon
+              New Additions Arriving Soon
             </span>
 
             <h3 className={`font-display text-2xl font-extrabold uppercase tracking-tight ${dark ? 'text-white' : 'text-ink'}`}>
@@ -115,7 +113,7 @@ export function CategorySection({
             </p>
 
             <p className="mt-1 max-w-sm text-xs text-zinc-400">
-              Need items in this category immediately? Message our sound technicians on WhatsApp for direct stock sourcing.
+              Need items in this category immediately? Message our sound technicians on WhatsApp for direct warehouse sourcing.
             </p>
 
             <a
@@ -137,7 +135,6 @@ export function CategorySection({
                 variant={variant}
                 specKeys={specKeys}
                 ctaLabel={ctaLabel}
-                showAvailability={showAvailability}
               />
             ))}
           </div>

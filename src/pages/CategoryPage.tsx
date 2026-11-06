@@ -36,17 +36,8 @@ export function CategoryPage() {
 
   return (
     <div className="bg-surface">
-      <header className="relative isolate overflow-hidden bg-ink">
-        <img
-          src={category.image || '/amplifiers1.webp'}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-25"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = '/amplifiers1.webp';
-          }}
-        />
-        
-        <div className="relative mx-auto w-full max-w-[1320px] px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      <header className="relative isolate overflow-hidden bg-gradient-to-br from-ink via-zinc-950 to-zinc-900 border-b border-zinc-800">
+        <div className="relative mx-auto w-full max-w-[1320px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-1.5 text-xs font-semibold text-white/60">
               <li>
@@ -103,7 +94,7 @@ export function CategoryPage() {
             </h2>
 
             <p className="mt-3 max-w-lg text-sm sm:text-base leading-relaxed text-zinc-600">
-              We are currently testing and curating premium <strong>{category.name}</strong> for our verified catalog. High-performance models and fresh stock are arriving very soon!
+              We are currently testing and curating premium <strong>{category.name}</strong> for our verified catalog. High-performance models and new additions are arriving very soon!
             </p>
 
             <div className="mt-4 rounded-xl border border-zinc-100 bg-zinc-50 p-4 text-xs sm:text-sm text-zinc-600 max-w-md">
@@ -139,7 +130,6 @@ export function CategoryPage() {
                 key={product.id}
                 product={product}
                 ctaLabel="Send Inquiry"
-                showAvailability
               />
             ))}
           </div>

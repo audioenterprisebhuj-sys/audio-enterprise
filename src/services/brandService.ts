@@ -17,7 +17,11 @@ function getInitialBrands(): Brand[] {
       if (cached) {
         const parsed = JSON.parse(cached);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          const cleaned = parsed.filter((b) => b.name?.toLowerCase() !== 'soundforge');
+          if (cleaned.length !== parsed.length) {
+            localStorage.setItem(BRANDS_CACHE_KEY, JSON.stringify(cleaned));
+          }
+          return cleaned;
         }
       }
     } catch {

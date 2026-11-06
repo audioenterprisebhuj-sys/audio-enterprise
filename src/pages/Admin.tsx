@@ -7,6 +7,7 @@ import {
   ArrowUpIcon,
   CheckCircle2Icon,
   CheckIcon,
+  ChevronDownIcon,
   Edit2Icon,
   ExternalLinkIcon,
   EyeIcon,
@@ -23,7 +24,6 @@ import {
   SearchIcon,
   SlidersHorizontalIcon,
   SparklesIcon,
-  TagIcon,
   Trash2Icon,
   UploadCloudIcon,
   XIcon
@@ -67,16 +67,6 @@ import { formatPrice } from '../utils/format';
 
 const AUTH_STORAGE_KEY = 'ae_admin_auth_token';
 
-const PRESET_TAGS = [
-  { id: 'new', label: '⭐ New Arrival' },
-  { id: 'sale', label: '🔥 Sale / Offer' },
-  { id: 'bestseller', label: '🏆 Best Seller' },
-  { id: 'popular', label: '⚡ Popular' },
-  { id: 'featured', label: '✨ Featured' },
-  { id: 'professional', label: '🎙️ Professional' },
-  { id: 'budget', label: '💰 Budget Friendly' }
-];
-
 function checkInitialAuth(): boolean {
   if (typeof window === 'undefined') return false;
   try {
@@ -110,7 +100,7 @@ export function Admin() {
     }
     return '';
   });
-  const [stockFilter, setStockFilter] = useState('');
+  const [brandFilter, setBrandFilter] = useState('');
 
   // Admin active view tab
   const [activeTab, setActiveTab] = useState<'products' | 'homepage' | 'categories' | 'brands'>('products');
@@ -120,6 +110,7 @@ export function Admin() {
   const [homeSections, setHomeSections] = useState<HomeSection[]>(() => liveHomeSections);
   const [savingHomeSections, setSavingHomeSections] = useState(false);
   const [pickerSectionId, setPickerSectionId] = useState<string | null>(null);
+  const [expandedSectionIds, setExpandedSectionIds] = useState<string[]>([]);
   const [pickerSearch, setPickerSearch] = useState('');
   const [pickerCategory, setPickerCategory] = useState('');
 
@@ -157,6 +148,7 @@ export function Admin() {
     description: '',
     image: '/amplifiers1.webp'
   });
+  const [isSlugManuallyEdited, setIsSlugManuallyEdited] = useState(false);
   const [uploadingCategoryImage, setUploadingCategoryImage] = useState(false);
   const [categoryUploadError, setCategoryUploadError] = useState<string | null>(null);
   const [categoryUploadSuccess, setCategoryUploadSuccess] = useState<string | null>(null);
@@ -204,10 +196,7 @@ export function Admin() {
   const liveBrands = useLiveBrands();
   const [isCreatingBrand, setIsCreatingBrand] = useState(false);
   const [editingBrand, setEditingBrand] = useState<Brand | null>(null);
-  const [brandFormData, setBrandFormData] = useState({ name: '', description: '' });
-
-  // Custom Tag input state for Product modal
-  const [customTagInput, setCustomTagInput] = useState('');
+  const [brandFormData, setBrandFormData] = useState({ name: '', description: '', logo: '' });
 
   // Combined list of all categories: from dynamic categories + existing products + active filter
   const allCategoriesList = useMemo(() => {
@@ -243,7 +232,6 @@ export function Admin() {
     images: ['/amplifiers1.webp'],
     description: '',
     specifications: { Power: '1000W', Channels: '2' },
-    availability: 'In Stock',
     tags: ['professional']
   });
 
@@ -262,6 +250,7 @@ export function Admin() {
     });
     setCategoryUploadError(null);
     setCategoryUploadSuccess(null);
+    setIsSlugManuallyEdited(true);
   };
 
   const handleSaveCategory = async (e: React.FormEvent) => {
@@ -269,12 +258,18 @@ export function Admin() {
     if (!categoryFormData.name.trim()) return;
     setActionLoading(true);
     const catName = categoryFormData.name.trim();
+    const finalSlug = (categoryFormData.slug?.trim() || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''));
+    const payload = {
+      ...categoryFormData,
+      name: catName,
+      slug: finalSlug
+    };
     const wasEditing = editingCategory;
     setIsCreatingCategory(false);
     setEditingCategory(null);
     try {
       if (wasEditing) {
-        const updated = await updateCategoryApi(wasEditing.id, categoryFormData);
+        const updated = await updateCategoryApi(wasEditing.id, payload);
         showPopupToast({
           type: 'success',
           title: 'Category Updated',
@@ -282,7 +277,7 @@ export function Admin() {
         });
         handleCategoryFilterChange(updated.name);
       } else {
-        const newCat = await createCategoryApi(categoryFormData);
+        const newCat = await createCategoryApi(payload);
         showPopupToast({
           type: 'success',
           title: 'Category Created',
@@ -335,7 +330,7 @@ export function Admin() {
 
   // Brand Handlers
   const handleOpenCreateBrand = () => {
-    setBrandFormData({ name: '', description: '' });
+    setBrandFormData({ name: '', description: '', logo: '' });
     setIsCreatingBrand(true);
   };
 
@@ -343,7 +338,8 @@ export function Admin() {
     setEditingBrand(brand);
     setBrandFormData({
       name: brand.name,
-      description: brand.description || ''
+      description: brand.description || '',
+      logo: brand.logo || ''
     });
   };
 
@@ -408,34 +404,6 @@ export function Admin() {
     } finally {
       setActionLoading(false);
     }
-  };
-
-  // Product Tag Handlers
-  const handleTogglePresetTag = (tagId: string) => {
-    setFormData((prev) => {
-      const current = Array.isArray(prev.tags) ? [...prev.tags] : [];
-      const has = current.includes(tagId);
-      const next = has ? current.filter((t) => t !== tagId) : [...current, tagId];
-      return { ...prev, tags: next };
-    });
-  };
-
-  const handleAddCustomTag = () => {
-    const trimmed = customTagInput.trim().toLowerCase();
-    if (!trimmed) return;
-    setFormData((prev) => {
-      const current = Array.isArray(prev.tags) ? [...prev.tags] : [];
-      if (current.includes(trimmed)) return prev;
-      return { ...prev, tags: [...current, trimmed] };
-    });
-    setCustomTagInput('');
-  };
-
-  const handleRemoveTag = (tagToRemove: string) => {
-    setFormData((prev) => {
-      const current = Array.isArray(prev.tags) ? [...prev.tags] : [];
-      return { ...prev, tags: current.filter((t) => t !== tagToRemove) };
-    });
   };
 
   // Home Page Section Handlers
@@ -696,6 +664,7 @@ export function Admin() {
         // storage fallback
       }
       setIsAuthenticated(true);
+      window.dispatchEvent(new Event('admin_auth_changed'));
       setLoggingIn(false);
       return;
     }
@@ -717,6 +686,7 @@ export function Admin() {
           // ignore
         }
         setIsAuthenticated(true);
+        window.dispatchEvent(new Event('admin_auth_changed'));
       } else {
         setLoginError(data.error || 'Incorrect admin password');
       }
@@ -730,6 +700,7 @@ export function Admin() {
           // ignore
         }
         setIsAuthenticated(true);
+        window.dispatchEvent(new Event('admin_auth_changed'));
       } else {
         setLoginError('Incorrect password. Please enter the valid administrator password.');
       }
@@ -747,7 +718,20 @@ export function Admin() {
     }
     setIsAuthenticated(false);
     setPassword('');
+    window.dispatchEvent(new Event('admin_auth_changed'));
   };
+
+  useEffect(() => {
+    const handleAuthSync = () => {
+      setIsAuthenticated(checkInitialAuth());
+    };
+    window.addEventListener('admin_auth_changed', handleAuthSync);
+    window.addEventListener('storage', handleAuthSync);
+    return () => {
+      window.removeEventListener('admin_auth_changed', handleAuthSync);
+      window.removeEventListener('storage', handleAuthSync);
+    };
+  }, []);
 
   const openCreateModal = () => {
     const defaultImg = availableImages[0] || '/amplifiers1.webp';
@@ -767,7 +751,6 @@ export function Admin() {
       images: [defaultImg],
       description: 'Engineered for high performance and live tour durability.',
       specifications: { Power: '1000W', Channels: '2' },
-      availability: 'In Stock',
       tags: ['new', 'professional']
     });
     setSpecRows([
@@ -777,7 +760,6 @@ export function Admin() {
     setUploadError(null);
     setUploadSuccess(null);
     setCustomImageUrl('');
-    setCustomTagInput('');
     setIsCreating(true);
   };
 
@@ -797,7 +779,6 @@ export function Admin() {
     setUploadError(null);
     setUploadSuccess(null);
     setCustomImageUrl('');
-    setCustomTagInput('');
   };
 
   // Upload handler with strict .webp validation
@@ -1127,33 +1108,19 @@ export function Admin() {
     }
   };
 
-  const handleQuickAvailabilityToggle = async (p: Product) => {
-    const cycle: Record<Product['availability'], Product['availability']> = {
-      'In Stock': 'Limited Stock',
-      'Limited Stock': 'Made To Order',
-      'Made To Order': 'In Stock'
-    };
-    const nextAvail = cycle[p.availability];
-    try {
-      await updateProductApi(p.id, { availability: nextAvail });
-    } catch {
-      // error handled in api
-    }
-  };
-
   // Filter products
   const filteredProducts = products.filter(p => {
     const q = search.toLowerCase();
     const matchesSearch = !q || [p.name, p.model, p.brand, p.category].join(' ').toLowerCase().includes(q);
     const matchesCat = !categoryFilter || p.category === categoryFilter;
-    const matchesStock = !stockFilter || p.availability === stockFilter;
-    return matchesSearch && matchesCat && matchesStock;
+    const matchesBrand = !brandFilter || p.brand === brandFilter;
+    return matchesSearch && matchesCat && matchesBrand;
   });
 
   // If not logged in, render the secure Login Screen
   if (!isAuthenticated) {
     return (
-      <div className="flex min-h-[80vh] items-center justify-center bg-surface px-4 py-16">
+      <div className="flex flex-1 h-full min-h-[80vh] items-center justify-center bg-surface px-4 py-16 overflow-y-auto">
         <div className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-8 shadow-card">
           <div className="text-center">
             <img src={IMG.logo} alt={SITE.brand} className="mx-auto h-12 w-auto object-contain" />
@@ -1225,7 +1192,7 @@ export function Admin() {
 
   // Authenticated Admin Dashboard
   return (
-    <div className="bg-surface min-h-screen pb-20">
+    <div className="flex-1 flex flex-col h-full overflow-hidden bg-surface">
       {/* High-visibility Result Popup Toast Notification */}
       {toast && (
         <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[250] flex w-[92%] max-w-lg items-start gap-3.5 rounded-2xl border border-zinc-200/90 bg-white p-4 shadow-[0_25px_60px_rgba(0,0,0,0.35)] backdrop-blur-md transition-all">
@@ -1252,140 +1219,143 @@ export function Admin() {
         </div>
       )}
 
-      {/* Admin Hero Section */}
-      <div className="relative overflow-hidden bg-linear-to-r from-ink via-[#17181a] to-ink text-white border-b border-zinc-800">
-        <div className="mx-auto flex w-full max-w-330 flex-col gap-5 px-4 py-6 sm:px-6 sm:py-7 lg:px-8 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent mb-3">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Atlas Connected: <strong className="text-white">jbl_audio_db</strong></span>
+      {/* Main Admin Layout: Side Navbar + Content Area */}
+      <div className="flex-1 flex flex-col lg:flex-row overflow-hidden w-full bg-surface">
+        {/* Admin Left Side Navbar (Fixed in place, non-scrolling) */}
+        <aside className="w-full lg:w-72 shrink-0 border-b lg:border-b-0 lg:border-r border-zinc-200 bg-white p-4 lg:p-6 lg:h-full lg:overflow-y-auto flex flex-col justify-between">
+          <div className="space-y-6">
+            <div className="flex items-center justify-between pb-4 border-b border-zinc-100">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+                  Admin Control Center
+                </span>
+                <h2 className="font-display text-base font-extrabold uppercase tracking-tight text-ink">
+                  Catalogue Panel
+                </h2>
+              </div>
+              <div className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Atlas Live</span>
+              </div>
             </div>
-            <h1 className="font-display text-3xl sm:text-4xl font-extrabold uppercase tracking-tight text-white">
-              Product Management
-            </h1>
-            <p className="mt-2 text-sm text-zinc-400 leading-relaxed">
-              Manage audio catalogue items, pricing, technical specifications, and multi-image .webp product galleries in real-time.
-            </p>
+
+            {/* 4 Tabs in Vertical Side Navbar */}
+            <nav className="space-y-1.5" aria-label="Admin Navigation Tabs">
+              <button
+                type="button"
+                onClick={() => setActiveTab('products')}
+                className={`flex w-full items-center justify-between rounded-xl px-3.5 py-3 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  activeTab === 'products'
+                    ? 'bg-accent text-white shadow-md shadow-accent/20'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-ink'
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <LayoutGridIcon size={17} />
+                  <span>Products Catalog</span>
+                </div>
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                    activeTab === 'products'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-zinc-100 text-zinc-600'
+                  }`}
+                >
+                  {products.length}
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('homepage')}
+                className={`flex w-full items-center justify-between rounded-xl px-3.5 py-3 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  activeTab === 'homepage'
+                    ? 'bg-accent text-white shadow-md shadow-accent/20'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-ink'
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <SlidersHorizontalIcon size={17} />
+                  <span className="text-left">Home Page Products</span>
+                </div>
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                    activeTab === 'homepage'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-accent/15 text-accent'
+                  }`}
+                >
+                  {homeSections.filter((s) => s.enabled !== false).length} Active
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('categories')}
+                className={`flex w-full items-center justify-between rounded-xl px-3.5 py-3 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  activeTab === 'categories'
+                    ? 'bg-accent text-white shadow-md shadow-accent/20'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-ink'
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <FolderPlusIcon size={17} />
+                  <span>Categories</span>
+                </div>
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                    activeTab === 'categories'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-zinc-100 text-zinc-600'
+                  }`}
+                >
+                  {allCategoriesList.length}
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('brands')}
+                className={`flex w-full items-center justify-between rounded-xl px-3.5 py-3 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
+                  activeTab === 'brands'
+                    ? 'bg-accent text-white shadow-md shadow-accent/20'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-ink'
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <SparklesIcon size={17} />
+                  <span>Brands</span>
+                </div>
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
+                    activeTab === 'brands'
+                      ? 'bg-white/20 text-white'
+                      : 'bg-zinc-100 text-zinc-600'
+                  }`}
+                >
+                  {allBrandsList.length}
+                </span>
+              </button>
+            </nav>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+          {/* Sidebar Footer Controls */}
+          <div className="pt-6 border-t border-zinc-100 space-y-2 mt-6">
             <button
               type="button"
               onClick={handleSeedDatabase}
               disabled={actionLoading}
-              className="inline-flex h-10 items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800/80 px-4 text-xs font-bold uppercase tracking-wider text-zinc-200 hover:border-white hover:bg-zinc-700 hover:text-white transition-all shadow-sm"
+              className="flex w-full items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-zinc-50 py-2.5 px-3 text-xs font-bold uppercase tracking-wider text-zinc-600 hover:border-zinc-300 hover:bg-zinc-100 hover:text-ink transition-all cursor-pointer"
             >
-              <RefreshCwIcon size={14} className={actionLoading ? 'animate-spin' : ''} />
-              Sync / Seed Catalog
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setCategoryFormData({
-                  name: '',
-                  slug: '',
-                  description: '',
-                  image: availableImages[0] || '/amplifiers1.webp'
-                });
-                setCategoryUploadError(null);
-                setCategoryUploadSuccess(null);
-                setIsCreatingCategory(true);
-              }}
-              className="inline-flex h-10 items-center gap-2 rounded-lg border border-accent/40 bg-accent/15 px-4 text-xs font-bold uppercase tracking-wider text-accent hover:bg-accent hover:text-white transition-all shadow-sm cursor-pointer"
-            >
-              <FolderPlusIcon size={15} />
-              + Add Category
-            </button>
-            <button
-              type="button"
-              onClick={openCreateModal}
-              className="inline-flex h-10 items-center gap-2 rounded-lg bg-accent px-5 text-xs font-bold uppercase tracking-wider text-white hover:bg-accent-dark transition-all shadow-md shadow-accent/20 cursor-pointer"
-            >
-              <PlusIcon size={16} />
-              + Add Product
-            </button>
-            <button
-              type="button"
-              onClick={handleLogout}
-              className="inline-flex h-10 items-center gap-2 rounded-lg border border-red-500/30 bg-red-500/10 px-4 text-xs font-bold uppercase tracking-wider text-red-300 hover:bg-red-500 hover:text-white transition-all"
-            >
-              <LogOutIcon size={14} />
-              Logout
+              <RefreshCwIcon size={13} className={actionLoading ? 'animate-spin' : ''} />
+              <span>Sync / Seed Catalog</span>
             </button>
           </div>
-        </div>
-      </div>
+        </aside>
 
-      {/* Admin Tabs Navigation Bar */}
-      <div className="border-b border-zinc-200 bg-white sticky top-0 z-20 shadow-xs">
-        <div className="mx-auto flex w-full max-w-330 gap-2 px-4 sm:px-6 lg:px-8">
-          <button
-            type="button"
-            onClick={() => setActiveTab('products')}
-            className={`flex items-center gap-2 border-b-2 py-4 px-3 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
-              activeTab === 'products'
-                ? 'border-accent text-accent'
-                : 'border-transparent text-zinc-500 hover:text-ink'
-            }`}
-          >
-            <LayoutGridIcon size={16} />
-            <span>Products Catalog</span>
-            <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] text-zinc-600 font-semibold">
-              {products.length}
-            </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab('homepage')}
-            className={`flex items-center gap-2 border-b-2 py-4 px-3 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
-              activeTab === 'homepage'
-                ? 'border-accent text-accent'
-                : 'border-transparent text-zinc-500 hover:text-ink'
-            }`}
-          >
-            <SlidersHorizontalIcon size={16} />
-            <span>Home Page Product Management</span>
-            <span className="rounded-full bg-accent/15 px-2 py-0.5 text-[10px] text-accent font-bold">
-              {homeSections.filter((s) => s.enabled !== false).length} Active
-            </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab('categories')}
-            className={`flex items-center gap-2 border-b-2 py-4 px-3 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
-              activeTab === 'categories'
-                ? 'border-accent text-accent'
-                : 'border-transparent text-zinc-500 hover:text-ink'
-            }`}
-          >
-            <FolderPlusIcon size={16} />
-            <span>Categories</span>
-            <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] text-zinc-600 font-semibold">
-              {allCategoriesList.length}
-            </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab('brands')}
-            className={`flex items-center gap-2 border-b-2 py-4 px-3 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
-              activeTab === 'brands'
-                ? 'border-accent text-accent'
-                : 'border-transparent text-zinc-500 hover:text-ink'
-            }`}
-          >
-            <SparklesIcon size={16} />
-            <span>Brands</span>
-            <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] text-zinc-600 font-semibold">
-              {allBrandsList.length}
-            </span>
-          </button>
-        </div>
-      </div>
-
-      <div className="mx-auto w-full max-w-330 px-4 py-8 sm:px-6 lg:px-8">
+        {/* Right Main Content Area (Scrolls independently while side navbar stays fixed) */}
+        <main className="flex-1 min-w-0 h-full overflow-y-auto p-4 sm:p-6 lg:p-8">
+          <div className="mx-auto w-full max-w-[1500px] pb-16">
         {/* Toast / Alert Message */}
         {actionMessage && (
           <div
@@ -1410,29 +1380,29 @@ export function Admin() {
           <>
             {/* Stats Row */}
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 mb-8">
-          <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">Total Products</span>
-            <div className="mt-1 font-display text-3xl font-extrabold text-ink">{products.length}</div>
-          </div>
-          <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">In Stock</span>
-            <div className="mt-1 font-display text-3xl font-extrabold text-emerald-600">
-              {products.filter(p => p.availability === 'In Stock').length}
+              <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">Total Products</span>
+                <div className="mt-1 font-display text-3xl font-extrabold text-ink">{products.length}</div>
+              </div>
+              <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">Categories</span>
+                <div className="mt-1 font-display text-3xl font-extrabold text-ink">
+                  {getCategoryNames().length}
+                </div>
+              </div>
+              <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">Brands</span>
+                <div className="mt-1 font-display text-3xl font-extrabold text-accent">
+                  {getBrandNames().length}
+                </div>
+              </div>
+              <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">Featured Items</span>
+                <div className="mt-1 font-display text-3xl font-extrabold text-emerald-600">
+                  {products.filter(p => Boolean(p.badge)).length}
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">Categories</span>
-            <div className="mt-1 font-display text-3xl font-extrabold text-ink">
-              {getCategoryNames().length}
-            </div>
-          </div>
-          <div className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400">Brands</span>
-            <div className="mt-1 font-display text-3xl font-extrabold text-accent">
-              {getBrandNames().length}
-            </div>
-          </div>
-        </div>
 
         {/* Filters and Controls */}
         <div className="mb-6 flex flex-col gap-3 rounded-xl border border-zinc-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center">
@@ -1464,29 +1434,43 @@ export function Admin() {
             </select>
 
             <select
-              value={stockFilter}
-              onChange={(e) => setStockFilter(e.target.value)}
+              value={brandFilter}
+              onChange={(e) => setBrandFilter(e.target.value)}
               className="h-11 rounded-md border border-zinc-300 bg-white px-3 text-xs font-semibold text-ink outline-none focus:border-accent cursor-pointer"
             >
-              <option value="">All Stock Statuses</option>
-              <option value="In Stock">In Stock</option>
-              <option value="Limited Stock">Limited Stock</option>
-              <option value="Made To Order">Made To Order</option>
+              <option value="">All Brands ({allBrandsList.length})</option>
+              {brandFilter && !allBrandsList.includes(brandFilter) && (
+                <option value={brandFilter}>{brandFilter}</option>
+              )}
+              {allBrandsList.map((b) => (
+                <option key={b} value={b}>
+                  {b}
+                </option>
+              ))}
             </select>
 
-            {(search || categoryFilter || stockFilter) && (
+            {(search || categoryFilter || brandFilter) && (
               <button
                 type="button"
                 onClick={() => {
                   setSearch('');
                   handleCategoryFilterChange('');
-                  setStockFilter('');
+                  setBrandFilter('');
                 }}
                 className="h-11 rounded-md border border-zinc-300 px-3 text-xs font-bold uppercase text-zinc-500 hover:text-ink cursor-pointer"
               >
                 Clear
               </button>
             )}
+
+            <button
+              type="button"
+              onClick={openCreateModal}
+              className="inline-flex h-11 items-center gap-2 rounded-lg bg-accent px-4 text-xs font-bold uppercase tracking-wider text-white hover:bg-accent-dark transition-all shadow-sm cursor-pointer shrink-0"
+            >
+              <PlusIcon size={15} />
+              <span>+ Add Product</span>
+            </button>
           </div>
         </div>
 
@@ -1500,7 +1484,6 @@ export function Admin() {
                   <th className="py-3 px-4">Category</th>
                   <th className="py-3 px-4">Brand</th>
                   <th className="py-3 px-4">Price</th>
-                  <th className="py-3 px-4">Stock Status (Click to toggle)</th>
                   <th className="py-3 px-4">Badge</th>
                   <th className="py-3 px-4 text-right">Actions</th>
                 </tr>
@@ -1508,7 +1491,7 @@ export function Admin() {
               <tbody className="divide-y divide-zinc-100">
                 {filteredProducts.length === 0 ? (
                   <tr>
-                    <td colSpan={7} className="py-12 text-center text-sm text-zinc-400">
+                    <td colSpan={6} className="py-12 text-center text-sm text-zinc-400">
                       No products found matching filters.
                     </td>
                   </tr>
@@ -1542,25 +1525,6 @@ export function Admin() {
                             {formatPrice(p.oldPrice)}
                           </span>
                         )}
-                      </td>
-                      <td className="py-3 px-4">
-                        <button
-                          type="button"
-                          onClick={() => handleQuickAvailabilityToggle(p)}
-                          title="Click to cycle status"
-                          className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-wider transition-transform active:scale-95 ${
-                            p.availability === 'In Stock'
-                              ? 'bg-emerald-100 text-emerald-800'
-                              : p.availability === 'Limited Stock'
-                              ? 'bg-amber-100 text-amber-800'
-                              : 'bg-zinc-100 text-zinc-700'
-                          }`}
-                        >
-                          <span className={`h-1.5 w-1.5 rounded-full ${
-                            p.availability === 'In Stock' ? 'bg-emerald-600' : p.availability === 'Limited Stock' ? 'bg-amber-600' : 'bg-zinc-500'
-                          }`} />
-                          {p.availability}
-                        </button>
                       </td>
                       <td className="py-3 px-4">
                         {p.badge ? (
@@ -1623,6 +1587,21 @@ export function Admin() {
           <div className="flex flex-wrap items-center gap-2.5 shrink-0">
             <button
               type="button"
+              onClick={() => {
+                if (expandedSectionIds.length === homeSections.length) {
+                  setExpandedSectionIds([]);
+                } else {
+                  setExpandedSectionIds(homeSections.map((s) => s.id));
+                }
+              }}
+              className="inline-flex h-11 items-center gap-2 rounded-lg border border-zinc-300 bg-white px-3.5 text-xs font-bold uppercase tracking-wider text-zinc-700 hover:border-zinc-400 hover:text-ink transition-colors cursor-pointer"
+            >
+              <SlidersHorizontalIcon size={14} />
+              {expandedSectionIds.length === homeSections.length ? 'Collapse All' : 'Expand All'}
+            </button>
+
+            <button
+              type="button"
               onClick={handleResetHomeSections}
               disabled={savingHomeSections}
               className="inline-flex h-11 items-center gap-2 rounded-lg border border-zinc-300 bg-white px-4 text-xs font-bold uppercase tracking-wider text-zinc-600 hover:border-zinc-400 hover:text-ink transition-colors cursor-pointer disabled:opacity-50"
@@ -1655,24 +1634,35 @@ export function Admin() {
                   : products.filter((p) => p.category.toLowerCase() === (section.filterValue || section.title).toLowerCase()).slice(0, section.maxProducts || 5)
                 );
 
+            const isExpanded = expandedSectionIds.includes(section.id);
+
             return (
               <div
                 key={section.id}
-                className={`rounded-2xl border transition-all ${
+                className={`rounded-2xl border transition-all overflow-hidden ${
                   section.enabled !== false
                     ? 'border-zinc-200 bg-white shadow-sm'
-                    : 'border-zinc-200/60 bg-zinc-50/70 opacity-75'
+                    : 'border-zinc-200/60 bg-zinc-50/70 opacity-80'
                 }`}
               >
-                {/* Section Header */}
-                <div className="flex flex-col gap-3 border-b border-zinc-100 p-5 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-100 font-display text-xs font-black text-zinc-700">
+                {/* Section Header (Clickable Dropdown Toggle) */}
+                <div
+                  onClick={() => {
+                    setExpandedSectionIds((prev) =>
+                      prev.includes(section.id) ? prev.filter((id) => id !== section.id) : [...prev, section.id]
+                    );
+                  }}
+                  className={`flex flex-col gap-3 p-4 sm:p-5 sm:flex-row sm:items-center sm:justify-between cursor-pointer select-none transition-colors ${
+                    isExpanded ? 'bg-zinc-50/80 border-b border-zinc-200' : 'hover:bg-zinc-50/80'
+                  }`}
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-zinc-100 font-display text-xs font-black text-zinc-700">
                       #{index + 1}
                     </span>
-                    <div>
-                      <div className="flex items-center gap-2.5">
-                        <h3 className="font-display text-lg font-extrabold uppercase tracking-tight text-ink">
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="font-display text-base sm:text-lg font-extrabold uppercase tracking-tight text-ink">
                           {section.title}
                         </h3>
                         <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-zinc-600">
@@ -1680,19 +1670,32 @@ export function Admin() {
                         </span>
                         {section.dark && (
                           <span className="rounded-full bg-ink px-2 py-0.5 text-[10px] font-bold text-white">
-                            Dark Theme
+                            Dark
                           </span>
                         )}
+                        <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-2.5 py-0.5 text-[10px] font-bold text-accent">
+                          {isCustomSelected ? (
+                            <>
+                              <SparklesIcon size={11} />
+                              {sectionProducts.length} Handpicked
+                            </>
+                          ) : (
+                            <>{sectionProducts.length} Auto</>
+                          )}
+                        </span>
                       </div>
-                      <p className="text-xs text-zinc-400 mt-0.5">
+                      <p className="text-xs text-zinc-400 mt-0.5 truncate">
                         ID: <code className="text-zinc-600">{section.id}</code> · {section.subtitle}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 self-end sm:self-center">
+                  <div className="flex flex-wrap items-center gap-2 self-start sm:self-center shrink-0">
                     {/* Move Up / Down */}
-                    <div className="flex items-center border border-zinc-200 rounded-lg overflow-hidden bg-white">
+                    <div
+                      className="flex items-center border border-zinc-200 rounded-lg overflow-hidden bg-white shadow-xs"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <button
                         type="button"
                         disabled={index === 0}
@@ -1717,21 +1720,49 @@ export function Admin() {
                     {/* Enable / Disable Toggle Switch */}
                     <button
                       type="button"
-                      onClick={() => handleToggleSectionEnabled(section.id)}
-                      className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleToggleSectionEnabled(section.id);
+                      }}
+                      className={`flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer shadow-xs ${
                         section.enabled !== false
                           ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
                           : 'bg-zinc-200 text-zinc-600 hover:bg-zinc-300'
                       }`}
                     >
                       <span className={`inline-block h-2 w-2 rounded-full ${section.enabled !== false ? 'bg-emerald-500' : 'bg-zinc-400'}`} />
-                      <span>{section.enabled !== false ? 'Active on Home' : 'Hidden'}</span>
+                      <span>{section.enabled !== false ? 'Active' : 'Hidden'}</span>
+                    </button>
+
+                    {/* Expand/Collapse Dropdown Button */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setExpandedSectionIds((prev) =>
+                          prev.includes(section.id) ? prev.filter((id) => id !== section.id) : [...prev, section.id]
+                        );
+                      }}
+                      className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-xs ${
+                        isExpanded
+                          ? 'border-accent bg-accent text-white'
+                          : 'border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 hover:text-ink'
+                      }`}
+                      aria-expanded={isExpanded}
+                    >
+                      <span>{isExpanded ? 'Collapse' : 'Expand'}</span>
+                      <ChevronDownIcon
+                        size={14}
+                        strokeWidth={2.5}
+                        className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+                      />
                     </button>
                   </div>
                 </div>
 
                 {/* Section Settings & Product Selection */}
-                <div className="p-5 space-y-5">
+                {isExpanded && (
+                  <div className="p-5 space-y-5 animate-in fade-in duration-150">
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <div>
                       <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-500">
@@ -1879,6 +1910,7 @@ export function Admin() {
                     )}
                   </div>
                 </div>
+                )}
               </div>
             );
           })}
@@ -1935,6 +1967,7 @@ export function Admin() {
               });
               setCategoryUploadError(null);
               setCategoryUploadSuccess(null);
+              setIsSlugManuallyEdited(false);
               setIsCreatingCategory(true);
             }}
             className="inline-flex h-11 items-center gap-2 rounded-lg bg-accent px-5 text-xs font-bold uppercase tracking-wider text-white hover:bg-accent-dark transition-all shadow-md cursor-pointer"
@@ -1948,24 +1981,20 @@ export function Admin() {
           {allCategoriesList.map((catName) => {
             const catObj = getAllCategories().find(c => c.name.toLowerCase() === catName.toLowerCase());
             const catProducts = products.filter(p => p.category.toLowerCase() === catName.toLowerCase());
-            const img = catObj?.image || catProducts[0]?.image || '/amplifiers1.webp';
 
             return (
               <div key={catName} className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm flex flex-col justify-between hover:border-zinc-300 transition-colors">
                 <div>
-                  <div className="relative group aspect-4/3 w-full rounded-lg bg-zinc-100 overflow-hidden flex items-center justify-center mb-3">
-                    <img
-                      src={img}
-                      alt={catName}
-                      className="h-full w-full object-contain p-2"
-                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/amplifiers1.webp'; }}
-                    />
-                    <div className="absolute top-2 right-2 flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 font-display text-base font-black text-accent border border-accent/20">
+                      {catName.charAt(0)}
+                    </span>
+                    <div className="flex items-center gap-1.5">
                       <button
                         type="button"
-                        onClick={() => handleOpenEditCategory(catObj || { id: catName, name: catName, slug: catName.toLowerCase().replace(/[^a-z0-9]+/g, '-'), description: '', image: img })}
+                        onClick={() => handleOpenEditCategory(catObj || { id: catName, name: catName, slug: catName.toLowerCase().replace(/[^a-z0-9]+/g, '-'), description: '', image: '' })}
                         title="Edit category"
-                        className="rounded-md bg-white/95 p-1.5 text-zinc-700 shadow-sm hover:bg-accent hover:text-white transition-colors cursor-pointer border border-zinc-200"
+                        className="rounded-md bg-white p-1.5 text-zinc-700 shadow-xs hover:bg-accent hover:text-white transition-colors cursor-pointer border border-zinc-200"
                       >
                         <Edit2Icon size={13} />
                       </button>
@@ -1974,7 +2003,7 @@ export function Admin() {
                           type="button"
                           onClick={() => handleDeleteCategory(catObj)}
                           title="Delete category"
-                          className="rounded-md bg-white/95 p-1.5 text-zinc-500 shadow-sm hover:bg-red-500 hover:text-white transition-colors cursor-pointer border border-zinc-200"
+                          className="rounded-md bg-white p-1.5 text-zinc-500 shadow-xs hover:bg-red-500 hover:text-white transition-colors cursor-pointer border border-zinc-200"
                         >
                           <Trash2Icon size={13} />
                         </button>
@@ -2042,10 +2071,23 @@ export function Admin() {
           {allBrandsList.map((brandName) => {
             const brandObj = liveBrands.find(b => b.name.toLowerCase() === brandName.toLowerCase());
             const brandProducts = products.filter(p => p.brand.toLowerCase() === brandName.toLowerCase());
+            const logoSrc = brandObj?.logo || (
+              brandName.toLowerCase().includes('em audio') ? '/brands/em-audio.webp' :
+              brandName.toLowerCase().includes('ss audio') ? '/brands/ss-audio.webp' :
+              brandName.toLowerCase().includes('shupu') ? '/brands/shupu.webp' :
+              brandName.toLowerCase().includes('al electronic') ? '/brands/al-electronic.webp' : null
+            );
 
             return (
               <div key={brandName} className="rounded-xl border border-zinc-200 bg-white p-5 shadow-sm flex flex-col justify-between hover:border-zinc-300 transition-colors">
                 <div>
+                  <div className="mb-3 flex h-14 w-full items-center justify-center rounded-lg border border-zinc-100 bg-zinc-50 p-2">
+                    {logoSrc ? (
+                      <img src={logoSrc} alt={brandName} className="max-h-full max-w-full object-contain" />
+                    ) : (
+                      <span className="text-[11px] font-bold uppercase text-zinc-400">No logo uploaded</span>
+                    )}
+                  </div>
                   <div className="flex items-start justify-between gap-2">
                     <h3 className="font-display text-base font-extrabold uppercase text-ink">
                       {brandName}
@@ -2097,7 +2139,9 @@ export function Admin() {
         </div>
       </div>
     )}
-  </div>
+          </div>
+        </main>
+      </div>
 
   {/* Product Picker Modal for Home Page Section */}
   {pickerSectionId && activePickerSection && (
@@ -2314,7 +2358,7 @@ export function Admin() {
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <div className="flex items-center justify-between">
                     <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600">Category *</label>
@@ -2329,6 +2373,7 @@ export function Admin() {
                         });
                         setCategoryUploadError(null);
                         setCategoryUploadSuccess(null);
+                        setIsSlugManuallyEdited(false);
                         setIsCreatingCategory(true);
                       }}
                       className="text-[11px] font-bold uppercase tracking-wider text-accent hover:underline cursor-pointer"
@@ -2369,7 +2414,7 @@ export function Admin() {
                     <button
                       type="button"
                       onClick={() => {
-                        setBrandFormData({ name: '', description: '' });
+                        setBrandFormData({ name: '', description: '', logo: '' });
                         setIsCreatingBrand(true);
                       }}
                       className="text-[11px] font-bold uppercase tracking-wider text-accent hover:underline cursor-pointer"
@@ -2392,7 +2437,7 @@ export function Admin() {
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600">Price (₹ INR) *</label>
                   <input
@@ -2412,18 +2457,6 @@ export function Admin() {
                     placeholder="Optional"
                     className="mt-1 h-11 w-full rounded-md border border-zinc-300 bg-white px-3 text-sm text-ink outline-none focus:border-accent"
                   />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600">Availability</label>
-                  <select
-                    value={formData.availability || 'In Stock'}
-                    onChange={(e) => setFormData({ ...formData, availability: e.target.value as any })}
-                    className="mt-1 h-11 w-full rounded-md border border-zinc-300 bg-white px-3 text-sm text-ink outline-none focus:border-accent"
-                  >
-                    <option value="In Stock">In Stock</option>
-                    <option value="Limited Stock">Limited Stock</option>
-                    <option value="Made To Order">Made To Order</option>
-                  </select>
                 </div>
               </div>
 
@@ -2670,7 +2703,7 @@ export function Admin() {
                   rows={3}
                   value={formData.description || ''}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  placeholder="Comprehensive description of acoustic parameters, application venues, and build..."
+                  placeholder="Comprehensive description of acoustic parameters, power ratings, and hardware build..."
                   className="mt-1 w-full rounded-md border border-zinc-300 bg-white p-3 text-sm text-ink outline-none focus:border-accent"
                 />
               </div>
@@ -2722,89 +2755,6 @@ export function Admin() {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Product Tags & Collections */}
-              <div className="rounded-xl border border-zinc-200 bg-zinc-50/70 p-4">
-                <div className="flex items-center justify-between">
-                  <label className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-700">
-                    <TagIcon size={14} className="text-accent" />
-                    Product Tags & Collections
-                  </label>
-                  <span className="text-[11px] text-zinc-400">
-                    Controls navbar tabs (New Arrivals, Sale) & collection filters
-                  </span>
-                </div>
-
-                {/* Preset quick tag toggles */}
-                <div className="mt-2.5 flex flex-wrap gap-2">
-                  {PRESET_TAGS.map((tag) => {
-                    const active = Array.isArray(formData.tags) && formData.tags.includes(tag.id);
-                    return (
-                      <button
-                        key={tag.id}
-                        type="button"
-                        onClick={() => handleTogglePresetTag(tag.id)}
-                        className={`rounded-full px-3 py-1 text-xs font-semibold transition-all cursor-pointer ${
-                          active
-                            ? 'bg-accent text-white shadow-sm ring-2 ring-accent/30'
-                            : 'bg-white text-zinc-700 border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-100'
-                        }`}
-                      >
-                        {tag.label} {active ? '✓' : '+'}
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* Custom tag input */}
-                <div className="mt-3 flex items-center gap-2">
-                  <input
-                    type="text"
-                    value={customTagInput}
-                    onChange={(e) => setCustomTagInput(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        e.preventDefault();
-                        handleAddCustomTag();
-                      }
-                    }}
-                    placeholder="Add custom tag (e.g. concert, outdoor, wireless)..."
-                    className="h-9 flex-1 rounded-md border border-zinc-300 bg-white px-3 text-xs text-ink outline-none focus:border-accent"
-                  />
-                  <button
-                    type="button"
-                    onClick={handleAddCustomTag}
-                    className="h-9 rounded-md bg-zinc-800 px-4 text-xs font-bold uppercase tracking-wider text-white hover:bg-black transition-colors cursor-pointer"
-                  >
-                    Add Tag
-                  </button>
-                </div>
-
-                {/* Currently active tags pills */}
-                {Array.isArray(formData.tags) && formData.tags.length > 0 && (
-                  <div className="mt-3 flex flex-wrap items-center gap-1.5 pt-2 border-t border-zinc-200">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mr-1">
-                      Active Tags:
-                    </span>
-                    {formData.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent border border-accent/20"
-                      >
-                        #{t}
-                        <button
-                          type="button"
-                          onClick={() => handleRemoveTag(t)}
-                          className="hover:text-red-600 transition-colors cursor-pointer ml-0.5"
-                          title="Remove tag"
-                        >
-                          <XIcon size={12} />
-                        </button>
-                      </span>
-                    ))}
-                  </div>
-                )}
               </div>
 
               <div className="mt-6 flex justify-end gap-3 border-t border-zinc-200 pt-4">
@@ -2874,7 +2824,13 @@ export function Admin() {
               </div>
               <button
                 type="button"
-                onClick={() => { setIsCreatingCategory(false); setEditingCategory(null); }}
+                onClick={() => {
+                  setIsCreatingCategory(false);
+                  setEditingCategory(null);
+                  setIsSlugManuallyEdited(false);
+                  setCategoryUploadError(null);
+                  setCategoryUploadSuccess(null);
+                }}
                 className="rounded-md p-1.5 text-zinc-400 hover:bg-zinc-100 hover:text-ink cursor-pointer"
               >
                 <XIcon size={18} />
@@ -2891,13 +2847,13 @@ export function Admin() {
                   required
                   value={categoryFormData.name}
                   onChange={(e) => {
-                    const val = e.target.value;
-                    const autoSlug = val.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                    setCategoryFormData({
-                      ...categoryFormData,
-                      name: val,
-                      slug: categoryFormData.slug ? categoryFormData.slug : autoSlug
-                    });
+                    const newName = e.target.value;
+                    const autoSlug = newName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    setCategoryFormData((prev) => ({
+                      ...prev,
+                      name: newName,
+                      slug: !isSlugManuallyEdited || !prev.slug ? autoSlug : prev.slug
+                    }));
                   }}
                   placeholder="e.g. Studio Monitors, Stage Boxes, DJ Consoles"
                   className="mt-1.5 h-11 w-full rounded-md border border-zinc-300 bg-white px-3 text-sm text-ink outline-none focus:border-accent"
@@ -2905,13 +2861,33 @@ export function Admin() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700">
-                  URL Slug (Auto-generated)
-                </label>
+                <div className="flex items-center justify-between">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700">
+                    URL Slug (Auto-generated)
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const auto = categoryFormData.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                      setIsSlugManuallyEdited(false);
+                      setCategoryFormData((prev) => ({ ...prev, slug: auto }));
+                    }}
+                    className="text-[11px] font-bold uppercase tracking-wider text-accent hover:underline cursor-pointer"
+                  >
+                    Sync from Name
+                  </button>
+                </div>
                 <input
                   type="text"
                   value={categoryFormData.slug}
-                  onChange={(e) => setCategoryFormData({ ...categoryFormData, slug: e.target.value })}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setIsSlugManuallyEdited(val.trim() !== '');
+                    setCategoryFormData((prev) => ({
+                      ...prev,
+                      slug: val
+                    }));
+                  }}
                   placeholder="e.g. studio-monitors"
                   className="mt-1.5 h-11 w-full rounded-md border border-zinc-300 bg-zinc-50 px-3 text-sm text-ink outline-none focus:border-accent font-mono"
                 />
@@ -3017,7 +2993,13 @@ export function Admin() {
               <div className="mt-6 flex justify-end gap-3 border-t border-zinc-200 pt-4">
                 <button
                   type="button"
-                  onClick={() => { setIsCreatingCategory(false); setEditingCategory(null); }}
+                  onClick={() => {
+                    setIsCreatingCategory(false);
+                    setEditingCategory(null);
+                    setIsSlugManuallyEdited(false);
+                    setCategoryUploadError(null);
+                    setCategoryUploadSuccess(null);
+                  }}
                   className="rounded-md border border-zinc-300 px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-600 hover:border-zinc-400 cursor-pointer"
                 >
                   Cancel
@@ -3083,6 +3065,26 @@ export function Admin() {
                   placeholder="e.g. World-class touring and studio hardware"
                   className="mt-1.5 h-11 w-full rounded-md border border-zinc-300 bg-white px-3 text-sm text-ink outline-none focus:border-accent"
                 />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-700">
+                  Brand Logo Path / URL (e.g. /brands/shupu.webp)
+                </label>
+                <div className="mt-1.5 flex gap-2">
+                  <input
+                    type="text"
+                    value={brandFormData.logo || ''}
+                    onChange={(e) => setBrandFormData({ ...brandFormData, logo: e.target.value })}
+                    placeholder="e.g. /brands/shupu.webp or https://..."
+                    className="h-11 flex-1 rounded-md border border-zinc-300 bg-white px-3 text-sm text-ink outline-none focus:border-accent"
+                  />
+                  {brandFormData.logo && (
+                    <div className="flex h-11 w-16 shrink-0 items-center justify-center rounded-md border border-zinc-200 bg-zinc-50 p-1">
+                      <img src={brandFormData.logo} alt="Preview" className="max-h-full max-w-full object-contain" />
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="mt-6 flex justify-end gap-3 border-t border-zinc-200 pt-4">

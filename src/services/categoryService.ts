@@ -14,7 +14,8 @@ function getInitialCategories(): Category[] {
       if (cached) {
         const parsed = JSON.parse(cached);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          const cleaned = parsed.map((c) => ({ ...c, image: '' }));
+          return cleaned;
         }
       }
     } catch {
@@ -73,9 +74,10 @@ export async function hydrateCategoriesFromBackend(): Promise<Category[]> {
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
-        liveCategories = data;
+        const sanitized = data.map((c) => ({ ...c, image: '' }));
+        liveCategories = sanitized;
         notifyCategories();
-        return data;
+        return sanitized;
       }
     }
   } catch {
@@ -153,7 +155,7 @@ export async function createCategoryApi(data: {
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)/g, '');
   const description = data.description?.trim() || `Professional audio equipment in ${cleanName}`;
-  const image = data.image?.trim() || '/amplifiers1.webp';
+  const image = data.image?.trim() || '';
 
   const payload = {
     name: cleanName,

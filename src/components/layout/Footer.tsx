@@ -39,18 +39,15 @@ const COLUMNS = [
     title: 'Company',
     links: [
       { label: 'About Us', to: '/about' },
-      { label: 'Services', to: '/about#services' },
-      { label: 'Our Brands', to: '/brands' },
-      { label: 'Showroom & Branches', to: '/branches' }
+      { label: 'Services', to: '/about' },
+      { label: 'Our Brands', to: '/brands' }
     ]
   },
   {
     title: 'Quick Links',
     links: [
       { label: 'New Arrivals', to: '/products?tag=new' },
-      { label: 'Sale', to: '/products?tag=sale' },
       { label: 'All Products', to: '/products' },
-      { label: 'Sitemap', to: '/sitemap' },
       { label: 'Inquiry', to: '/contact' }
     ]
   }
@@ -68,19 +65,28 @@ export function Footer() {
               <div className="inline-flex items-center rounded-lg bg-white px-3.5 py-2 shadow-sm transition-transform group-hover:scale-[1.02]">
                 <img
                   src={IMG.logo}
-                  alt={SITE.brand}
-                  className="h-10 w-auto object-contain"
+                  alt="SS Audio"
+                  height={40}
+                  style={{ height: '40px', maxHeight: '40px', width: 'auto', display: 'block' }}
+                  className="h-10 max-h-10 w-auto object-contain"
                 />
               </div>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
-              Authorised dealer of professional audio equipment, JBL Audio Pro, EM Audio,
-              touring sound systems, and commercial installation support across India.
+              Professional audio products manufacturer supplying touring sound operators, rental companies, DJ setups, and audio equipment dealers across India.
             </p>
             <ul className="mt-5 space-y-2.5 text-sm text-white/65">
               <li className="flex items-start gap-2.5">
                 <MapPinIcon size={15} className="mt-0.5 shrink-0 text-accent" />
-                <span>{SITE.address}</span>
+                <a
+                  href={SITE.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                  title="View on Google Maps"
+                >
+                  {SITE.address}
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <PhoneIcon size={15} className="shrink-0 text-accent" />
@@ -123,32 +129,20 @@ export function Footer() {
             © 2026 {SITE.brand}. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-            <Link
-              to="/admin"
-              className="text-xs text-accent font-bold uppercase tracking-wider hover:text-white transition-colors underline-offset-2 hover:underline"
-            >
-              Admin Portal
-            </Link>
             <button
               type="button"
               onClick={() => setModalContent('privacy')}
-              className="text-xs text-white/50 hover:text-white transition-colors underline-offset-2 hover:underline"
+              className="text-xs text-white/50 hover:text-white transition-colors underline-offset-2 hover:underline cursor-pointer"
             >
               Privacy Policy
             </button>
             <button
               type="button"
               onClick={() => setModalContent('terms')}
-              className="text-xs text-white/50 hover:text-white transition-colors underline-offset-2 hover:underline"
+              className="text-xs text-white/50 hover:text-white transition-colors underline-offset-2 hover:underline cursor-pointer"
             >
               Terms &amp; Conditions
             </button>
-            <Link
-              to="/sitemap"
-              className="text-xs text-white/50 hover:text-white transition-colors underline-offset-2 hover:underline"
-            >
-              Sitemap
-            </Link>
             <div className="flex items-center gap-2">
               {[
                 { Icon: InstagramIcon, href: SITE.social.instagram, label: 'Instagram' },
@@ -206,10 +200,7 @@ export function Footer() {
               ) : (
                 <>
                   <p>
-                    <strong>Audio Enterprise Quotations & Equipment Terms:</strong> All product prices, specifications, and availability displayed on this catalogue are indicative dealer estimates. Formal quotations with final invoice totals, GST rates, and logistics freight will be confirmed directly upon WhatsApp/phone consultation.
-                  </p>
-                  <p>
-                    Manufacturer warranties (JBL, EM Audio, SoundForge, etc.) apply as specified on genuine brand warranty cards provided with dispatch.
+                    <strong>Audio Enterprise Quotations & Equipment Terms:</strong> All product prices and specifications displayed on this catalogue are indicative estimates. Formal quotations with final invoice totals, GST rates, and logistics freight will be confirmed directly upon WhatsApp/phone consultation.
                   </p>
                 </>
               )}

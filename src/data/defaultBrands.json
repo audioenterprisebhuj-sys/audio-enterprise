@@ -1,37 +1,26 @@
 [
   {
-    "id": 1,
-    "name": "Audio Enterprise",
-    "description": "Flagship professional audio systems and touring equipment"
-  },
-  {
-    "id": 2,
-    "name": "JBL Audio Pro",
-    "description": "Legendary world-class transducers, speakers and touring line arrays"
-  },
-  {
     "id": 3,
     "name": "EM Audio",
-    "description": "High-powered pro amplifiers, crossovers and sound processors"
+    "description": "High-powered tour amplifiers, active digital crossovers, line drivers, and precision sound management processors.",
+    "logo": "/brands/em-audio.webp"
   },
   {
     "id": 4,
-    "name": "SoundForge",
-    "description": "Tour-grade mixing consoles and live digital desks"
+    "name": "AL ELECTRONIC",
+    "description": "Professional power electronics, stage switching distribution, audio signal connectors, and heavy-duty touring cabling.",
+    "logo": "/brands/al-electronic.webp"
   },
   {
     "id": 5,
-    "name": "Crestline",
-    "description": "Rugged stage cabling, snakes, and tour distribution boxes"
+    "name": "SHUPU",
+    "description": "World-class wired and wireless microphones, conference audio systems, gooseneck speech mics, and vocal stage cartridges.",
+    "logo": "/brands/shupu.webp"
   },
   {
     "id": 6,
-    "name": "Axiom Pro",
-    "description": "Precision compression drivers, tweeters and HF components"
-  },
-  {
-    "id": 7,
-    "name": "NovaStage",
-    "description": "Intelligent DMX moving heads, stage strobes and atmospheric FX"
+    "name": "SS Audio",
+    "description": "Premium transducers, custom high-output speaker systems, and specialized acoustic components engineered for high-performance sound reinforcement.",
+    "logo": "/brands/ss-audio.webp"
   }
 ]

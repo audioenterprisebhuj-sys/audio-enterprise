@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  CheckCircle2Icon,
   ChevronRightIcon,
-  ClockIcon,
   FileTextIcon,
   PackageSearchIcon,
   PhoneIcon,
@@ -23,11 +21,6 @@ import { getRelatedProducts, useProduct } from '../services/productService';
 import { discountPercent, formatPrice } from '../utils/format';
 import { generateWhatsAppInquiry } from '../utils/whatsapp';
 
-const availabilityIcon = {
-  'In Stock': CheckCircle2Icon,
-  'Limited Stock': ClockIcon,
-  'Made To Order': WrenchIcon
-};
 
 export function ProductDetail() {
   const { slug = '' } = useParams();
@@ -62,7 +55,6 @@ export function ProductDetail() {
 
   const off = discountPercent(product.price, product.oldPrice);
   const related = getRelatedProducts(product);
-  const AvailabilityIcon = availabilityIcon[product.availability];
   const whatsappHref = generateWhatsAppInquiry(product);
 
   return (
@@ -174,18 +166,7 @@ export function ProductDetail() {
                 )}
               </div>
 
-              <p
-                className={`mt-2 inline-flex items-center gap-1.5 text-sm font-semibold ${
-                  product.availability === 'In Stock'
-                    ? 'text-emerald-600'
-                    : product.availability === 'Limited Stock'
-                    ? 'text-amber-600'
-                    : 'text-zinc-500'
-                }`}
-              >
-                <AvailabilityIcon size={15} />
-                {product.availability}
-              </p>
+              
 
               <p className="mt-4 text-[15px] leading-relaxed text-zinc-600">
                 {product.description}

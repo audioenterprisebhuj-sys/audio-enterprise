@@ -21,7 +21,6 @@ export const products: Product[] = [
   description:
   'A workhorse two-channel power amplifier built for touring and fixed installations. Toroidal transformer, forced-air cooling and full protection circuitry keep it stable through long shows.',
   specifications: { Power: '450W × 2 @ 8Ω', Channels: '2', Frequency: '20Hz – 20kHz', THD: '<0.05%', Connectivity: 'XLR / TRS / Speakon', Cooling: 'Variable speed fan', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'bestseller', 'professional']
 },
 {
@@ -29,7 +28,7 @@ export const products: Product[] = [
   slug: 'power-amplifier-2000w-fx-2000',
   name: 'Power Amplifier 2000W',
   model: 'FX-2000',
-  brand: 'SoundForge',
+  brand: 'EM Audio',
   category: 'Amplifiers',
   price: 34999,
   oldPrice: 41999,
@@ -42,7 +41,6 @@ export const products: Product[] = [
   description:
   'High-headroom stereo amplifier for large format PA systems, with bridged mono operation and selectable crossover.',
   specifications: { Power: '2000W Bridged', Channels: '2', Frequency: '20Hz – 20kHz', 'Damping Factor': '>400', Connectivity: 'XLR / Speakon', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['sale', 'professional']
 },
 {
@@ -50,7 +48,7 @@ export const products: Product[] = [
   slug: 'power-amplifier-1500w-fx-1500',
   name: 'Power Amplifier 1500W',
   model: 'FX-1500',
-  brand: 'SoundForge',
+  brand: 'EM Audio',
   category: 'Amplifiers',
   price: 27999,
   oldPrice: 32999,
@@ -63,7 +61,6 @@ export const products: Product[] = [
   description:
   'Reliable mid-power amplifier suited to mobile DJs, banquet halls and mid-size live events.',
   specifications: { Power: '1500W Bridged', Channels: '2', Frequency: '20Hz – 20kHz', Connectivity: 'XLR / TRS', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'popular']
 },
 {
@@ -83,7 +80,6 @@ export const products: Product[] = [
   description:
   'Four independent channels with onboard DSP presets — ideal for multi-zone installations and line array systems.',
   specifications: { Power: '800W × 4 @ 4Ω', Channels: '4', DSP: 'Onboard 96kHz', Frequency: '20Hz – 20kHz', Connectivity: 'XLR / Speakon / Ethernet', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['new', 'professional']
 },
 {
@@ -103,7 +99,6 @@ export const products: Product[] = [
   description:
   'Lightweight Class-D touring amplifier with switch-mode power supply and remote monitoring.',
   specifications: { Power: '1600W × 2 @ 4Ω', Class: 'Class-D', Channels: '2', Frequency: '20Hz – 22kHz', Connectivity: 'XLR / Speakon', Warranty: '2 Years' },
-  availability: 'Limited Stock',
   tags: ['new', 'professional']
 },
 {
@@ -124,7 +119,6 @@ export const products: Product[] = [
   description:
   'Compact, road-ready amplifier tuned for mobile DJ rigs with bass boost and thermal protection.',
   specifications: { Power: '600W × 2', Channels: '2', Frequency: '25Hz – 20kHz', Connectivity: 'RCA / XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['popular', 'budget', 'sale']
 },
 {
@@ -143,7 +137,6 @@ export const products: Product[] = [
   description:
   'Constant voltage amplifier for commercial background music and paging installations.',
   specifications: { Power: '600W', Lines: '70V / 100V', Zones: '4', Connectivity: 'Euroblock / RCA', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 
@@ -166,7 +159,6 @@ export const products: Product[] = [
   description:
   'Bi-amplified 15-inch powered loudspeaker with onboard DSP, a 1.75" compression driver and a 90° × 60° rotatable horn.',
   specifications: { Power: '1500W Peak', 'Driver Size': '15" + 1.75" HF', Frequency: '45Hz – 20kHz', SPL: '132 dB', Connectivity: 'XLR / TRS Combo', Weight: '19.5 kg', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['sale', 'bestseller', 'professional']
 },
 {
@@ -187,7 +179,6 @@ export const products: Product[] = [
   description:
   'Compact powered 12-inch speaker for live vocals, corporate events and monitor duty.',
   specifications: { Power: '1000W Peak', 'Driver Size': '12" + 1.4" HF', Frequency: '50Hz – 20kHz', SPL: '129 dB', Connectivity: 'XLR / TRS', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['popular', 'sale']
 },
 {
@@ -195,7 +186,7 @@ export const products: Product[] = [
   slug: 'passive-speaker-12-ps-1200',
   name: 'Passive Speaker 12"',
   model: 'PS-1200',
-  brand: 'SoundForge',
+  brand: 'SS Audio',
   category: 'Speakers & Tweeters',
   price: 17999,
   rating: 4.5,
@@ -206,7 +197,6 @@ export const products: Product[] = [
   description:
   'Rugged plywood passive enclosure with a 12-inch woofer and titanium compression driver.',
   specifications: { Power: '600W RMS', 'Driver Size': '12" + 1"', Impedance: '8Ω', Frequency: '55Hz – 19kHz', Connectivity: 'Speakon / Binding Post', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional', 'budget']
 },
 {
@@ -214,7 +204,7 @@ export const products: Product[] = [
   slug: 'passive-speaker-15-ps-1500',
   name: 'Passive Speaker 15"',
   model: 'PS-1500',
-  brand: 'SoundForge',
+  brand: 'SS Audio',
   category: 'Speakers & Tweeters',
   price: 21999,
   oldPrice: 24999,
@@ -227,7 +217,6 @@ export const products: Product[] = [
   description:
   'High-output passive 15-inch full range cabinet with fly points and pole socket.',
   specifications: { Power: '800W RMS', 'Driver Size': '15" + 1.4"', Impedance: '8Ω', Frequency: '48Hz – 19kHz', Connectivity: 'Speakon', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'professional']
 },
 {
@@ -246,7 +235,6 @@ export const products: Product[] = [
   description:
   'Titanium diaphragm compression driver delivering smooth, detailed high frequency response.',
   specifications: { 'Voice Coil': '75mm', Power: '120W AES', Impedance: '8Ω', Frequency: '900Hz – 20kHz', Throat: '1.4"', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -267,7 +255,6 @@ export const products: Product[] = [
   description:
   'Piezo bullet tweeter for DJ boxes and car audio builds — crisp, cutting top end.',
   specifications: { Power: '150W', Impedance: '8Ω', Frequency: '2kHz – 22kHz', Sensitivity: '105 dB', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['sale', 'budget', 'popular']
 },
 {
@@ -275,7 +262,7 @@ export const products: Product[] = [
   slug: 'woofer-driver-wd-18',
   name: 'Woofer Driver 18"',
   model: 'WD-18',
-  brand: 'SoundForge',
+  brand: 'SS Audio',
   category: 'Speakers & Tweeters',
   price: 13999,
   rating: 4.7,
@@ -286,7 +273,6 @@ export const products: Product[] = [
   description:
   'High excursion 18-inch woofer with 4-inch voice coil for subwoofer cabinet builds.',
   specifications: { 'Driver Size': '18"', Power: '1000W RMS', 'Voice Coil': '4"', Impedance: '8Ω', Frequency: '30Hz – 2kHz', Warranty: '1 Year' },
-  availability: 'Made To Order',
   tags: ['professional']
 },
 
@@ -309,7 +295,6 @@ export const products: Product[] = [
   description:
   'Active 18-inch subwoofer with a birch ply cabinet, DSP alignment presets and pole mount for satellite speakers.',
   specifications: { Power: '2000W Peak', 'Driver Size': '18"', Frequency: '30Hz – 150Hz', SPL: '136 dB', Connectivity: 'XLR In / Thru', Weight: '46 kg', Warranty: '2 Years' },
-  availability: 'Limited Stock',
   tags: ['sale', 'bestseller', 'professional']
 },
 {
@@ -329,7 +314,6 @@ export const products: Product[] = [
   description:
   'Portable powered subwoofer that adds weight to small PA systems without a truck load of gear.',
   specifications: { Power: '1200W Peak', 'Driver Size': '15"', Frequency: '38Hz – 160Hz', Connectivity: 'XLR In / Thru', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['popular']
 },
 
@@ -353,7 +337,6 @@ export const products: Product[] = [
   description:
   'Dual-channel UHF wireless system with 100 selectable frequencies, metal handhelds and rack-mountable receiver.',
   specifications: { Type: 'UHF Wireless', Channels: '2', Range: '80 m line of sight', Frequency: '50Hz – 16kHz', Battery: '8 hrs (2 × AA)', Connectivity: 'XLR / 6.35mm', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'bestseller', 'popular']
 },
 {
@@ -362,7 +345,7 @@ export const products: Product[] = [
   name: 'Wired Vocal Microphone',
   model: 'SRP6',
   subcategory: 'Wired',
-  brand: 'SoundForge',
+  brand: 'SHUPU',
   category: 'Microphones',
   price: 2499,
   oldPrice: 2999,
@@ -375,7 +358,6 @@ export const products: Product[] = [
   description:
   'Industry-standard dynamic vocal microphone with a tailored presence peak and rugged steel grille.',
   specifications: { Type: 'Dynamic Cardioid', Frequency: '50Hz – 15kHz', Impedance: '300Ω', Connectivity: 'XLR', 'Cable Included': '5 m', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['bestseller', 'budget', 'sale']
 },
 {
@@ -395,7 +377,6 @@ export const products: Product[] = [
   description:
   'Compact clip-on instrument mic engineered for high SPL sources like drums and guitar cabinets.',
   specifications: { Type: 'Dynamic Supercardioid', 'Max SPL': '150 dB', Frequency: '40Hz – 18kHz', Connectivity: 'XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -416,7 +397,6 @@ export const products: Product[] = [
   description:
   'Daisy-chainable conference delegate unit with mute LED ring and built-in monitor speaker.',
   specifications: { Type: 'Condenser Gooseneck', Frequency: '80Hz – 16kHz', Connectivity: '8-pin Chain', Indicator: 'LED Ring', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['new', 'professional']
 },
 {
@@ -436,7 +416,6 @@ export const products: Product[] = [
   description:
   'Podium gooseneck condenser microphone with shock-mounted capsule and phantom power operation.',
   specifications: { Type: 'Condenser Cardioid', Length: '18 inch', Power: '48V Phantom', Connectivity: 'XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -458,123 +437,203 @@ export const products: Product[] = [
   description:
   'Bodypack wireless system bundled with both a lapel and a headworn microphone for presenters.',
   specifications: { Type: 'UHF Bodypack', Channels: '2', Range: '60 m', Battery: '6 hrs', Connectivity: 'XLR / 6.35mm', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'popular', 'budget']
 },
 
+// ---------------------------------------------------------------- SHUPU WIRED MICROPHONES
 {
   id: 101,
-  slug: 'wired-microphone-sm-94s',
-  name: 'Wired Microphone SM 9.4S',
+  slug: 'shupu-sm-94s-wired-microphone',
+  name: 'Shupu SM-9.4S Handheld Dynamic Microphone',
   model: 'SM 9.4S',
-  brand: 'JBL Audio Pro',
+  brand: 'SHUPU',
   category: 'Microphones',
   subcategory: 'Wired',
-  price: 2899,
-  rating: 4.4,
-  reviews: 38,
-  feature: 'Dynamic Vocal Mic',
+  price: 2500,
+  oldPrice: 3200,
+  rating: 4.6,
+  reviews: 48,
+  feature: 'Stage Vocal & Speech Reproduction',
   image: IMG.microphone1,
   images: [IMG.microphone1],
-  description: 'Professional wired dynamic microphone for clear vocals, announcements and live performance use.',
-  specifications: { Type: 'Dynamic Cardioid', Frequency: '50Hz – 16kHz', Impedance: '600Ω', Connectivity: 'XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
-  tags: ['professional']
+  description: 'Rugged wired dynamic microphone engineered by Shupu for live stage vocals, public speaking, and speech reinforcement with high gain and feedback rejection.',
+  specifications: { 'Cartridge Type': 'Dynamic Cardioid', 'Frequency Response': '50Hz – 16,000Hz', 'Output Impedance': '600Ω ± 30%', 'Sensitivity': '-73dB ± 3dB', 'Body Material': 'Zinc-aluminum diecast alloy', 'Connector': 'Balanced 3-Pin XLR', 'Warranty': '1 Year' },
+  tags: ['professional', 'popular']
 },
 {
   id: 102,
-  slug: 'wired-microphone-sm815',
-  name: 'Wired Microphone SM815',
+  slug: 'shupu-sm-815-wired-stage-microphone',
+  name: 'Shupu SM-815 Heavy-Duty Live Stage Microphone',
   model: 'SM815',
-  brand: 'JBL Audio Pro',
+  brand: 'SHUPU',
   category: 'Microphones',
   subcategory: 'Wired',
-  price: 2499,
-  rating: 4.3,
-  reviews: 31,
-  feature: 'Cardioid Dynamic',
+  price: 2400,
+  oldPrice: 2950,
+  rating: 4.5,
+  reviews: 36,
+  feature: 'High Gain-Before-Feedback',
   image: IMG.microphone2,
   images: [IMG.microphone2],
-  description: 'Durable wired handheld microphone designed for dependable speech and vocal reproduction.',
-  specifications: { Type: 'Dynamic Cardioid', Frequency: '60Hz – 15kHz', Impedance: '500Ω', Connectivity: 'XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
-  tags: ['budget']
+  description: 'Heavy-duty handheld vocal microphone featuring an internal anti-shock capsule suspension system to eliminate handling thumps and mechanical noise.',
+  specifications: { 'Cartridge Type': 'Dynamic Cardioid', 'Frequency Response': '50Hz – 15,000Hz', 'Output Impedance': '500Ω', 'Sensitivity': '-72dB ± 3dB', 'Grille': 'Hardened dent-resistant steel mesh', 'Connector': 'Gold-plated 3-Pin XLR', 'Warranty': '1 Year' },
+  tags: ['budget', 'popular']
 },
 {
   id: 103,
-  slug: 'wired-microphone-sm303',
-  name: 'Wired Microphone SM303',
-  model: 'SM303',
-  brand: 'SoundForge',
+  slug: 'shupu-sr-p6-dynamic-vocal-microphone',
+  name: 'Shupu SR-P6 Dynamic Stage Microphone',
+  model: 'SRP6',
+  brand: 'SHUPU',
   category: 'Microphones',
   subcategory: 'Wired',
-  price: 2199,
-  rating: 4.2,
-  reviews: 27,
-  feature: 'Vocal Performance',
+  price: 2600,
+  oldPrice: 3400,
+  rating: 4.7,
+  reviews: 54,
+  badge: 'BESTSELLER',
+  feature: 'Ultra-Low Handling Noise & Vocal Punch',
   image: IMG.microphone3,
   images: [IMG.microphone3],
-  description: 'Reliable wired microphone with focused pickup for stage vocals, karaoke and presentations.',
-  specifications: { Type: 'Dynamic Cardioid', Frequency: '60Hz – 15kHz', Impedance: '600Ω', Connectivity: 'XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
-  tags: ['budget']
+  description: 'High-definition vocal microphone with clean high-frequency extension and low handling noise. Designed for live concerts, religious assemblies, and touring sound rigs.',
+  specifications: { 'Cartridge Type': 'High-Output Dynamic', 'Polar Pattern': 'Cardioid Unidirectional', 'Frequency Response': '50Hz – 15,000Hz', 'Output Impedance': '600Ω ± 30%', 'Sensitivity': '-72dB ± 3dB', 'Connector': 'Standard 3-Pin XLR', 'Warranty': '1 Year' },
+  tags: ['bestseller', 'professional']
 },
 {
   id: 104,
-  slug: 'wired-microphone-sm999',
-  name: 'Wired Microphone SM999',
-  model: 'SM999',
-  brand: 'SoundForge',
+  slug: 'shupu-sm-59nd-neodymium-microphone',
+  name: 'Shupu SM-59ND Neodymium Vocal Microphone',
+  model: 'SM59ND',
+  brand: 'SHUPU',
   category: 'Microphones',
   subcategory: 'Wired',
-  price: 2999,
-  rating: 4.4,
-  reviews: 35,
-  feature: 'High Output Vocal',
+  price: 3400,
+  oldPrice: 4200,
+  rating: 4.8,
+  reviews: 82,
+  badge: 'FLAGSHIP',
+  feature: 'High-Energy Neodymium Cartridge',
   image: IMG.microphone4,
   images: [IMG.microphone4],
-  description: 'High-output wired dynamic microphone tuned for strong vocal presence and clean stage sound.',
-  specifications: { Type: 'Dynamic Cardioid', Frequency: '50Hz – 16kHz', Impedance: '500Ω', Connectivity: 'XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
-  tags: ['popular']
+  description: 'Flagship Shupu wired stage microphone powered by a neodymium magnetic element for ultra-high sensitivity, exceptional dynamic range, and vocal warmth.',
+  specifications: { 'Cartridge Type': 'Neodymium Dynamic', 'Polar Pattern': 'Tight Cardioid', 'Frequency Response': '50Hz – 16,000Hz', 'Impedance': '600Ω', 'Sensitivity': '-52dB ± 2dB', 'Connector': 'Gold-plated balanced XLR', 'Warranty': '1 Year' },
+  tags: ['flagship', 'professional', 'bestseller']
 },
 {
   id: 105,
-  slug: 'wired-microphone-sm98a',
-  name: 'Wired Microphone SM98A',
-  model: 'SM98A',
-  brand: 'Axiom Pro',
+  slug: 'shupu-sm-21-heavy-duty-microphone',
+  name: 'Shupu SM-2.1 Heavy-Duty Handheld Microphone',
+  model: 'SM 2.1',
+  brand: 'SHUPU',
   category: 'Microphones',
   subcategory: 'Wired',
-  price: 3499,
-  rating: 4.5,
-  reviews: 29,
-  feature: 'Studio & Stage',
+  price: 1950,
+  oldPrice: 2500,
+  rating: 4.4,
+  reviews: 65,
+  feature: 'Rugged Metal Body + 7.5m XLR Cable',
   image: IMG.microphone5,
   images: [IMG.microphone5],
-  description: 'Versatile wired microphone for detailed vocal capture in studio, stage and event applications.',
-  specifications: { Type: 'Dynamic Cardioid', Frequency: '40Hz – 18kHz', Impedance: '300Ω', Connectivity: 'XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
-  tags: ['professional']
+  description: 'Reliable all-metal wired microphone packaged with a heavy-duty 7.5-meter low-noise XLR cable. Ideal for touring PA systems, wedding venues, and public halls.',
+  specifications: { 'Type': 'Dynamic Cardioid', 'Frequency Response': '60Hz – 14,000Hz', 'Impedance': '600Ω', 'Cable Included': '7.5m Low-Noise OFC Shielded Cable', 'Connector': '3-Pin XLR', 'Warranty': '1 Year' },
+  tags: ['budget', 'bestseller']
 },
 {
   id: 106,
-  slug: 'wired-microphone-sm8000',
-  name: 'Wired Microphone SM8000',
+  slug: 'shupu-sm-8000-tour-grade-microphone',
+  name: 'Shupu SM-8000 Tour-Grade Vocal Microphone',
   model: 'SM8000',
-  brand: 'Crestline',
+  brand: 'SHUPU',
   category: 'Microphones',
   subcategory: 'Wired',
   price: 3999,
-  rating: 4.5,
-  reviews: 24,
-  feature: 'Professional Dynamic',
+  oldPrice: 4800,
+  rating: 4.7,
+  reviews: 41,
+  feature: 'High-SPL Supercardioid Capsule',
   image: IMG.microphone6,
   images: [IMG.microphone6],
-  description: 'Professional wired dynamic microphone built for consistent vocal clarity and everyday touring use.',
-  specifications: { Type: 'Dynamic Supercardioid', Frequency: '45Hz – 18kHz', Impedance: '300Ω', Connectivity: 'XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
-  tags: ['professional']
+  description: 'Tour-grade vocal microphone delivering precise supercardioid pattern isolation, ultra-clean off-axis rejection, and linear vocal reproduction for demanding sound stages.',
+  specifications: { 'Cartridge Type': 'Dynamic Supercardioid', 'Frequency Response': '45Hz – 18,000Hz', 'Output Impedance': '300Ω', 'Max SPL': '>145dB', 'Connector': 'Gold-plated 3-Pin XLR', 'Warranty': '1 Year' },
+  tags: ['professional', 'tour-grade']
+},
+{
+  id: 107,
+  slug: 'shupu-sm-95s-vocal-microphone',
+  name: 'Shupu SM-9.5S Professional Vocal Microphone',
+  model: 'SM 9.5S',
+  brand: 'SHUPU',
+  category: 'Microphones',
+  subcategory: 'Wired',
+  price: 2800,
+  oldPrice: 3500,
+  rating: 4.6,
+  reviews: 73,
+  badge: 'POPULAR',
+  feature: 'Wide Dynamic Range & Feedback Rejection',
+  image: IMG.microphone1,
+  images: [IMG.microphone1],
+  description: 'Renowned professional vocal microphone featuring tailored mid-range presence and tight cardioid polar response for clear, punchy vocals on live concert stages.',
+  specifications: { 'Cartridge Type': 'Dynamic Cardioid', 'Frequency Response': '55Hz – 15,000Hz', 'Output Impedance': '500Ω', 'Sensitivity': '-70dB ± 3dB', 'Body Material': 'Zinc-aluminum diecast alloy', 'Connector': 'Standard 3-Pin XLR', 'Warranty': '1 Year' },
+  tags: ['popular', 'professional']
+},
+{
+  id: 108,
+  slug: 'shupu-sm-303-instrument-vocal-microphone',
+  name: 'Shupu SM-303 Instrument & Vocal Microphone',
+  model: 'SM303',
+  brand: 'SHUPU',
+  category: 'Microphones',
+  subcategory: 'Wired',
+  price: 2100,
+  oldPrice: 2600,
+  rating: 4.4,
+  reviews: 39,
+  feature: 'Optimized for Vocals & Traditional Instruments',
+  image: IMG.microphone2,
+  images: [IMG.microphone2],
+  description: 'Versatile dynamic microphone with natural acoustic response. Widely chosen for PA systems, cultural festivals, speech, and live instruments like harmonium, tabla, and dholak.',
+  specifications: { 'Cartridge Type': 'Cardioid Dynamic', 'Frequency Response': '60Hz – 14,000Hz', 'Output Impedance': '600Ω', 'Sensitivity': '-74dB ± 3dB', 'Connector': '3-Pin Balanced XLR', 'Warranty': '1 Year' },
+  tags: ['budget', 'versatile']
+},
+{
+  id: 109,
+  slug: 'shupu-sm-999-ultra-clear-microphone',
+  name: 'Shupu SM-999 Ultra-Clear Vocal Microphone',
+  model: 'SM999',
+  brand: 'SHUPU',
+  category: 'Microphones',
+  subcategory: 'Wired',
+  price: 3100,
+  oldPrice: 3800,
+  rating: 4.7,
+  reviews: 58,
+  badge: 'PRO STAGE',
+  feature: 'Crisp High-Frequency Vocal Presence',
+  image: IMG.microphone3,
+  images: [IMG.microphone3],
+  description: 'High-output dynamic microphone tailored for lead vocalists requiring silky high-end clarity, low proximity boom, and robust gain-before-feedback.',
+  specifications: { 'Cartridge Type': 'Supercardioid Dynamic', 'Frequency Response': '50Hz – 16,000Hz', 'Impedance': '300Ω', 'Sensitivity': '-51dB ± 3dB', 'Connector': 'Balanced 3-Pin XLR', 'Warranty': '1 Year' },
+  tags: ['professional', 'vocal']
+},
+{
+  id: 110,
+  slug: 'shupu-sm-98a-public-address-microphone',
+  name: 'Shupu SM-98A Public Address & Stage Microphone',
+  model: 'SM98A',
+  brand: 'SHUPU',
+  category: 'Microphones',
+  subcategory: 'Wired',
+  price: 2250,
+  oldPrice: 2800,
+  rating: 4.5,
+  reviews: 33,
+  feature: 'Optimized Speech Intelligibility',
+  image: IMG.microphone4,
+  images: [IMG.microphone4],
+  description: 'Engineered for exceptional vocal articulation and speech clarity in auditoriums, houses of worship, and live public address applications.',
+  specifications: { 'Cartridge Type': 'Cardioid Dynamic', 'Frequency Response': '60Hz – 15,000Hz', 'Impedance': '600Ω', 'Pop Filter': 'Multi-layer internal acoustic foam', 'Connector': '3-Pin XLR', 'Warranty': '1 Year' },
+  tags: ['speech', 'budget']
 },
 
 // ---------------------------------------------------------------- MIXERS
@@ -596,7 +655,6 @@ export const products: Product[] = [
   description:
   'Analog 12-channel mixing console with 6 mic preamps, 3-band EQ, 24-bit effects engine and USB/Bluetooth playback.',
   specifications: { Channels: '12', 'Mic Preamps': '6', Effects: '24-bit, 100 presets', USB: 'Yes (Record / Playback)', Bluetooth: 'Yes', EQ: '3-band per channel', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['sale', 'bestseller', 'professional']
 },
 {
@@ -604,7 +662,7 @@ export const products: Product[] = [
   slug: '4-channel-mixer-mx-04',
   name: '4 Channel Mixer',
   model: 'MX-04',
-  brand: 'SoundForge',
+  brand: 'SHUPU',
   category: 'Mixers',
   price: 6499,
   rating: 4.3,
@@ -615,7 +673,6 @@ export const products: Product[] = [
   description:
   'Ultra-compact desktop mixer for podcasts, small venues and rehearsal rooms.',
   specifications: { Channels: '4', 'Mic Preamps': '2', Effects: 'No', USB: 'Yes', Bluetooth: 'No', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -623,7 +680,7 @@ export const products: Product[] = [
   slug: '8-channel-mixer-mx-08',
   name: '8 Channel Mixer',
   model: 'MX-08',
-  brand: 'SoundForge',
+  brand: 'EM Audio',
   category: 'Mixers',
   price: 11999,
   oldPrice: 13999,
@@ -636,7 +693,6 @@ export const products: Product[] = [
   description:
   'Eight-channel console balancing portability and I/O for bands and houses of worship.',
   specifications: { Channels: '8', 'Mic Preamps': '4', Effects: '16 presets', USB: 'Yes', Bluetooth: 'Yes', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'popular']
 },
 {
@@ -655,7 +711,6 @@ export const products: Product[] = [
   description:
   'Full-size analog console with 10 mic inputs, dual effects processors and 4 aux sends.',
   specifications: { Channels: '16', 'Mic Preamps': '10', Effects: 'Dual engine', USB: 'Yes', Bluetooth: 'Yes', 'Aux Sends': '4', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -675,7 +730,6 @@ export const products: Product[] = [
   description:
   'Motorised-fader digital console with scene recall, per-channel dynamics and tablet control over Wi-Fi.',
   specifications: { Channels: '24', 'Mic Preamps': '16', Effects: '8 FX racks', USB: 'Multitrack', Bluetooth: 'Yes', Control: 'Wi-Fi / Tablet', Warranty: '2 Years' },
-  availability: 'Made To Order',
   tags: ['new', 'professional']
 },
 {
@@ -696,7 +750,6 @@ export const products: Product[] = [
   description:
   'Club-style DJ mixer with a replaceable crossfader, filter knobs and booth output.',
   specifications: { Channels: '4', Effects: 'Filter / Echo', USB: 'Yes', Bluetooth: 'Yes', Crossfader: 'Replaceable', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'popular']
 },
 
@@ -719,7 +772,6 @@ export const products: Product[] = [
   description:
   'System processor with parametric EQ, delay, limiters and crossover on every output, controlled from PC software.',
   specifications: { Inputs: '4', Outputs: '8', 'Sample Rate': '96 kHz', Latency: '<1.2 ms', Control: 'USB / Ethernet', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['sale', 'professional']
 },
 {
@@ -738,7 +790,6 @@ export const products: Product[] = [
   description:
   'Dual channel 31-band graphic EQ with switchable low-cut filter and bypass relay.',
   specifications: { Bands: '31 × 2', Range: '±12 dB', Frequency: '20Hz – 20kHz', Connectivity: 'XLR / TRS', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -757,7 +808,6 @@ export const products: Product[] = [
   description:
   'Stereo 2/3-way or mono 4-way active crossover with Linkwitz-Riley filters.',
   specifications: { Modes: '2/3/4-Way', Slope: '24 dB/octave', Frequency: '20Hz – 20kHz', Connectivity: 'XLR', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional', 'budget']
 },
 {
@@ -776,7 +826,6 @@ export const products: Product[] = [
   description:
   'Two-channel compressor, limiter and expander gate with auto attack/release.',
   specifications: { Channels: '2', Ratio: '1:1 – ∞:1', Gate: 'Yes', Connectivity: 'XLR / TRS', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -796,7 +845,6 @@ export const products: Product[] = [
   description:
   'Installation matrix controller with wall-panel support for multi-zone commercial audio.',
   specifications: { Inputs: '8', Outputs: '8', Zones: '8', Control: 'Ethernet / Wall Panel', Warranty: '2 Years' },
-  availability: 'In Stock',
   tags: ['new', 'professional']
 },
 {
@@ -815,7 +863,6 @@ export const products: Product[] = [
   description:
   'Complete loudspeaker management with FIR filters, alignment delay and secure preset lock for rental fleets.',
   specifications: { Inputs: '3', Outputs: '6', Filters: 'FIR / IIR', 'Sample Rate': '96 kHz', Control: 'USB / Ethernet', Warranty: '2 Years' },
-  availability: 'Limited Stock',
   tags: ['professional']
 },
 
@@ -838,7 +885,6 @@ export const products: Product[] = [
   description:
   'Complete plug-and-play stage lighting kit with fixtures, T-bar stands, DMX controller and cabling.',
   specifications: { Fixtures: '8 × LED PAR', Control: 'DMX-512', Power: '480W total', Modes: 'Auto / Sound / DMX', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'popular']
 },
 {
@@ -859,7 +905,6 @@ export const products: Product[] = [
   description:
   'Bright RGBW LED PAR can with flicker-free dimming, suitable for stages, mandaps and studios.',
   specifications: { LEDs: '54 × 3W RGBW', Beam: '25°', Control: 'DMX-512 / Auto / Sound', Power: '170W', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'bestseller', 'budget']
 },
 // ---------------------------------------------------------------- WIRES & CABLES
@@ -881,7 +926,6 @@ export const products: Product[] = [
   description:
   'Oxygen-free copper speaker cable terminated with metal Speakon connectors.',
   specifications: { 'Cable Type': 'Speaker', Length: '15 m', Connector: 'Speakon – Speakon', Conductor: '2 × 2.5 mm² OFC', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['sale', 'budget']
 },
 {
@@ -901,7 +945,6 @@ export const products: Product[] = [
   description:
   'Low-noise balanced microphone cable with braided shield and moulded strain relief.',
   specifications: { 'Cable Type': 'Microphone', Length: '10 m', Connector: 'XLR M – XLR F', Shield: 'Braided 95%', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['bestseller', 'budget']
 },
 {
@@ -920,7 +963,6 @@ export const products: Product[] = [
   description:
   'Short XLR patch lead for stage boxes, mixers and powered speakers.',
   specifications: { 'Cable Type': 'XLR', Length: '5 m', Connector: 'XLR M – XLR F', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -939,7 +981,6 @@ export const products: Product[] = [
   description:
   'True 110Ω DMX lighting control cable for reliable, glitch-free fixture chains.',
   specifications: { 'Cable Type': 'DMX', Length: '10 m', Connector: '3-pin XLR', Impedance: '110Ω', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -958,7 +999,6 @@ export const products: Product[] = [
   description:
   'Low-capacitance guitar and keyboard cable with gold-plated tips.',
   specifications: { 'Cable Type': 'Instrument', Length: '6 m', Connector: '6.35mm TS – TS', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -977,7 +1017,6 @@ export const products: Product[] = [
   description:
   'Heavy-duty 16A power extension for amplifier racks and stage distribution.',
   specifications: { 'Cable Type': 'Power', Length: '5 m', Connector: '16A Industrial', Rating: '16A / 250V', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -996,7 +1035,6 @@ export const products: Product[] = [
   description:
   'Right-angle patch cable set for pedalboards and rack patching.',
   specifications: { 'Cable Type': 'Patch', Length: '0.3 m', Connector: '6.35mm TS Angled', Quantity: '8 pcs', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 
@@ -1017,7 +1055,6 @@ export const products: Product[] = [
   description:
   'Solderable 3-pin XLR connectors with zinc shell and silver-plated contacts.',
   specifications: { Type: 'XLR 3-pin', Quantity: '10 pcs', Plating: 'Silver', Body: 'Zinc alloy', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['budget', 'popular']
 },
 {
@@ -1036,7 +1073,6 @@ export const products: Product[] = [
   description:
   'Locking 4-pole speaker connectors rated for high current amplifier outputs.',
   specifications: { Type: 'Speakon NL4', Quantity: '4 pcs', Rating: '30A', Locking: 'Twist lock', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -1055,7 +1091,6 @@ export const products: Product[] = [
   description:
   'Metal-bodied 6.35mm TS jack plugs for instrument and line cable assembly.',
   specifications: { Type: '6.35mm TS', Quantity: '12 pcs', Body: 'Nickel', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -1074,7 +1109,6 @@ export const products: Product[] = [
   description:
   'Gold-plated RCA plugs for clean, corrosion-resistant line level connections.',
   specifications: { Type: 'RCA', Quantity: '20 pcs', Plating: 'Gold', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -1093,7 +1127,6 @@ export const products: Product[] = [
   description:
   'Screw-type banana plugs for amplifier binding posts — no soldering required.',
   specifications: { Type: 'Banana', Quantity: '16 pcs', Plating: 'Gold', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -1113,7 +1146,6 @@ export const products: Product[] = [
   description:
   'Essential adapter kit covering XLR, TRS, TS, RCA and 3.5mm conversions in a zip case.',
   specifications: { Type: 'Mixed adapters', Quantity: '9 pcs', Case: 'Included', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['popular', 'budget']
 },
 
@@ -1123,7 +1155,7 @@ export const products: Product[] = [
   slug: 'speaker-box-12-sb-12',
   name: '12" Speaker Box',
   model: 'SB-12',
-  brand: 'SoundForge',
+  brand: 'EM Audio',
   category: 'Speaker Box',
   price: 8999,
   rating: 4.4,
@@ -1134,7 +1166,6 @@ export const products: Product[] = [
   description:
   'Empty 12-inch cabinet with textured paint finish, steel grille and pole socket.',
   specifications: { Size: '12 inch', Material: '18mm Birch Ply', Finish: 'Textured paint', Handles: '2 side', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -1142,7 +1173,7 @@ export const products: Product[] = [
   slug: 'speaker-box-15-sb-15',
   name: '15" Speaker Box',
   model: 'SB-15',
-  brand: 'SoundForge',
+  brand: 'SS Audio',
   category: 'Speaker Box',
   price: 11499,
   oldPrice: 13499,
@@ -1155,7 +1186,6 @@ export const products: Product[] = [
   description:
   'Front-ported 15-inch enclosure ready for your driver and horn combination.',
   specifications: { Size: '15 inch', Material: '18mm Birch Ply', Porting: 'Front ported', Fly: 'M10 points', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'popular']
 },
 {
@@ -1163,7 +1193,7 @@ export const products: Product[] = [
   slug: 'subwoofer-box-18-sb-18',
   name: '18" Subwoofer Box',
   model: 'SB-18',
-  brand: 'SoundForge',
+  brand: 'SS Audio',
   category: 'Speaker Box',
   price: 16999,
   rating: 4.6,
@@ -1174,7 +1204,6 @@ export const products: Product[] = [
   description:
   'Heavy-duty 18-inch bass reflex cabinet with recessed castors and skid rails.',
   specifications: { Size: '18 inch', Material: '21mm Birch Ply', Porting: 'Bass reflex', Castors: 'Recessed', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -1194,7 +1223,6 @@ export const products: Product[] = [
   description:
   'Compact dual 8-inch line array module with integrated rigging hardware.',
   specifications: { Size: 'Dual 8 inch', Rigging: 'Integrated', Material: '15mm Birch Ply', Coverage: '100° × 10°', Warranty: '1 Year' },
-  availability: 'Made To Order',
   tags: ['new', 'professional']
 },
 {
@@ -1202,7 +1230,7 @@ export const products: Product[] = [
   slug: 'monitor-speaker-box-mb-12',
   name: 'Monitor Speaker Box',
   model: 'MB-12',
-  brand: 'SoundForge',
+  brand: 'SS Audio',
   category: 'Speaker Box',
   price: 9999,
   rating: 4.3,
@@ -1213,7 +1241,6 @@ export const products: Product[] = [
   description:
   'Low-profile 12-inch floor wedge cabinet for stage monitoring builds.',
   specifications: { Size: '12 inch', Type: 'Wedge monitor', Angle: '45°', Material: '18mm Birch Ply', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional', 'budget']
 },
 
@@ -1234,7 +1261,6 @@ export const products: Product[] = [
   description:
   'Genuine replacement diaphragm for 44mm compression drivers — restores full HF output.',
   specifications: { Size: '44 mm', Material: 'Titanium', Impedance: '8Ω', Fitment: 'Universal 1" throat', Warranty: '3 Months' },
-  availability: 'In Stock',
   tags: ['popular', 'budget']
 },
 {
@@ -1253,7 +1279,6 @@ export const products: Product[] = [
   description:
   'Copper-wound 75mm voice coil on a Kapton former for woofer reconing.',
   specifications: { Size: '75 mm', Wire: 'Copper', Former: 'Kapton', Impedance: '8Ω', Warranty: '3 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -1272,7 +1297,6 @@ export const products: Product[] = [
   description:
   'Complete 15-inch recone kit including cone, spider, surround and gasket.',
   specifications: { Size: '15 inch', Includes: 'Cone, spider, surround', Material: 'Treated paper', Warranty: '3 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -1291,7 +1315,6 @@ export const products: Product[] = [
   description:
   'Drop-in mylar diaphragm replacement for 25mm dome tweeters.',
   specifications: { Size: '25 mm', Material: 'Mylar', Impedance: '8Ω', Warranty: '3 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -1310,7 +1333,6 @@ export const products: Product[] = [
   description:
   'Workshop service kit with gaskets, screws, terminals and adhesives for driver repairs.',
   specifications: { Contents: 'Gaskets, terminals, adhesive', Application: 'Driver servicing', Warranty: '3 Months' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 
@@ -1333,7 +1355,6 @@ export const products: Product[] = [
   description:
   'Height-adjustable steel tripod speaker stands with safety pin and carry bag.',
   specifications: { Material: 'Steel', 'Max Height': '1.9 m', 'Load Capacity': '50 kg per stand', Quantity: '2 pcs', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['sale', 'bestseller']
 },
 {
@@ -1353,7 +1374,6 @@ export const products: Product[] = [
   description:
   'Tripod boom microphone stand with clutch height adjustment and mic clip included.',
   specifications: { Type: 'Tripod boom', 'Height Range': '0.9 – 1.6 m', Boom: '0.75 m', Includes: 'Mic clip', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['bestseller', 'budget']
 },
 {
@@ -1372,7 +1392,6 @@ export const products: Product[] = [
   description:
   'Folding mixer table with adjustable tilt for FOH positions and DJ booths.',
   specifications: { Material: 'Aluminium', 'Load Capacity': '25 kg', Tilt: 'Adjustable', Folding: 'Yes', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -1391,7 +1410,6 @@ export const products: Product[] = [
   description:
   'Swivel and tilt wall bracket for installing speakers in halls and showrooms.',
   specifications: { 'Load Capacity': '30 kg', Movement: 'Swivel + Tilt', Material: 'Powder-coated steel', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 {
@@ -1411,7 +1429,6 @@ export const products: Product[] = [
   description:
   'Flight-cased 12U rack with removable lids, castors and vented rails for amplifier racks.',
   specifications: { Size: '12U', Depth: '450 mm', Castors: 'Included', Construction: 'Plywood + aluminium', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['new', 'professional']
 },
 {
@@ -1430,7 +1447,6 @@ export const products: Product[] = [
   description:
   'Rack-mount 8-outlet power distributor with sequential switching and surge protection.',
   specifications: { Outlets: '8', Rating: '16A', Protection: 'Surge + MCB', 'Rack Size': '1U', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['professional']
 },
 {
@@ -1449,7 +1465,6 @@ export const products: Product[] = [
   description:
   'Padded nylon transport bag protecting 15-inch speakers on the road.',
   specifications: { Fits: '15 inch speakers', Material: 'Padded nylon', Handles: 'Shoulder + side', Warranty: '6 Months' },
-  availability: 'In Stock',
   tags: ['budget']
 },
 
@@ -1472,7 +1487,6 @@ export const products: Product[] = [
   description:
   'Four-deck DJ controller with capacitive jog wheels, performance pads and a built-in sound card.',
   specifications: { Decks: '4', Pads: '16 RGB', 'Sound Card': '24-bit / 96kHz', Outputs: 'XLR / RCA / Booth', Warranty: '2 Years' },
-  availability: 'Limited Stock',
   tags: ['sale', 'popular', 'professional']
 },
 {
@@ -1491,7 +1505,6 @@ export const products: Product[] = [
   description:
   'Closed-back monitoring headphones with swivel cups and a detachable coiled cable.',
   specifications: { Drivers: '50 mm', Frequency: '5Hz – 30kHz', Impedance: '32Ω', Cable: 'Detachable coiled', Warranty: '1 Year' },
-  availability: 'In Stock',
   tags: ['popular', 'budget']
 }];
 

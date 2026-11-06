@@ -33,7 +33,7 @@ const MAIN_PAGES = [
   {
     title: 'All Products Catalogue',
     path: '/products',
-    description: 'Complete browsable audio equipment database with price, category, tag, and availability filters.'
+    description: 'Complete browsable audio equipment database with price, category, tag, and brand filters.'
   },
   {
     title: 'Audio Brands Portfolio',
@@ -74,7 +74,7 @@ const COLLECTIONS = [
     title: '🏆 Best Sellers',
     path: '/products?tag=bestseller',
     tag: 'bestseller',
-    description: 'Top-demanded equipment consistently chosen by sound rental companies and venues.'
+    description: 'Top-demanded equipment consistently chosen by sound rental companies and event operators.'
   },
   {
     title: '⚡ Popular Gear',
@@ -98,7 +98,7 @@ const COLLECTIONS = [
     title: '💡 Budget Friendly',
     path: '/products?tag=budget',
     tag: 'budget',
-    description: 'Cost-effective high-value audio solutions for small venues, clubs, and worship spaces.'
+    description: 'Cost-effective high-value audio hardware for live sound operators, DJs, and club setups.'
   }
 ];
 
@@ -395,14 +395,9 @@ export function Sitemap() {
                     to={`/category/${cat.slug}`}
                     className="group flex items-start gap-3 rounded-xl border border-zinc-200 bg-white p-3.5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:shadow-card"
                   >
-                    <img
-                      src={cat.image || '/amplifiers1.webp'}
-                      alt={cat.name}
-                      className="h-12 w-12 shrink-0 rounded-lg border border-zinc-200 bg-zinc-50 object-cover"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = '/amplifiers1.webp';
-                      }}
-                    />
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10 border border-accent/20 font-display text-sm font-black text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+                      {cat.name.charAt(0)}
+                    </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center justify-between gap-1">
                         <h3 className="font-display text-sm font-bold uppercase text-ink truncate group-hover:text-accent transition-colors">
@@ -617,7 +612,7 @@ export function Sitemap() {
                   </h3>
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-zinc-600">
-                  Get real-time catalog quotations and warehouse stock updates sent directly to WhatsApp.
+                  Get real-time catalog quotations and warehouse product updates sent directly to WhatsApp.
                 </p>
                 <div className="mt-3">
                   <a

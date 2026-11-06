@@ -99,7 +99,7 @@ export function Branches() {
               {
                 icon: WrenchIcon,
                 title: 'Local Service & Spares',
-                text: 'All original diaphragms, recone kits, and replacement parts readily in stock at our warehouse.'
+                text: 'All original diaphragms, recone kits, and replacement parts readily available at our warehouse.'
               },
               {
                 icon: ShieldCheckIcon,

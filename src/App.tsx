@@ -22,10 +22,10 @@ function AppLayout() {
   const isAdmin = location.pathname.toLowerCase().startsWith('/admin');
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-surface">
-      <AnnouncementBar />
+    <div className={`flex w-full flex-col bg-surface ${isAdmin ? 'h-screen overflow-hidden' : 'min-h-screen'}`}>
+      {!isAdmin && <AnnouncementBar />}
       <Navbar />
-      <main className="flex-1">
+      <main className={`flex-1 ${isAdmin ? 'overflow-hidden flex flex-col' : ''}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<AllProducts />} />

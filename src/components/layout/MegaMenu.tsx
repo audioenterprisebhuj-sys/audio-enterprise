@@ -45,25 +45,13 @@ export function MegaMenu({ onNavigate }: MegaMenuProps) {
                   <Link
                     to={`/category/${category.slug}`}
                     onClick={onNavigate}
-                    className="group flex items-start gap-3 rounded-lg p-2 transition-colors hover:bg-surface"
+                    className="group flex flex-col rounded-lg border border-transparent p-2.5 transition-colors hover:border-zinc-200 hover:bg-surface"
                   >
-                    <img
-                      src={category.image || '/amplifiers1.webp'}
-                      alt={category.name}
-                      loading="lazy"
-                      className="h-11 w-11 shrink-0 rounded-md border border-zinc-200 bg-zinc-100 object-cover transition-transform duration-300 group-hover:scale-105"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src = '/amplifiers1.webp';
-                      }}
-                    />
-
-                    <span className="min-w-0">
-                      <span className="block truncate text-[13px] font-bold text-ink group-hover:text-accent">
-                        {category.name}
-                      </span>
-                      <span className="block truncate text-[11px] leading-snug text-zinc-500">
-                        {category.description}
-                      </span>
+                    <span className="block truncate text-[13.5px] font-bold text-ink group-hover:text-accent">
+                      {category.name}
+                    </span>
+                    <span className="block truncate text-[11px] leading-snug text-zinc-500">
+                      {category.description}
                     </span>
                   </Link>
                 </li>
@@ -75,11 +63,10 @@ export function MegaMenu({ onNavigate }: MegaMenuProps) {
             <div>
               <HeadphonesIcon size={26} className="text-accent" />
               <h3 className="mt-4 font-display text-2xl font-extrabold uppercase leading-none">
-                Not sure what you need?
+                Looking for Equipment?
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-white/60">
-                Tell our audio engineers about your venue and we will spec the right
-                system for you.
+                Message our product specialists to get technical specifications, pricing, and factory direct quotations.
               </p>
             </div>
             <a
@@ -88,7 +75,7 @@ export function MegaMenu({ onNavigate }: MegaMenuProps) {
               rel="noopener noreferrer"
               className="mt-6 inline-flex h-11 items-center justify-center rounded-md bg-accent px-5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-ink"
             >
-              Talk to an Expert
+              Get Product Quotation
             </a>
           </aside>
         </div>

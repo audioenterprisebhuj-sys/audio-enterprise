@@ -138,6 +138,9 @@ export const IMG = {
   catProAudioAcc: '/proAudioImg.webp',
 
   // Branding
-  logo: '/logo.webp',
-  emAudio: '/em-audio.webp',
+  logo: '/brands/ss-audio.webp',
+  emAudio: '/brands/em-audio.webp',
+  ssAudio: '/brands/ss-audio.webp',
+  shupu: '/brands/shupu.webp',
+  alElectronic: '/brands/al-electronic.webp',
 } as const;

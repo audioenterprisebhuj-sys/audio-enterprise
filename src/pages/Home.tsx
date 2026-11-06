@@ -1,5 +1,6 @@
 import React from 'react';
-import { CategoryShowcase } from '../components/home/CategoryShowcase';
+import { BrandInnovation } from '../components/home/BrandInnovation';
+import { CreativeApplications } from '../components/home/CreativeApplications';
 import { HelpCTA } from '../components/home/HelpCTA';
 import { HeroCarousel } from '../components/home/HeroCarousel';
 import { TopPicks } from '../components/home/TopPicks';
@@ -59,29 +60,32 @@ export function Home() {
     .filter((s) => s.enabled !== false)
     .sort((a, b) => (a.order || 0) - (b.order || 0));
 
-  const hasTopPicks = enabledSections.some((s) => s.id === 'top-picks' || s.type === 'top-picks');
-
   return (
     <>
       <HeroCarousel />
       <TrustBar />
 
+      {/* Brand Innovation & Sonic Craftsmanship */}
+      <BrandInnovation />
+
+      {/* Professional Audio Products In Action - Crafted For Every Stage */}
+      <CreativeApplications />
+
+      {/* Product Showcase Sections (Top Picks, Sale, Categories, etc.) */}
       {enabledSections.map((section, idx) => {
         // If this is the Top Picks section
         if (section.id === 'top-picks' || section.type === 'top-picks') {
           return (
-            <React.Fragment key={section.id}>
-              <TopPicks
-                maxProducts={section.maxProducts || 5}
-                productIds={section.productIds}
-                title={section.title}
-                eyebrow={section.eyebrow}
-                subtitle={section.subtitle}
-                viewAllHref={section.viewAllHref}
-                viewAllLabel={section.viewAllLabel}
-              />
-              <CategoryShowcase />
-            </React.Fragment>
+            <TopPicks
+              key={section.id}
+              maxProducts={section.maxProducts || 5}
+              productIds={section.productIds}
+              title={section.title}
+              eyebrow={section.eyebrow}
+              subtitle={section.subtitle}
+              viewAllHref={section.viewAllHref}
+              viewAllLabel={section.viewAllLabel}
+            />
           );
         }
 
@@ -135,8 +139,7 @@ export function Home() {
               className={bgClass}
               footer={customFooter}
             />
-            {/* If CategoryShowcase wasn't rendered by top-picks */}
-            {!hasTopPicks && idx === 1 && <CategoryShowcase />}
+            {/* Category Section */}
           </React.Fragment>
         );
       })}

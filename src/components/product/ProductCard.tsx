@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { CheckCircle2Icon, ClockIcon, WrenchIcon } from 'lucide-react';
 import type { Product } from '../../types';
 import { discountPercent, formatPrice } from '../../utils/format';
 import { generateWhatsAppInquiry } from '../../utils/whatsapp';
@@ -14,7 +13,6 @@ interface ProductCardProps {
   variant?: 'default' | 'spec';
   specKeys?: string[];
   ctaLabel?: string;
-  showAvailability?: boolean;
 }
 
 const badgeStyles: Record<string, string> = {
@@ -25,24 +23,17 @@ const badgeStyles: Record<string, string> = {
   POPULAR: 'bg-gradient-to-r from-zinc-700 to-zinc-600 text-white'
 };
 
-const availabilityIcon = {
-  'In Stock': CheckCircle2Icon,
-  'Limited Stock': ClockIcon,
-  'Made To Order': WrenchIcon
-};
 
 export function ProductCard({
   product,
   variant = 'default',
   specKeys,
-  ctaLabel = 'WhatsApp Inquiry',
-  showAvailability = false
+  ctaLabel = 'WhatsApp Inquiry'
 }: ProductCardProps) {
   const off = discountPercent(product.price, product.oldPrice);
   const specs = (specKeys ?? []).
   map((key) => ({ key, value: product.specifications[key] })).
   filter((s) => Boolean(s.value));
-  const AvailabilityIcon = availabilityIcon[product.availability];
 
   return (
     <motion.article
@@ -128,20 +119,7 @@ export function ProductCard({
 
         <div className="mt-1.5 flex items-center justify-between gap-2">
           <Rating value={product.rating} reviews={product.reviews} />
-          {showAvailability &&
-          <span
-            className={`inline-flex items-center gap-1 text-[11px] font-semibold ${
-            product.availability === 'In Stock' ?
-            'text-emerald-600' :
-            product.availability === 'Limited Stock' ?
-            'text-amber-600' :
-            'text-zinc-500'}`
-            }>
-            
-              <AvailabilityIcon size={12} />
-              {product.availability}
-            </span>
-          }
+          
         </div>
 
         <div className="mt-3 flex-1" />

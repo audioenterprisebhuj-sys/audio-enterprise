@@ -30,8 +30,8 @@ export function HelpCTA() {
               Need Help Choosing the Right Equipment?
             </h2>
             <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/65">
-              Our audio experts can help you select the right products for your event,
-              studio, DJ setup or professional installation.
+              Our audio equipment specialists can assist you in selecting the exact products,
+              power ratings, and matching hardware for your live sound needs.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a

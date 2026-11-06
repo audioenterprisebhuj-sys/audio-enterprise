@@ -522,7 +522,7 @@ ${urls.map((u) => `  <url>
 
         const slug = (body.slug || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')).trim();
         const description = (body.description || `Professional audio equipment in ${name}`).trim();
-        const image = (body.image || '/amplifiers1.webp').trim();
+        const image = (body.image || '').trim();
 
         const { categoriesCollection } = await getDb();
         const existing = await categoriesCollection.findOne({
@@ -698,7 +698,7 @@ ${urls.map((u) => `  <url>
         const maxB = await brandsCollection.find({}).sort({ id: -1 }).limit(1).toArray();
         const nextId = (maxB.length > 0 && typeof maxB[0].id === 'number') ? maxB[0].id + 1 : Date.now();
 
-        const newBrand = { id: nextId, name, description };
+        const newBrand = { id: nextId, name, description, ...(body.logo ? { logo: body.logo } : {}) };
         await brandsCollection.insertOne(newBrand);
         await syncBrandsBackup();
 
@@ -731,9 +731,14 @@ ${urls.map((u) => `  <url>
         const newName = (body.name || existing.name).trim();
         const newDesc = (body.description !== undefined ? body.description : existing.description).trim();
 
+        const updateFields = { name: newName, description: newDesc };
+        if (body.logo !== undefined) {
+          updateFields.logo = body.logo;
+        }
+
         await brandsCollection.updateOne(
           query,
-          { $set: { name: newName, description: newDesc } }
+          { $set: updateFields }
         );
 
         // If brand name changed, cascade update all products with old brand name!

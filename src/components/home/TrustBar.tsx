@@ -14,7 +14,7 @@ const FEATURES = [
   { Icon: HeadphonesIcon, title: 'Expert Support', text: 'Get product guidance' },
   { Icon: WhatsAppIcon, title: 'Fast Response', text: 'Quick WhatsApp inquiry' },
   { Icon: ShieldCheckIcon, title: 'Genuine Products', text: 'Quality assured' },
-  { Icon: WrenchIcon, title: 'Installation Support', text: 'Professional assistance' },
+  { Icon: WrenchIcon, title: 'Original Spares', text: 'Factory replacement parts' },
   { Icon: ZapIcon, title: 'Warranty Support', text: 'After-sales service' }
 ];
 

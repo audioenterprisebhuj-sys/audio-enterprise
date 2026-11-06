@@ -3,7 +3,6 @@ import { AlertCircleIcon, CheckCircle2Icon, CheckIcon, Loader2Icon, SendIcon } f
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 import { createInquiry } from '../../services/inquiryService';
 import {
-  formatContactInquiryMessage,
   generateContactInquiry,
   openWhatsApp
 } from '../../utils/whatsapp';
@@ -106,14 +105,8 @@ export function validateMessage(message: string): string | null {
   return null;
 }
 
-export function InquiryForm({ product, title = 'Send an Inquiry' }: InquiryFormProps) {
+export function InquiryForm({ product, title = 'Inquiry Form' }: InquiryFormProps) {
   const [status, setStatus] = useState<Status>('idle');
-  const [submittedData, setSubmittedData] = useState<{
-    url: string;
-    formattedText: string;
-    name: string;
-    phone: string;
-  } | null>(null);
 
   const [form, setForm] = useState({
     name: '',
@@ -209,7 +202,7 @@ export function InquiryForm({ product, title = 'Send an Inquiry' }: InquiryFormP
 
     setStatus('submitting');
 
-    // 1. Format the structured message and build the pre-filled WhatsApp deep-link
+    // 1. Build the pre-filled WhatsApp deep-link
     const inquiryData = {
       name: form.name.trim(),
       phone: form.phone.trim(),
@@ -218,18 +211,9 @@ export function InquiryForm({ product, title = 'Send an Inquiry' }: InquiryFormP
       product
     };
 
-    const formattedText = formatContactInquiryMessage(inquiryData);
     const whatsappUrl = generateContactInquiry(inquiryData);
 
-    setSubmittedData({
-      url: whatsappUrl,
-      formattedText,
-      name: form.name.trim(),
-      phone: form.phone.trim()
-    });
-
     // 2. Open WhatsApp immediately with the pre-filled formatted message
-    // When WhatsApp opens, user just has to press Enter to send!
     openWhatsApp(whatsappUrl);
 
     // 3. Persist inquiry locally in leads storage
@@ -239,12 +223,7 @@ export function InquiryForm({ product, title = 'Send an Inquiry' }: InquiryFormP
       // ignore
     }
 
-    setStatus('success');
-  };
-
-  const resetForm = () => {
-    setStatus('idle');
-    setSubmittedData(null);
+    // 4. Reset form fields for subsequent inquiry
     setForm({
       name: '',
       phone: '',
@@ -253,6 +232,12 @@ export function InquiryForm({ product, title = 'Send an Inquiry' }: InquiryFormP
     });
     setTouched({});
     setErrors({});
+    setStatus('success');
+
+    // Return to idle state after 4 seconds
+    setTimeout(() => {
+      setStatus('idle');
+    }, 4000);
   };
 
   const getFieldClass = (field: 'name' | 'phone' | 'email' | 'message') => {
@@ -266,66 +251,6 @@ export function InquiryForm({ product, title = 'Send an Inquiry' }: InquiryFormP
     }
     return `${base} border-zinc-300 focus:border-accent`;
   };
-
-  // ==========================================
-  // Success Confirmation Screen
-  // ==========================================
-  if (status === 'success' && submittedData) {
-    return (
-      <div className="flex flex-col items-center gap-4 rounded-2xl border border-emerald-200 bg-emerald-50/60 p-6 sm:p-8 text-center shadow-sm">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#25D366] text-white shadow-md ring-8 ring-emerald-100">
-          <WhatsAppIcon size={28} />
-        </div>
-
-        <div>
-          <span className="rounded-full bg-emerald-100 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-emerald-800">
-            WhatsApp Loaded & Ready
-          </span>
-          <h3 className="mt-2 font-display text-2xl font-extrabold uppercase tracking-tight text-ink sm:text-3xl">
-            Inquiry Formatted!
-          </h3>
-          <p className="mt-1.5 max-w-md text-sm leading-relaxed text-zinc-600">
-            Your details have been formatted and loaded directly into WhatsApp chat with <strong>Audio Enterprise</strong>. All you have to do is press <strong>Enter</strong> in WhatsApp to send!
-          </p>
-        </div>
-
-        {/* Message Preview Box */}
-        <div className="w-full max-w-lg rounded-xl border border-emerald-200 bg-white p-4 text-left shadow-sm">
-          <div className="flex items-center justify-between border-b border-zinc-100 pb-2 mb-2.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-500">
-              Formatted WhatsApp Message Preview
-            </span>
-            <span className="flex items-center gap-1 text-[11px] font-semibold text-emerald-600">
-              <CheckCircle2Icon size={13} /> Ready to send
-            </span>
-          </div>
-          <pre className="whitespace-pre-wrap font-sans text-xs leading-relaxed text-zinc-700 max-h-56 overflow-y-auto thin-scrollbar">
-            {submittedData.formattedText}
-          </pre>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 w-full">
-          <a
-            href={submittedData.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 text-xs font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#1faa54] hover:shadow-lg"
-          >
-            <WhatsAppIcon size={18} />
-            Open WhatsApp (Press Enter to Send)
-          </a>
-          <button
-            type="button"
-            onClick={resetForm}
-            className="inline-flex h-12 items-center justify-center rounded-lg border border-zinc-300 bg-white px-5 text-xs font-bold uppercase tracking-wider text-zinc-700 transition-colors hover:border-zinc-400 hover:text-ink cursor-pointer"
-          >
-            Send Another Inquiry
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   // ==========================================
   // Form UI
@@ -502,7 +427,7 @@ export function InquiryForm({ product, title = 'Send an Inquiry' }: InquiryFormP
                   : 'border-emerald-500 focus:border-emerald-600'
                 : 'border-zinc-300 focus:border-accent'
             }`}
-            placeholder="Tell us about your venue, event, sound setup, or specific model requirements."
+            placeholder="Tell us about your audio equipment requirements, desired quantities, or specific models."
           />
           {touched.message && errors.message ? (
             <span className="mt-1.5 flex items-center gap-1 text-[11px] font-semibold text-red-600">
@@ -524,6 +449,13 @@ export function InquiryForm({ product, title = 'Send an Inquiry' }: InquiryFormP
         </div>
       )}
 
+      {status === 'success' && (
+        <div className="mt-5 flex items-center gap-2 rounded-xl bg-emerald-50 p-3.5 text-xs font-semibold text-emerald-800 border border-emerald-200">
+          <CheckCircle2Icon size={16} className="shrink-0 text-emerald-600" />
+          <span>WhatsApp opened with your inquiry! Press Send in WhatsApp.</span>
+        </div>
+      )}
+
       <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
@@ -535,7 +467,7 @@ export function InquiryForm({ product, title = 'Send an Inquiry' }: InquiryFormP
           ) : (
             <WhatsAppIcon size={18} />
           )}
-          {status === 'submitting' ? 'Formatting & Loading WhatsApp...' : 'Send Inquiry on WhatsApp'}
+          {status === 'submitting' ? 'Opening WhatsApp...' : 'Send Inquiry on WhatsApp'}
         </button>
 
         <p className="text-[11px] text-zinc-500 flex items-center gap-1">

@@ -39,7 +39,21 @@ function getInitialProducts(): Product[] {
       if (cached) {
         const parsed = JSON.parse(cached);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          let hasSoundForge = false;
+          const cleaned = parsed.map((p) => {
+            if (p.brand === 'SoundForge') {
+              hasSoundForge = true;
+              return {
+                ...p,
+                brand: p.category === 'Microphones' ? 'SHUPU' : p.category === 'Amplifiers' || p.category === 'Mixers' ? 'EM Audio' : 'SS Audio'
+              };
+            }
+            return p;
+          });
+          if (hasSoundForge) {
+            localStorage.setItem(CACHE_KEY, JSON.stringify(cleaned));
+          }
+          return cleaned;
         }
       }
     } catch {
@@ -264,7 +278,6 @@ export interface FilterParams {
   categories?: string[];
   brands?: string[];
   maxPrice?: number;
-  availability?: string[];
   sort?: SortKey;
 }
 
@@ -274,7 +287,6 @@ export function filterProducts(params: FilterParams, sourceList = liveProducts):
     categories = [],
     brands = [],
     maxPrice = PRICE_CEILING,
-    availability = [],
     sort = 'featured'
   } = params;
 
@@ -289,10 +301,15 @@ export function filterProducts(params: FilterParams, sourceList = liveProducts):
       if (!inName && !inModel && !inBrand && !inCat && !inFeature) return false;
     }
 
-    if (categories.length > 0 && !categories.includes(p.category)) return false;
-    if (brands.length > 0 && !brands.includes(p.brand)) return false;
+    if (categories.length > 0) {
+      const normCats = categories.map((c) => c.toLowerCase().trim());
+      if (!normCats.includes(p.category.toLowerCase().trim())) return false;
+    }
+    if (brands.length > 0) {
+      const normBrands = brands.map((b) => b.toLowerCase().trim());
+      if (!normBrands.includes(p.brand.toLowerCase().trim())) return false;
+    }
     if (p.price > maxPrice) return false;
-    if (availability.length > 0 && !availability.includes(p.availability)) return false;
 
     return true;
   });

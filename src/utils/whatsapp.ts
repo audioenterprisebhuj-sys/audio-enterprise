@@ -22,7 +22,7 @@ export function generateWhatsAppInquiry(product: Product): string {
     `Price: ${formatPrice(product.price)}`,
     `Link: ${productUrl(product)}`,
     '',
-    'Please share availability, specifications and best price.'
+    'Please share specifications and best price quotation.'
   ].join('\n');
   return buildUrl(message);
 }
@@ -30,14 +30,14 @@ export function generateWhatsAppInquiry(product: Product): string {
 /** Pre-filled WhatsApp message for a category or section level inquiry. */
 export function generateCategoryInquiry(category: string): string {
   return buildUrl(
-    `Hello, I would like to know more about your ${category} range. Please share the catalogue, availability and best price.`
+    `Hello, I would like to know more about your ${category} range. Please share the catalogue, specifications and best price.`
   );
 }
 
 /** Pre-filled WhatsApp message for a brand inquiry. */
 export function generateBrandInquiry(brandName: string): string {
   return buildUrl(
-    `Hello Audio Enterprise, I would like to know more about products from ${brandName}. Please share catalogue, availability and best price.`
+    `Hello Audio Enterprise, I would like to know more about products from ${brandName}. Please share catalogue, specifications and best price.`
   );
 }
 
@@ -56,7 +56,7 @@ export interface ContactInquiryData {
   product?: Product;
 }
 
-/** Formats all contact inquiry fields into clean WhatsApp message text with structured layout */
+/** Formats all contact inquiry fields into clean WhatsApp message text with structured layout (No emojis/special symbols) */
 export function formatContactInquiryMessage(data: ContactInquiryData): string {
   const cleanPhone = (data.phone || '').trim().replace(/\D/g, '');
   const formattedPhone = cleanPhone.length === 10 ? `+91 ${cleanPhone}` : data.phone.trim();
@@ -64,20 +64,20 @@ export function formatContactInquiryMessage(data: ContactInquiryData): string {
   const parts: string[] = [
     'Hello Audio Enterprise, I would like to make an inquiry:',
     '',
-    '📋 *NEW CUSTOMER INQUIRY*',
+    '*NEW CUSTOMER INQUIRY*',
     '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-    `👤 *Full Name:* ${data.name.trim()}`,
-    `📞 *Contact Number:* ${formattedPhone}`
+    `*Full Name:* ${data.name.trim()}`,
+    `*Contact Number:* ${formattedPhone}`
   ];
 
   if (data.email && data.email.trim()) {
-    parts.push(`✉️ *Email Address:* ${data.email.trim()}`);
+    parts.push(`*Email Address:* ${data.email.trim()}`);
   }
 
   if (data.product) {
     parts.push(
       '',
-      '📦 *PRODUCT DETAILS*',
+      '*PRODUCT DETAILS*',
       `*Product:* ${data.product.name} (${data.product.model})`,
       `*Category:* ${data.product.category}`,
       `*Price:* ${formatPrice(data.product.price)}`,
@@ -88,7 +88,7 @@ export function formatContactInquiryMessage(data: ContactInquiryData): string {
   if (data.message && data.message.trim()) {
     parts.push(
       '',
-      '📝 *Requirement / Message:*',
+      '*Requirement / Message:*',
       data.message.trim()
     );
   }
@@ -96,7 +96,7 @@ export function formatContactInquiryMessage(data: ContactInquiryData): string {
   parts.push(
     '',
     '━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
-    'Please share quotation, availability, and technical details. Thank you!'
+    'Please share quotation and technical details. Thank you!'
   );
 
   return parts.join('\n');

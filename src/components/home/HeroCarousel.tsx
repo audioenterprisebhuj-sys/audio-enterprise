@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
+import { SITE } from '../../config/site';
 import { heroSlides } from '../../data/heroSlides';
 import { generateGeneralInquiry } from '../../utils/whatsapp';
 
@@ -89,13 +90,22 @@ export function HeroCarousel() {
                   />
                 </Link>
                 <a
-                  href="https://chat.whatsapp.com/IPOJb87wI9z9WO0B9iGAVE?mode=gi_t"
+                  href={SITE.whatsappGroup}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-11 sm:h-12 w-full items-center justify-center gap-2 rounded-md border border-white/30 px-5 sm:px-6 text-xs sm:text-sm font-bold uppercase tracking-wider text-white backdrop-blur-sm transition-colors hover:border-[#25D366] hover:bg-[#25D366] hover:text-white sm:w-auto"
+                  className="relative group inline-flex h-11 sm:h-12 w-full items-center justify-center gap-2.5 rounded-lg bg-gradient-to-r from-[#20ba5a] via-[#25D366] to-[#128C7E] px-5 sm:px-6 text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white shadow-[0_0_25px_rgba(37,211,102,0.6)] ring-2 ring-[#25D366] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(37,211,102,0.85)] hover:ring-white sm:w-auto overflow-hidden animate-pulse"
                 >
-                  <WhatsAppIcon size={16} />
-                  Join WhatsApp Group
+                  {/* Subtle animated light shimmer across the button */}
+                  <span className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out" />
+                  
+                  {/* Glowing live indicator pulse */}
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white" />
+                  </span>
+
+                  <WhatsAppIcon size={18} className="shrink-0 drop-shadow" />
+                  <span className="relative z-10 font-black">Join WhatsApp Group</span>
                 </a>
               </div>
             </motion.div>

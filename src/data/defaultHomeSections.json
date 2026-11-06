@@ -9,13 +9,38 @@
     "viewAllHref": "/products?tag=sale",
     "viewAllLabel": "View All Sale Products",
     "maxProducts": 5,
-    "productIds": [
-      18
-    ],
-    "enabled": true,
+    "productIds": [],
+    "enabled": false,
     "variant": "default",
     "dark": false,
     "order": 1
+  },
+  {
+    "id": "mixers",
+    "title": "Professional Mixing Consoles",
+    "eyebrow": "Live Sound Mixers",
+    "subtitle": "From compact 4-channel desks to 16-channel touring consoles with studio-grade DSP effects.",
+    "type": "category",
+    "filterValue": "Mixers",
+    "viewAllHref": "/category/mixers",
+    "viewAllLabel": "View All Mixers",
+    "maxProducts": 4,
+    "productIds": [
+      201,
+      202,
+      203,
+      204
+    ],
+    "enabled": true,
+    "variant": "spec",
+    "specKeys": [
+      "Channels",
+      "Effects",
+      "USB",
+      "Bluetooth"
+    ],
+    "dark": false,
+    "order": 2
   },
   {
     "id": "top-picks",
@@ -28,7 +53,11 @@
     "viewAllLabel": "View All Top Picks",
     "maxProducts": 5,
     "productIds": [
-      18
+      104,
+      201,
+      301,
+      401,
+      102
     ],
     "enabled": true,
     "variant": "default",
@@ -45,8 +74,11 @@
     "viewAllHref": "/category/amplifiers",
     "viewAllLabel": "View All Amplifiers",
     "maxProducts": 5,
-    "productIds": [],
-    "enabled": true,
+    "productIds": [
+      301,
+      302
+    ],
+    "enabled": false,
     "variant": "spec",
     "specKeys": [
       "Power",
@@ -66,7 +98,7 @@
     "viewAllLabel": "View All Speakers & Tweeters",
     "maxProducts": 5,
     "productIds": [],
-    "enabled": true,
+    "enabled": false,
     "variant": "spec",
     "specKeys": [
       "Power",
@@ -77,45 +109,25 @@
   },
   {
     "id": "microphones",
-    "title": "Microphones",
-    "eyebrow": "Category",
-    "subtitle": "Vocal, instrument, wireless systems, podium and studio microphones.",
+    "title": "Shupu Professional Microphones",
+    "eyebrow": "Wired Dynamic Range",
+    "subtitle": "Precision cardioid and neodymium stage microphones engineered for flawless vocal clarity and zero feedback.",
     "type": "category",
     "filterValue": "Microphones",
     "viewAllHref": "/category/microphones",
     "viewAllLabel": "View All Microphones",
-    "maxProducts": 3,
+    "maxProducts": 5,
     "productIds": [
-      18,
-      20,
-      21
+      103,
+      104,
+      107,
+      101,
+      106
     ],
     "enabled": true,
     "variant": "default",
     "dark": false,
     "order": 5
-  },
-  {
-    "id": "mixers",
-    "title": "Professional Mixers",
-    "eyebrow": "Category",
-    "subtitle": "From compact 4-channel desks to 24-channel digital consoles.",
-    "type": "category",
-    "filterValue": "Mixers",
-    "viewAllHref": "/category/mixers",
-    "viewAllLabel": "View All Mixers",
-    "maxProducts": 5,
-    "productIds": [],
-    "enabled": true,
-    "variant": "spec",
-    "specKeys": [
-      "Channels",
-      "Effects",
-      "USB",
-      "Bluetooth"
-    ],
-    "dark": false,
-    "order": 6
   },
   {
     "id": "processors",
@@ -128,7 +140,7 @@
     "viewAllLabel": "View All Audio Processors",
     "maxProducts": 5,
     "productIds": [],
-    "enabled": true,
+    "enabled": false,
     "variant": "spec",
     "specKeys": [
       "Inputs",
@@ -150,7 +162,7 @@
     "viewAllLabel": "Explore Lighting",
     "maxProducts": 5,
     "productIds": [],
-    "enabled": true,
+    "enabled": false,
     "variant": "default",
     "dark": true,
     "order": 8
@@ -166,7 +178,7 @@
     "viewAllLabel": "View All Wires & Cables",
     "maxProducts": 5,
     "productIds": [],
-    "enabled": true,
+    "enabled": false,
     "variant": "spec",
     "specKeys": [
       "Cable Type",
@@ -187,7 +199,7 @@
     "viewAllLabel": "View All Connectors",
     "maxProducts": 5,
     "productIds": [],
-    "enabled": true,
+    "enabled": false,
     "variant": "spec",
     "specKeys": [
       "Type",
@@ -207,7 +219,7 @@
     "viewAllLabel": "View All Speaker Boxes",
     "maxProducts": 5,
     "productIds": [],
-    "enabled": true,
+    "enabled": false,
     "variant": "spec",
     "specKeys": [
       "Size",
@@ -227,7 +239,7 @@
     "viewAllLabel": "View All Spare Parts",
     "maxProducts": 5,
     "productIds": [],
-    "enabled": true,
+    "enabled": false,
     "variant": "default",
     "dark": false,
     "order": 12
@@ -243,7 +255,7 @@
     "viewAllLabel": "View All Accessories",
     "maxProducts": 5,
     "productIds": [],
-    "enabled": true,
+    "enabled": false,
     "variant": "default",
     "dark": false,
     "order": 13
